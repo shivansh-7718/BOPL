@@ -113,7 +113,7 @@ export default function ChatAssistant() {
 
       {/* Chat Window Panel */}
       {isOpen && (
-        <div className="absolute bottom-18 right-0 w-80 sm:w-88 h-108 sm:h-120 glass-card rounded-3xl border border-slate-200/50 dark:border-slate-800/80 shadow-2xl flex flex-col justify-between overflow-hidden animate-float">
+        <div className="absolute bottom-full right-0 mb-4 w-[320px] sm:w-[360px] h-[450px] sm:h-[500px] glass-card rounded-3xl border border-slate-200/50 dark:border-slate-800/80 shadow-2xl flex flex-col justify-between overflow-hidden animate-float">
           
           {/* Header */}
           <div className="bg-gradient-to-r from-brandorange-500 to-brandorange-600 p-4 text-white flex items-center justify-between shadow-md shrink-0">
