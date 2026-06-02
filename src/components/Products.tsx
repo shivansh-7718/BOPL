@@ -214,11 +214,11 @@ export default function Products() {
             ) : (
               <form onSubmit={handleInquirySubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <div class="space-y-1">
+                  <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Your Name *</label>
                     <input type="text" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none focus:border-brandorange-500" />
                   </div>
-                  <div class="space-y-1">
+                  <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Email Address *</label>
                     <input type="email" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none focus:border-brandorange-500" />
                   </div>
@@ -262,22 +262,22 @@ export default function Products() {
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                   <tr>
-                    <td class="p-3 text-slate-400 font-medium">Therapeutic Category</td>
+                    <td className="p-3 text-slate-400 font-medium">Therapeutic Category</td>
                     <td className="p-3">{comparedProdObjects[0].therCat}</td>
                     <td className="p-3">{comparedProdObjects[1].therCat}</td>
                   </tr>
                   <tr>
-                    <td class="p-3 text-slate-400 font-medium">Core Indication</td>
+                    <td className="p-3 text-slate-400 font-medium">Core Indication</td>
                     <td className="p-3">{comparedProdObjects[0].desc}</td>
                     <td className="p-3">{comparedProdObjects[1].desc}</td>
                   </tr>
                   <tr>
-                    <td class="p-3 text-slate-400 font-medium">Formulation Form</td>
+                    <td className="p-3 text-slate-400 font-medium">Formulation Form</td>
                     <td className="p-3">{comparedProdObjects[0].form}</td>
                     <td className="p-3">{comparedProdObjects[1].form}</td>
                   </tr>
                   <tr>
-                    <td class="p-3 text-slate-400 font-medium">Manufacturing Quality Standards</td>
+                    <td className="p-3 text-slate-400 font-medium">Manufacturing Quality Standards</td>
                     <td className="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO / GMP Sterile</td>
                     <td className="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO / GMP Sterile</td>
                   </tr>

@@ -50,7 +50,7 @@ export default function About() {
           </div>
 
           <div className="space-y-4">
-            <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-2 pl-2">Our Core Values</h4>
+            <h4 className="font-bold text-xs uppercase tracking-wider text-slate-400 mb-2 pl-2">Our Core Values</h4>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {values.map((v, i) => (
                 <div key={i} className="glass-card p-4 rounded-2xl text-center hover:scale-105 active:scale-95 transition-all group cursor-pointer hover:border-brandorange-500/50">
@@ -67,7 +67,7 @@ export default function About() {
 
         {/* Right Column: Milestones */}
         <div className="lg:col-span-5 space-y-6">
-          <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 pl-4 border-l-2 border-brandorange-500">Corporate Journey Timeline</h4>
+          <h4 className="font-bold text-xs uppercase tracking-wider text-slate-400 pl-4 border-l-2 border-brandorange-500">Corporate Journey Timeline</h4>
           <div className="space-y-4">
             {milestones.map((m, i) => (
               <div key={i} className="relative pl-8 border-l border-slate-200 dark:border-slate-800 pb-4 group last:pb-0">
