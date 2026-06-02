@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biocyte Organics | Advancing Healthcare Through Innovation</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Biocyte Organics Pvt. Ltd. (BOPL) is a leading pharmaceutical enterprise dedicated to manufacturing high-quality, research-driven medicines and critical care devices. Adhering to WHO-GMP and ISO 9001:2015 standards.">
+  <meta name="keywords" content="Biocyte Organics, pharmaceutical company, critical care devices, oxygen concentrators, WHO-GMP, ISO 9001:2015, Kanpur, Lucknow">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Setup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration for Custom Orange/Teal Theme -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brandorange: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#FF6B00', // Primary Vibrant Bio-Pharma Orange
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            },
+            tealaccent: {
+              50: '#eefcfb',
+              100: '#d5f7f4',
+              200: '#aeede7',
+              300: '#7adad2',
+              400: '#48beb7',
+              500: '#00B8A9', // Secondary Biotech Teal
+              600: '#00978d',
+              700: '#047b74',
+              800: '#09625d',
+              900: '#0d514d',
+            },
+            softgreen: {
+              50: '#f0fdf4',
+              500: '#29CC74', // Accent Compliance Green
+              600: '#1eb863',
+            },
+            darkslate: {
+              800: '#1E293B',
+              900: '#0F172A',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'spin-slow': 'spin 12s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    /* Glassmorphism Navigation */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .dark .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Card Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 32px 0 rgba(255, 107, 0, 0.03);
+    }
+    .dark .glass-card {
+      background: rgba(30, 41, 59, 0.55);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    /* SPA Routing transitions */
+    .page-section {
+      transition: all 0.35s ease-in-out;
+    }
+    .page-section.hidden {
+      display: none !important;
+      opacity: 0;
+      transform: scale(0.99);
+    }
+    .page-section.active-page {
+      display: block !important;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* About Us inner tabs transitions */
+    .about-sub-section {
+      transition: all 0.3s ease-in-out;
+    }
+    .about-sub-section.hidden {
+      display: none !important;
+      opacity: 0;
+    }
+    .about-sub-section.active-sub {
+      display: block !important;
+      opacity: 1;
+    }
+    
+    /* Glowing Effects */
+    .glow-orange {
+      box-shadow: 0 0 40px rgba(255, 107, 0, 0.12);
+    }
+    
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 transition-colors duration-300 dark:bg-[#0F172A] dark:text-[#E2E8F0]">
+
+  <!-- Canvas Molecule Animation Container -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <canvas id="molecule-canvas" class="w-full h-full opacity-35 dark:opacity-20"></canvas>
+  </div>
+
+  <!-- CLEAN STICKY NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center space-x-3 group">
+          <div class="flex items-center space-x-3">
+            <div class="flex items-center">
+              <!-- Beautiful BOPL SVG Logo with orbiting swoosh -->
+              <svg class="h-10 w-auto text-slate-800 dark:text-white transition-colors duration-300" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Left swoosh orbit -->
+                <path d="M 22,5 A 16,16 0 1,0 35,28" stroke="#FF6B00" stroke-width="3.5" stroke-linecap="round" fill="none" />
+                <circle cx="35" cy="28" r="2.5" fill="#FF6B00" />
+                <!-- BOPL Text -->
+                <text x="16" y="29" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="800" font-style="italic" font-size="24" fill="currentColor" tracking="-0.5">BOPL</text>
+              </svg>
+            </div>
+            <div class="hidden sm:flex flex-col border-l border-slate-200 dark:border-slate-800 pl-3">
+              <span class="text-[11px] font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase">Life . Health . Happiness</span>
+              <span class="text-[8px] font-bold tracking-widest text-slate-400 dark:text-slate-600 uppercase -mt-0.5">Biocyte Organics</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- STREAMLINED NAVBAR LINKS -->
+        <nav class="hidden lg:flex items-center space-x-1">
+          <a href="#home" onclick="navigateTo('home'); return false;" id="navlink-home" class="px-5 py-2 rounded-lg text-sm font-bold text-brandorange-500 bg-brandorange-50/50 dark:bg-slate-800/40 transition-all">Home</a>
+          <a href="#about" onclick="navigateTo('about'); return false;" id="navlink-about" class="px-5 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-brandorange-500 transition-all">About Us</a>
+          <a href="#products" onclick="navigateTo('products'); return false;" id="navlink-products" class="px-5 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-brandorange-500 transition-all">Products</a>
+          <a href="#careers" onclick="navigateTo('careers'); return false;" id="navlink-careers" class="px-5 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-brandorange-500 transition-all flex items-center space-x-1">
+            <span>Careers</span>
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-softgreen-500 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-softgreen-500"></span>
+            </span>
+          </a>
+          <a href="#contact" onclick="navigateTo('contact'); return false;" id="navlink-contact" class="px-5 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-brandorange-500 transition-all">Contact</a>
+        </nav>
+
+        <!-- Right Side: Search, Theme Toggle, CTA -->
+        <div class="hidden lg:flex items-center space-x-4">
+          <!-- Live Search Bar -->
+          <div class="relative">
+            <input type="text" id="navbar-search" placeholder="Search medicines..." class="w-48 pl-9 pr-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/70 text-xs focus:w-64 focus:border-brandorange-500 focus:bg-white focus:outline-none dark:border-slate-800 dark:bg-slate-900/70 dark:focus:bg-slate-950 transition-all duration-300">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-2.5"></i>
+            <!-- Search Results Dropdown -->
+            <div id="search-results" class="absolute right-0 top-full mt-2 w-64 p-2 rounded-xl glass-card shadow-lg opacity-0 pointer-events-none transition-all z-50 text-xs">
+              <div class="p-2 font-bold text-slate-400 uppercase tracking-wider text-[10px]">Products Found</div>
+              <div id="search-results-list" class="space-y-1 max-h-48 overflow-y-auto"></div>
+            </div>
+          </div>
+
+          <!-- Dark Mode Toggle Button -->
+          <button id="dark-mode-toggle" class="p-2.5 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-yellow-400 hover:scale-105 hover:bg-slate-50 dark:hover:bg-slate-750 transition-all duration-300">
+            <i data-lucide="sun" id="sun-icon" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="moon" id="moon-icon" class="w-4 h-4 block dark:hidden"></i>
+          </button>
+
+          <!-- Explore Catalog CTA -->
+          <a href="#products" onclick="navigateTo('products'); return false;" class="px-5 py-2.5 rounded-full text-xs font-bold bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white hover:shadow-lg hover:shadow-brandorange-500/25 active:scale-95 transition-all">Explore Products</a>
+        </div>
+
+        <!-- Mobile Menu Controls -->
+        <div class="flex items-center space-x-3 lg:hidden">
+          <button id="dark-mode-toggle-mobile" class="p-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-yellow-400">
+            <i data-lucide="sun" class="w-4.5 h-4.5 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-4.5 h-4.5 block dark:hidden"></i>
+          </button>
+          <button id="mobile-menu-btn" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors">
+            <i data-lucide="menu" id="menu-btn-icon" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay & Drawer Panel (Placed outside header to prevent glass-nav transparency/clipping inheritance) -->
+  <div id="mobile-drawer-overlay" class="fixed inset-0 z-40 bg-slate-950/40 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 lg:hidden" onclick="closeMobileDrawer()"></div>
+  
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-72 bg-white dark:bg-slate-900 shadow-2xl p-6 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-200 dark:border-slate-800 flex flex-col justify-between lg:hidden">
+    <div class="space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+        <div class="flex items-center space-x-2">
+          <!-- Beautiful BOPL SVG Logo with orbiting swoosh -->
+          <svg class="h-8 w-auto text-slate-800 dark:text-white transition-colors duration-300" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left swoosh orbit -->
+            <path d="M 22,5 A 16,16 0 1,0 35,28" stroke="#FF6B00" stroke-width="3.5" stroke-linecap="round" fill="none" />
+            <circle cx="35" cy="28" r="2.5" fill="#FF6B00" />
+            <!-- BOPL Text -->
+            <text x="16" y="29" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="800" font-style="italic" font-size="24" fill="currentColor" tracking="-0.5">BOPL</text>
+          </svg>
+          <span class="text-[9px] font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase ml-2 border-l border-slate-200 dark:border-slate-800 pl-2">Life. Health. Happiness</span>
+        </div>
+        <button id="close-drawer-btn" class="p-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      
+      <div class="space-y-3 flex flex-col text-sm font-semibold">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="mobile-link py-2 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50">Home</a>
+        <a href="#about" onclick="navigateTo('about'); return false;" class="mobile-link py-2 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50">About Us</a>
+        <a href="#products" onclick="navigateTo('products'); return false;" class="mobile-link py-2 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50">Products</a>
+        <a href="#careers" onclick="navigateTo('careers'); return false;" class="mobile-link py-2 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50">Careers</a>
+        <a href="#contact" onclick="navigateTo('contact'); return false;" class="mobile-link py-2 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50">Contact Us</a>
+      </div>
+    </div>
+    <div class="border-t border-slate-100 dark:border-slate-800 pt-4">
+      <a href="#products" onclick="navigateTo('products'); return false;" class="block w-full text-center py-3 bg-brandorange-500 hover:bg-brandorange-600 text-white font-bold rounded-xl text-xs shadow-md">Explore Catalog</a>
+    </div>
+  </div>
+
+  <!-- ==================== HOME PAGE SECTION ==================== -->
+  <section id="page-home" class="page-section active-page min-h-screen pt-28 pb-16 flex flex-col justify-between bg-gradient-to-br from-brandorange-50/40 via-white to-tealaccent-50/20 dark:from-[#1b140c] dark:via-[#0F172A] dark:to-[#0c1b1a] transition-all">
+    <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,107,0,0.06),transparent_50%)]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center my-auto">
+      <!-- Left Column: Copywriting & Actions -->
+      <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card border-slate-200/80 text-xs font-semibold text-brandorange-500 dark:text-brandorange-400 dark:border-slate-800 shadow-sm animate-float">
+          <i data-lucide="shield-check" class="w-4 h-4 text-tealaccent-500"></i>
+          <span>WHO-GMP & ISO 9001:2015 Accredited</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:leading-[1.1] text-slate-900 dark:text-white">
+          Advancing Healthcare <br class="hidden sm:inline">
+          Through <span class="bg-gradient-to-r from-brandorange-500 via-brandorange-400 to-tealaccent-500 bg-clip-text text-transparent">Innovation</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 font-medium">
+          Delivering quality pharmaceutical solutions with an unwavering commitment to scientific excellence, rigorous quality testing, and global patient well-being.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <a href="#products" onclick="navigateTo('products'); return false;" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white shadow-xl shadow-brandorange-500/25 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center space-x-2">
+            <span>Explore Products</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#about" onclick="navigateTo('about'); return false;" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm glass-card hover:bg-slate-100/50 dark:hover:bg-slate-800/40 text-slate-700 dark:text-slate-300 hover:scale-105 transition-all flex items-center justify-center space-x-2">
+            <i data-lucide="info" class="w-4 h-4 text-brandorange-500"></i>
+            <span>Learn About Us</span>
+          </a>
+        </div>
+
+        <!-- Corrected Statistics Contrast (standard Tailwind slate classes) -->
+        <div class="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0">
+          <div>
+            <span class="block text-2xl sm:text-3xl font-extrabold text-brandorange-500 dark:text-brandorange-400">24+</span>
+            <span class="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">Years Journey</span>
+          </div>
+          <div>
+            <span class="block text-2xl sm:text-3xl font-extrabold text-tealaccent-500">35+</span>
+            <span class="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">Formulations</span>
+          </div>
+          <div>
+            <span class="block text-2xl sm:text-3xl font-extrabold text-softgreen-500">100%</span>
+            <span class="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">Quality Checked</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        <div class="absolute -top-10 -left-10 w-48 h-48 bg-brandorange-400/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-tealaccent-400/10 rounded-full blur-3xl"></div>
+        
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-slate-200 dark:border-slate-700 shadow-inner glow-orange animate-spin-slow flex items-center justify-center">
+          <div class="w-60 h-60 sm:w-80 sm:h-80 rounded-full border border-dashed border-tealaccent-500/20 animate-pulse-slow"></div>
+        </div>
+
+        <!-- Central High-Fidelity SVG Molecule Card -->
+        <div class="absolute glass-card p-6 sm:p-8 rounded-3xl w-64 sm:w-76 border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brandorange-500 to-tealaccent-400 text-white flex items-center justify-center shadow-lg shadow-brandorange-500/20 mb-4 animate-bounce">
+            <i data-lucide="biohazard" class="w-8 h-8"></i>
+          </div>
+          <span class="text-[10px] font-bold tracking-widest text-tealaccent-500 uppercase">Chemical Synthesis</span>
+          <h3 class="font-extrabold text-lg text-slate-900 dark:text-white mt-1">Research & Formulation</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">Developing targeted medical molecules with high bioavailability and strict patient tolerance.</p>
+          
+          <div class="w-full mt-5 bg-slate-100/50 dark:bg-slate-800/50 rounded-xl p-3 border border-slate-200 dark:border-slate-700 text-left">
+            <div class="flex items-center justify-between text-[10px] font-bold text-slate-500 mb-1">
+              <span>Bioavailability Assay</span>
+              <span class="text-softgreen-500">Active</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-brandorange-500 to-tealaccent-500 h-full rounded-full" style="width: 94%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-8 pb-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 text-center flex flex-col items-center justify-center cursor-pointer hover:scale-105 active:scale-98 transition-all" onclick="navigateTo('about')">
+          <i data-lucide="award" class="w-6 h-6 text-brandorange-500 mb-2"></i>
+          <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Incorporated</span>
+          <span class="text-lg sm:text-xl font-extrabold mt-0.5">2002</span>
+        </div>
+        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 text-center flex flex-col items-center justify-center cursor-pointer hover:scale-105 active:scale-98 transition-all" onclick="navigateTo('products')">
+          <i data-lucide="container" class="w-6 h-6 text-tealaccent-500 mb-2"></i>
+          <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Products Range</span>
+          <span class="text-lg sm:text-xl font-extrabold mt-0.5">35+ Items</span>
+        </div>
+        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 text-center flex flex-col items-center justify-center cursor-pointer hover:scale-105 active:scale-98 transition-all" onclick="switchAboutTab('quality')">
+          <i data-lucide="badge-check" class="w-6 h-6 text-softgreen-500 mb-2"></i>
+          <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Compliance</span>
+          <span class="text-lg sm:text-xl font-extrabold mt-0.5">WHO-GMP</span>
+        </div>
+        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 text-center flex flex-col items-center justify-center cursor-pointer hover:scale-105 active:scale-98 transition-all" onclick="navigateTo('contact')">
+          <i data-lucide="building" class="w-6 h-6 text-yellow-500 mb-2"></i>
+          <span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">Headquarters</span>
+          <span class="text-lg sm:text-xl font-extrabold mt-0.5">Kanpur, UP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT PAGE SECTION (MERGED STRUCTURE) ==================== -->
+  <section id="page-about" class="page-section hidden min-h-screen pt-28 pb-16 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Page Title -->
+      <div class="text-center max-w-3xl mx-auto mb-8 space-y-4">
+        <span class="text-xs font-bold tracking-widest text-brandorange-500 uppercase px-3 py-1 bg-brandorange-50 dark:bg-slate-800 rounded-full">About Biocyte</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">Our Corporate Profile & Capabilities</h2>
+        <div class="w-12 h-1 bg-gradient-to-r from-brandorange-500 to-tealaccent-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- INLINE SUB-TABS NAVIGATION (Responsive scroll container) -->
+      <div class="flex items-center space-x-2 overflow-x-auto pb-3 mb-10 border-b border-slate-200 dark:border-slate-800 no-scrollbar max-w-4xl mx-auto justify-start lg:justify-center">
+        <button onclick="switchAboutTab('story')" id="about-tab-story" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-brandorange-500 text-white shadow-md transition-all shrink-0">Company Profile & Story</button>
+        <button onclick="switchAboutTab('manufacturing')" id="about-tab-manufacturing" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">GMP Manufacturing Facility</button>
+        <button onclick="switchAboutTab('services')" id="about-tab-services" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Commercial Services</button>
+        <button onclick="switchAboutTab('quality')" id="about-tab-quality" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Quality & Certifications</button>
+        <button onclick="switchAboutTab('leaders')" id="about-tab-leaders" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Leadership & Partners</button>
+      </div>
+
+      <!-- ================= Sub Tab 1: Story & Core Values ================= -->
+      <div id="about-view-story" class="about-sub-section active-sub mt-4">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+          <!-- Left Column -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md">
+              <h3 class="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+                <i data-lucide="book-open" class="text-brandorange-500 w-5 h-5"></i>
+                <span>Our Journey & Purpose</span>
+              </h3>
+              <!-- Corrected Text Contrast shade to standard Tailwind text-slate-600 -->
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                For more than 24 years, Biocyte Organics has dedicated itself to manufacturing, supplies, and marketing of pharmaceutical tablets, capsules, liquids, and critical care diagnostics equipment. We have established deep trust with state institutions, government healthcare agencies, and local distributors.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white/40 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                  <i data-lucide="target" class="w-6 h-6 text-brandorange-500 mb-3"></i>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-1.5">Our Mission</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-400">To offer high-efficiency, verified, and cost-effective medical formulations that protect life, health, and elevate community happiness.</p>
+                </div>
+                <div class="bg-white/40 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                  <i data-lucide="eye" class="w-6 h-6 text-tealaccent-500 mb-3"></i>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-1.5">Our Vision</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-400">To be a global biotech-tech innovator in specialized patient care, critical respiratory solutions, and diagnostics.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="space-y-4">
+              <h4 class="font-bold text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2 pl-2">Our Core Values</h4>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:scale-105 transition-all cursor-pointer">
+                  <div class="w-10 h-10 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center mx-auto mb-2"><i data-lucide="flask-conical" class="w-4.5 h-4.5"></i></div>
+                  <span class="font-bold text-xs block text-slate-800 dark:text-white">Innovation</span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:scale-105 transition-all cursor-pointer">
+                  <div class="w-10 h-10 rounded-full bg-tealaccent-50 dark:bg-slate-800 text-tealaccent-500 flex items-center justify-center mx-auto mb-2"><i data-lucide="check-check" class="w-4.5 h-4.5"></i></div>
+                  <span class="font-bold text-xs block text-slate-800 dark:text-white">Quality First</span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:scale-105 transition-all cursor-pointer">
+                  <div class="w-10 h-10 rounded-full bg-softgreen-50 dark:bg-slate-800 text-softgreen-500 flex items-center justify-center mx-auto mb-2"><i data-lucide="heart" class="w-4.5 h-4.5"></i></div>
+                  <span class="font-bold text-xs block text-slate-800 dark:text-white">Patient First</span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:scale-105 transition-all cursor-pointer">
+                  <div class="w-10 h-10 rounded-full bg-yellow-50 dark:bg-slate-800 text-yellow-600 flex items-center justify-center mx-auto mb-2"><i data-lucide="users" class="w-4.5 h-4.5"></i></div>
+                  <span class="font-bold text-xs block text-slate-800 dark:text-white">Integrity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (Timeline) -->
+          <div class="lg:col-span-5 space-y-6">
+            <h4 class="font-bold text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 pl-4 border-l-2 border-brandorange-500">Corporate Journey Timeline</h4>
+            <div class="space-y-4">
+              <div class="relative pl-8 border-l border-slate-200 dark:border-slate-800 pb-4">
+                <div class="absolute -left-1.5 top-1 w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                <span class="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">2002</span>
+                <h5 class="font-extrabold text-sm text-slate-800 dark:text-white">Corporate Foundation</h5>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">Incorporated as a private limited entity in Kanpur, Uttar Pradesh.</p>
+              </div>
+              <div class="relative pl-8 border-l border-slate-200 dark:border-slate-800 pb-4">
+                <div class="absolute -left-1.5 top-1 w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                <span class="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">2010</span>
+                <h5 class="font-extrabold text-sm text-slate-800 dark:text-white">Lucknow Branch Office</h5>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">Launched Lucknow branch office in Vikas Nagar. Registered as a supplier for institutional state medical centers.</p>
+              </div>
+              <div class="relative pl-8 border-l border-slate-200 dark:border-slate-800">
+                <div class="absolute -left-1.5 top-1 w-3.5 h-3.5 rounded-full bg-brandorange-500 ring-4 ring-brandorange-500/10"></div>
+                <span class="text-[10px] font-bold text-brandorange-500 dark:text-brandorange-400 uppercase tracking-widest">Present (2026)</span>
+                <h5 class="font-extrabold text-sm text-slate-800 dark:text-white">Redefined Enterprise Identity</h5>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">Expanding formulations catalog to over 35 items. Transitioning to smart digital order portals and advanced healthcare integrations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Sub Tab 2: GMP Manufacturing (Corrected text & high-fidelity interactive control panel) ================= -->
+      <div id="about-view-manufacturing" class="about-sub-section hidden mt-4">
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Left Column: Details -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">State-of-the-Art GMP Formulation Facility</h3>
+              <!-- Standardized text-slate-600 dark:text-slate-300 -->
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Biocyte Organics relies on advanced GMP formulation standards. Operating with massive climate-controlled cleanrooms, high-capacity automated tableting and capsule-filling lines, and certified liquid syrup packaging systems.
+              </p>
+            </div>
+
+            <!-- Custom validated lists with standard slate tags -->
+            <div class="space-y-4">
+              <div class="flex space-x-3 items-start">
+                <div class="w-8 h-8 rounded-full bg-brandorange-100 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+                <div>
+                  <h4 class="font-bold text-xs text-slate-800 dark:text-white">Raw Material Validation</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Every batch of active API undergoes robust chemical assay checks inside our Quality Control laboratory.</p>
+                </div>
+              </div>
+              <div class="flex space-x-3 items-start">
+                <div class="w-8 h-8 rounded-full bg-tealaccent-100 dark:bg-slate-800 text-tealaccent-500 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+                <div>
+                  <h4 class="font-bold text-xs text-slate-800 dark:text-white">Sterile Mixing & Formulation</h4>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Automated containment mixers process core therapeutic formulations to ensure absolute batch uniformity.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Workflow mini panel -->
+            <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <span class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-3">Workflow Checklist</span>
+              <div class="flex items-center justify-between text-center relative px-2">
+                <div class="absolute top-1/2 left-4 right-4 h-0.5 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 z-0"></div>
+                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-brandorange-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="inbox" class="w-3.5 h-3.5"></i></div></div>
+                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-tealaccent-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="test-tube" class="w-3.5 h-3.5"></i></div></div>
+                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-yellow-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="combine" class="w-3.5 h-3.5"></i></div></div>
+                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-softgreen-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="package" class="w-3.5 h-3.5"></i></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: HIGH-FIDELITY INTERACTIVE CLEANROOM CONTROL PANEL -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg glow-orange flex-grow flex flex-col justify-between space-y-6">
+              
+              <!-- Cleanroom interactive header -->
+              <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div class="flex items-center space-x-2">
+                  <span class="flex h-2.5 w-2.5 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-softgreen-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-softgreen-500"></span>
+                  </span>
+                  <span class="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Facility Live Diagnostic Screen</span>
+                </div>
+                <div class="text-[10px] font-bold text-brandorange-500 bg-brandorange-50 dark:bg-slate-800 px-2.5 py-1 rounded-full uppercase tracking-wider">GMP Class A</div>
+              </div>
+
+              <!-- Cleanroom Simulated Floor plan SVG Schematic -->
+              <div class="relative bg-slate-950 rounded-2xl p-4 border border-slate-800 flex flex-col justify-between h-48 overflow-hidden">
+                <div class="absolute inset-0 opacity-20 pointer-events-none">
+                  <div class="w-full h-full bg-[linear-gradient(rgba(0,184,169,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,184,169,0.1)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+                </div>
+                
+                <!-- Room schematic layout -->
+                <div class="grid grid-cols-3 gap-3 relative z-10 my-auto h-24">
+                  <!-- Room 1 Airlock -->
+                  <div id="schematic-room-airlock" class="border-2 border-brandorange-500 bg-brandorange-500/10 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300">
+                    <span class="text-[8px] font-extrabold text-brandorange-400 uppercase tracking-widest block">Zone 1</span>
+                    <span class="text-[9px] font-bold text-white block mt-1">Air Lock Chamber</span>
+                    <div class="flex items-center space-x-1 mt-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-softgreen-500 animate-ping"></span>
+                      <span class="text-[7px] text-softgreen-400 uppercase tracking-wider font-extrabold" id="schematic-status-airlock">Active</span>
+                    </div>
+                  </div>
+
+                  <!-- Room 2 Sterile Area -->
+                  <div id="schematic-room-mixing" class="border border-slate-800 bg-slate-900/40 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300">
+                    <span class="text-[8px] font-extrabold text-slate-500 uppercase tracking-widest block">Zone 2</span>
+                    <span class="text-[9px] font-bold text-slate-400 block mt-1">Sterile Area</span>
+                    <div class="flex items-center space-x-1 mt-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+                      <span class="text-[7px] text-slate-500 uppercase tracking-wider font-extrabold" id="schematic-status-mixing">Standby</span>
+                    </div>
+                  </div>
+
+                  <!-- Room 3 Packing Belt -->
+                  <div id="schematic-room-packaging" class="border border-slate-800 bg-slate-900/40 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300">
+                    <span class="text-[8px] font-extrabold text-slate-500 uppercase tracking-widest block">Zone 3</span>
+                    <span class="text-[9px] font-bold text-slate-400 block mt-1">Packing Belt</span>
+                    <div class="flex items-center space-x-1 mt-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+                      <span class="text-[7px] text-slate-500 uppercase tracking-wider font-extrabold" id="schematic-status-packaging">Standby</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Real-time diagnostic ticker -->
+                <div class="flex items-center justify-between border-t border-slate-800/80 pt-2 text-[9px] font-mono text-slate-500 relative z-10">
+                  <div class="flex items-center space-x-1.5">
+                    <i data-lucide="terminal" class="w-3.5 h-3.5 text-tealaccent-500"></i>
+                    <span id="diagnostic-ticker-message" class="text-tealaccent-400">Assay Status: Airlocks secure. +15.2 Pa positive pressure cycle active.</span>
+                  </div>
+                  <span id="diagnostic-ticker-time" class="text-slate-400">17:40:24</span>
+                </div>
+              </div>
+
+              <!-- Cleanroom simulated map grids -->
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div onclick="selectCleanroomZone('airlock')" id="zone-btn-airlock" class="p-3.5 rounded-2xl border-2 border-brandorange-500 bg-brandorange-50/10 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-brandorange-500 text-white flex items-center justify-center transition-colors"><i data-lucide="door-closed" class="w-4 h-4"></i></div>
+                  <span class="block font-bold text-[10px]">1. Air Locks</span>
+                  <span class="block text-[8px] text-softgreen-500 font-bold uppercase tracking-wider">Secure</span>
+                </div>
+
+                <div onclick="selectCleanroomZone('mixing')" id="zone-btn-mixing" class="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"><i data-lucide="workflow" class="w-4 h-4"></i></div>
+                  <span class="block font-bold text-[10px]">2. Sterile Area</span>
+                  <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">Nominal</span>
+                </div>
+
+                <div onclick="selectCleanroomZone('packaging')" id="zone-btn-packaging" class="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"><i data-lucide="package-open" class="w-4 h-4"></i></div>
+                  <span class="block font-bold text-[10px]">3. Packing Belt</span>
+                  <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">Nominal</span>
+                </div>
+              </div>
+
+              <!-- Cleanroom metrics status panel -->
+              <div class="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-semibold">
+                <div class="space-y-1 text-center sm:text-left">
+                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">Air Pressure</span>
+                  <span class="block text-base font-extrabold text-slate-800 dark:text-white" id="cleanroom-metric-pressure">+15.2 Pa</span>
+                </div>
+                <div class="space-y-1 text-center sm:text-left border-l border-slate-200 dark:border-slate-800 pl-0 sm:pl-4">
+                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">Humidity</span>
+                  <span class="block text-base font-extrabold text-slate-800 dark:text-white" id="cleanroom-metric-humidity">45% RH</span>
+                </div>
+                <div class="space-y-1 text-center sm:text-left border-l border-slate-200 dark:border-slate-800 pl-0 sm:pl-4">
+                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">Air Changes</span>
+                  <span class="block text-base font-extrabold text-slate-800 dark:text-white" id="cleanroom-metric-changes">40 / Hour</span>
+                </div>
+                <div class="space-y-1 text-center sm:text-left border-l border-slate-200 dark:border-slate-800 pl-0 sm:pl-4">
+                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">HEPA Filter</span>
+                  <span class="block text-base font-extrabold text-softgreen-500" id="cleanroom-metric-hepa">99.997%</span>
+                </div>
+              </div>
+
+              <!-- Interactive details note -->
+              <div class="p-4 bg-brandorange-50/30 dark:bg-brandorange-500/5 rounded-2xl border border-brandorange-500/10 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed" id="cleanroom-metric-detail">
+                <b>Air Lock Zone:</b> Class 100 HEPA air shower systems seal active formulation barriers. Maintains differential positive pressure (+15 Pa) to completely prevent raw material contamination.
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= Sub Tab 3: Commercial Services (Corrected text classes) ================= -->
+      <div id="about-view-services" class="about-sub-section hidden mt-4">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-10 h-10 rounded-lg bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center mb-4"><i data-lucide="handshake" class="w-5.5 h-5.5"></i></div>
+            <h3 class="font-extrabold text-sm text-slate-800 dark:text-white mb-2">Franchise & PCD Partners</h3>
+            <!-- Standardized slate text classes -->
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Providing PCD Franchise business rights to dedicated sales representatives with high promotional material support and stable margins.</p>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-10 h-10 rounded-lg bg-tealaccent-50 dark:bg-slate-800 text-tealaccent-500 flex items-center justify-center mb-4"><i data-lucide="package-check" class="w-5.5 h-5.5"></i></div>
+            <h3 class="font-extrabold text-sm text-slate-800 dark:text-white mb-2">Contract Manufacturing</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Leverage our high-speed blister packing and capsule-filling setups for private-label pharmaceutical formulations under confidentiality.</p>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-10 h-10 rounded-lg bg-softgreen-50 dark:bg-slate-800 text-softgreen-500 flex items-center justify-center mb-4"><i data-lucide="truck" class="w-5.5 h-5.5"></i></div>
+            <h3 class="font-extrabold text-sm text-slate-800 dark:text-white mb-2">Institutional Supplies</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Executing rapid shipping pipelines for central and state healthcare boards, maintaining critical care device calibration guarantees.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Sub Tab 4: Quality & Certifications (Corrected text classes) ================= -->
+      <div id="about-view-quality" class="about-sub-section hidden mt-4 space-y-12">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brandorange-500 to-tealaccent-400 text-white flex items-center justify-center shadow-md mb-4"><i data-lucide="beaker" class="w-6 h-6"></i></div>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">HPLC Validation Assays</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">High-Performance Liquid Chromatography tests ensure active chemical dosage precision across every production run.</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-tealaccent-500 to-softgreen-500 text-white flex items-center justify-center shadow-md mb-4"><i data-lucide="fingerprint" class="w-6 h-6"></i></div>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Contamination Barrier</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Atmospheric micro-particle counts are conducted daily in cleanrooms to secure absolute microbiological safety.</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-softgreen-500 to-yellow-400 text-white flex items-center justify-center shadow-md mb-4"><i data-lucide="timer" class="w-6 h-6"></i></div>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Dissolution Assays</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Testing bio-release speeds to ensure prompt bloodstream distribution and optimal therapeutic efficiency for patients.</p>
+          </div>
+        </div>
+
+        <!-- Certifications Showcase -->
+        <div class="border-t border-slate-200 dark:border-slate-800 pt-8">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 text-center mb-6">Registered Credentials & Corporate Accreditations</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('iso')">
+              <div class="w-10 h-10 rounded-xl bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 mx-auto flex items-center justify-center mb-2"><i data-lucide="shield-alert" class="w-5 h-5 text-brandorange-500"></i></div>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">ISO 9001:2015</span>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Management</span>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('gmp')">
+              <div class="w-10 h-10 rounded-xl bg-tealaccent-50 dark:bg-slate-800 text-tealaccent-505 mx-auto flex items-center justify-center mb-2"><i data-lucide="clipboard-check" class="w-5 h-5 text-tealaccent-505"></i></div>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">GMP Certified</span>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Formulations</span>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('mca')">
+              <div class="w-10 h-10 rounded-xl bg-softgreen-50 dark:bg-slate-800 text-softgreen-500 mx-auto flex items-center justify-center mb-2"><i data-lucide="landmark" class="w-5 h-5 text-softgreen-500"></i></div>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">MCA Registry</span>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Govt Supplies</span>
+            </div>
+            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('gst')">
+              <div class="w-10 h-10 rounded-xl bg-yellow-50 dark:bg-slate-800 text-yellow-500 mx-auto flex items-center justify-center mb-2"><i data-lucide="file-check-2" class="w-5 h-5 text-yellow-550"></i></div>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">Active GSTIN</span>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Tax Compliant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Sub Tab 5: Leadership & Partners ================= -->
+      <div id="about-view-leaders" class="about-sub-section hidden mt-4 space-y-12">
+        <!-- Corporate Leadership Grid -->
+        <div class="space-y-8">
+          <div class="text-center max-w-2xl mx-auto space-y-2">
+            <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">Corporate Leadership</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Meet our experienced leadership team driving innovation and excellence in pharmaceutical solutions.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- J. R. S. Gaur -->
+            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+              <div class="space-y-6">
+                <div class="flex flex-col items-center text-center space-y-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                  <div class="w-14 h-14 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shadow-inner">
+                    <i data-lucide="user" class="w-7 h-7"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-extrabold text-base text-slate-900 dark:text-white">J. R. S. Gaur</h4>
+                    <span class="text-[10px] font-bold text-brandorange-500 uppercase tracking-widest block mt-0.5">Director of Formulation Assay</span>
+                  </div>
+                </div>
+
+                <div class="space-y-4 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="graduation-cap" class="w-4.5 h-4.5 text-brandorange-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Academic Qualifications</span>
+                      <span class="block text-slate-800 dark:text-slate-200 mt-0.5">Bachelor of Science</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="briefcase" class="w-4.5 h-4.5 text-tealaccent-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total Experience</span>
+                      <span class="block text-slate-800 dark:text-slate-200 mt-0.5">25 Years</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="building" class="w-4.5 h-4.5 text-softgreen-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Previous Companies</span>
+                      <span class="block text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">Ranbaxy Laboratories Limited, Glenmark Laboratories Limited, Glenmark Pharmaceuticals Limited</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vibhor Tiwari -->
+            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+              <div class="space-y-6">
+                <div class="flex flex-col items-center text-center space-y-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                  <div class="w-14 h-14 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shadow-inner">
+                    <i data-lucide="user" class="w-7 h-7"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-extrabold text-base text-slate-900 dark:text-white">Vibhor Tiwari</h4>
+                    <span class="text-[10px] font-bold text-brandorange-500 uppercase tracking-widest block mt-0.5">Director of Global Channels</span>
+                  </div>
+                </div>
+
+                <div class="space-y-4 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="graduation-cap" class="w-4.5 h-4.5 text-brandorange-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Academic Qualifications</span>
+                      <span class="block text-slate-800 dark:text-slate-200 mt-0.5">Bachelor of Science, Masters in Business Administration</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="briefcase" class="w-4.5 h-4.5 text-tealaccent-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total Experience</span>
+                      <span class="block text-slate-800 dark:text-slate-200 mt-0.5">12 Years</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="building" class="w-4.5 h-4.5 text-softgreen-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Previous Companies</span>
+                      <span class="block text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">Biological E. Limited, Maxx Limited</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Indra Sen Singh -->
+            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+              <div class="space-y-6">
+                <div class="flex flex-col items-center text-center space-y-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                  <div class="w-14 h-14 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shadow-inner">
+                    <i data-lucide="user" class="w-7 h-7"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-extrabold text-base text-slate-900 dark:text-white">Indra Sen Singh</h4>
+                    <span class="text-[10px] font-bold text-brandorange-500 uppercase tracking-widest block mt-0.5">Director of Quality Assurances</span>
+                  </div>
+                </div>
+
+                <div class="space-y-4 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="graduation-cap" class="w-4.5 h-4.5 text-brandorange-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Academic Qualifications</span>
+                      <span class="block text-slate-800 dark:text-slate-200 mt-0.5">Bachelor of Science, Diploma in Marketing sponsored by SIDBI</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="briefcase" class="w-4.5 h-4.5 text-tealaccent-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total Experience</span>
+                      <span class="block text-slate-800 dark:text-slate-200 mt-0.5">15 Years</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i data-lucide="building" class="w-4.5 h-4.5 text-softgreen-500 shrink-0 mt-0.5"></i>
+                    <div>
+                      <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Previous Companies</span>
+                      <span class="block text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">Dr. Reddy's Laboratories Limited, Maxx Limited</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategic Partners Section -->
+        <div class="space-y-8 border-t border-slate-200 dark:border-slate-800 pt-12">
+          <div class="text-center max-w-2xl mx-auto space-y-2">
+            <span class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brandorange-50 dark:bg-slate-800 text-[10px] font-bold text-brandorange-500 uppercase tracking-wider">
+              <i data-lucide="handshake" class="w-3.5 h-3.5"></i>
+              <span>Strategic Partnerships</span>
+            </span>
+            <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">Business / Channel Partners</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              We collaborate with leading organizations to deliver comprehensive healthcare solutions across multiple markets.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center space-x-4 hover:scale-[1.02] transition-transform duration-300">
+              <div class="w-11 h-11 rounded-xl bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shrink-0">
+                <i data-lucide="building" class="w-5.5 h-5.5"></i>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-sm text-slate-800 dark:text-white">Creative Medical System Germany</h4>
+                <span class="text-[10px] font-bold text-tealaccent-500 uppercase tracking-widest block mt-0.5">Strategic Partner</span>
+              </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center space-x-4 hover:scale-[1.02] transition-transform duration-300">
+              <div class="w-11 h-11 rounded-xl bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shrink-0">
+                <i data-lucide="building" class="w-5.5 h-5.5"></i>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-sm text-slate-800 dark:text-white">Pneumacare Health Private Limited</h4>
+                <span class="text-[10px] font-bold text-tealaccent-500 uppercase tracking-widest block mt-0.5">Strategic Partner</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partners Registered Address -->
+          <div class="text-center pt-4 max-w-md mx-auto">
+            <div class="inline-flex items-center space-x-2 text-xs font-semibold text-slate-500 bg-slate-50 dark:bg-slate-900 px-5 py-3 rounded-2xl border border-slate-200 dark:border-slate-800 leading-relaxed">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brandorange-500 shrink-0"></i>
+              <span>Address: F - 11, 2nd Floor, Fazal Ganj, Kanpur, New Delhi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTS PAGE SECTION ==================== -->
+  <section id="page-products" class="page-section hidden min-h-screen pt-28 pb-16 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Title & Search -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div class="space-y-4 max-w-2xl">
+          <span class="text-xs font-bold tracking-widest text-tealaccent-500 uppercase px-3 py-1 bg-tealaccent-50 dark:bg-slate-800 rounded-full">Product Portfolio</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">Our Pharmaceutical & Medical Catalog</h2>
+          <div class="w-12 h-1 bg-gradient-to-r from-brandorange-500 to-tealaccent-500 rounded-full"></div>
+        </div>
+        
+        <div class="relative w-full md:w-80">
+          <input type="text" id="catalog-search" placeholder="Filter by medicine name..." class="w-full pl-10 pr-4 py-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 text-sm focus:border-brandorange-500 focus:outline-none transition-all">
+          <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5"></i>
+        </div>
+      </div>
+
+      <!-- Categories Tabs -->
+      <div class="flex items-center space-x-2 overflow-x-auto pb-4 mb-8 border-b border-slate-100 dark:border-slate-800 no-scrollbar">
+        <button onclick="filterCatalog('all')" id="tab-all" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-brandorange-500 text-white shadow-md active:scale-95 transition-all">All Products</button>
+        <button onclick="filterCatalog('nutritional')" id="tab-nutritional" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Nutritional & Vitamins</button>
+        <button onclick="filterCatalog('cardio')" id="tab-cardio" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Cardiovascular</button>
+        <button onclick="filterCatalog('digestive')" id="tab-digestive" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Digestive Care</button>
+        <button onclick="filterCatalog('respiratory')" id="tab-respiratory" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Respiratory & Pain</button>
+        <button onclick="filterCatalog('devices')" id="tab-devices" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Medical Equipment</button>
+      </div>
+
+      <!-- Compare banner -->
+      <div id="comparison-banner" class="hidden glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 mb-6 flex items-center justify-between">
+        <div class="flex items-center space-x-3 text-xs">
+          <i data-lucide="arrow-left-right" class="text-brandorange-500 animate-pulse-slow"></i>
+          <span class="font-bold">Compare products (<span id="compare-count">0</span> selected)</span>
+        </div>
+        <div class="flex space-x-2">
+          <button onclick="clearComparison()" class="px-4 py-2 text-xs font-semibold text-slate-500">Clear</button>
+          <button onclick="openComparisonModal()" class="px-5 py-2 bg-tealaccent-500 text-white rounded-lg text-xs font-bold shadow-md shadow-tealaccent-500/20">Compare Now</button>
+        </div>
+      </div>
+
+      <div id="products-catalog-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+      
+    </div>
+  </section>
+
+  <!-- ==================== CAREERS PAGE SECTION ==================== -->
+  <section id="page-careers" class="page-section hidden min-h-screen pt-28 pb-16 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-8 space-y-4">
+        <span class="text-xs font-bold tracking-widest text-brandorange-500 uppercase px-3 py-1 bg-brandorange-50 dark:bg-slate-800 rounded-full">Careers</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">Shape the Future of Healthcare</h2>
+        <div class="w-12 h-1 bg-gradient-to-r from-brandorange-500 to-tealaccent-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Career Grid -->
+      <div class="grid lg:grid-cols-12 gap-12 items-start mt-8">
+        
+        <!-- Openings -->
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="font-bold text-sm uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 pl-2">Current Openings</h3>
+          
+          <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-brandorange-500/50 transition-colors cursor-pointer group" onclick="fillJobApply('Medical Representative (MR)')">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-extrabold text-sm text-slate-800 dark:text-white group-hover:text-brandorange-500 transition-colors">Medical Representative (MR)</h4>
+              <span class="text-[9px] font-bold text-tealaccent-505 bg-tealaccent-50 dark:bg-slate-800 px-2 py-0.5 rounded-full">2 Positions</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3">Expanding our medical awareness footprint across Uttar Pradesh and Bihar regions.</p>
+            <div class="flex items-center space-x-4 text-[10px] text-slate-500 dark:text-slate-400 font-semibold">
+              <span class="flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1"></i>Kanpur/Lucknow</span>
+              <span class="flex items-center"><i data-lucide="briefcase" class="w-3.5 h-3.5 mr-1"></i>1-3 Years Experience</span>
+            </div>
+          </div>
+
+          <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-brandorange-500/50 transition-colors cursor-pointer group" onclick="fillJobApply('QC Analyst (HPLC/UV)')">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-extrabold text-sm text-slate-800 dark:text-white group-hover:text-brandorange-500 transition-colors">QC Analyst (HPLC/UV)</h4>
+              <span class="text-[9px] font-bold text-tealaccent-505 bg-tealaccent-50 dark:bg-slate-800 px-2 py-0.5 rounded-full">1 Position</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3">Conducting quantitative assays on formulation batches using HPLC systems.</p>
+            <div class="flex items-center space-x-4 text-[10px] text-slate-500 dark:text-slate-400 font-semibold">
+              <span class="flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1"></i>Kanpur Facility</span>
+              <span class="flex items-center"><i data-lucide="briefcase" class="w-3.5 h-3.5 mr-1"></i>2-5 Years Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-6">
+          <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md">
+            <h3 class="font-extrabold text-lg text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+              <i data-lucide="file-edit" class="text-brandorange-500 w-5 h-5"></i>
+              <span>Instant Application Portal</span>
+            </h3>
+            
+            <form id="careers-apply-form" onsubmit="handleApplySubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Your Name *</label>
+                  <input type="text" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Email Address *</label>
+                  <input type="email" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Phone Number *</label>
+                  <input type="tel" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none">
+                </div>
+                <div class="space-y-1">
+                  <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Applied Position *</label>
+                  <select id="applied-job-select" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/75 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none text-slate-600">
+                    <option value="">Select a Role...</option>
+                    <option value="Medical Representative (MR)">Medical Representative (MR)</option>
+                    <option value="QC Analyst (HPLC/UV)">QC Analyst (HPLC/UV)</option>
+                    <option value="QA Compliance Officer">QA Compliance Officer</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Brief Cover Note</label>
+                <textarea placeholder="Tell us about your background..." class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none focus:border-brandorange-500 h-20"></textarea>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 block">Upload Resume (PDF) *</label>
+                <div class="border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-all flex flex-col items-center justify-center relative">
+                  <input type="file" required accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer" onchange="handleResumeFile(this)">
+                  <i data-lucide="upload-cloud" class="w-8 h-8 text-slate-400 mb-2"></i>
+                  <span id="resume-file-label" class="text-[11px] text-slate-500 font-semibold">Drag & drop or browse computer files</span>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white font-bold rounded-xl text-xs shadow-md">Submit Profile Application</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT PAGE SECTION ==================== -->
+  <section id="page-contact" class="page-section hidden min-h-screen pt-28 pb-16 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-stretch mt-4">
+        <!-- Details & WhatsApp -->
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+          <div class="space-y-6">
+            <span class="text-xs font-bold tracking-widest text-tealaccent-500 uppercase px-3 py-1 bg-tealaccent-50 dark:bg-slate-800 rounded-full">Contact Support</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">Get in Touch with Corporate Offices</h2>
+            
+            <div class="space-y-4 pt-4 text-xs font-semibold text-slate-700 dark:text-slate-300">
+              <div class="flex items-start space-x-3">
+                <i data-lucide="building" class="w-5 h-5 text-brandorange-500 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="block font-bold text-slate-800 dark:text-white">Registered Office Address</span>
+                  <span class="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-lucide="map-pin" class="w-5 h-5 text-tealaccent-500 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="block font-bold text-slate-800 dark:text-white">Lucknow Branch Office</span>
+                  <span class="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">2C/50-53, Flat No. 403, 4th Floor, Ajeet Residency, Vikas Nagar-2, Lucknow</span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-lucide="phone" class="w-5 h-5 text-softgreen-500 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="block font-bold text-slate-800 dark:text-white">Phone Support Desk</span>
+                  <span class="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                    <a href="tel:+919919002065" class="hover:text-brandorange-500 transition-colors font-bold text-slate-600 dark:text-slate-400 shadow-none">+91-9919002065</a>, 
+                    <a href="tel:+919919002066" class="hover:text-brandorange-500 transition-colors font-bold text-slate-600 dark:text-slate-400 shadow-none">+91-9919002066</a> 
+                    <span class="block sm:inline">(Telefax: +91-8429692065)</span>
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i data-lucide="mail" class="w-5 h-5 text-yellow-500 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="block font-bold text-slate-800 dark:text-white">Email Communications</span>
+                  <span class="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                    <a href="mailto:info@biocyteorganics.com" class="hover:text-brandorange-500 transition-colors font-bold text-slate-600 dark:text-slate-400 shadow-none">info@biocyteorganics.com</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-softgreen-500/10 to-tealaccent-500/10 p-5 rounded-2xl border border-softgreen-500/20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-softgreen-500 text-white flex items-center justify-center font-bold shadow-md"><i data-lucide="message-square" class="w-5.5 h-5.5"></i></div>
+              <div>
+                <span class="block font-bold text-xs text-slate-800 dark:text-white">Direct WhatsApp Desk</span>
+                <span class="block text-[10px] text-slate-500">Chat immediately with representatives</span>
+              </div>
+            </div>
+            <a href="https://wa.me/919919002065" target="_blank" class="px-4 py-2 bg-softgreen-500 hover:bg-softgreen-600 text-white text-[11px] font-bold rounded-lg transition-colors flex items-center space-x-1.5">
+              <span>Start Chat</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+          <!-- Office Hours Card -->
+          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+            <div class="flex items-center space-x-3 pb-3 border-b border-slate-100 dark:border-slate-800">
+              <div class="w-10 h-10 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shrink-0">
+                <i data-lucide="clock" class="w-5.5 h-5.5"></i>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-sm text-slate-800 dark:text-white">Office Hours</h4>
+                <span class="text-[10px] text-slate-400 font-bold block">We're here to help</span>
+              </div>
+            </div>
+            <div class="space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
+              <div class="flex justify-between items-center">
+                <span>Monday - Friday</span>
+                <span class="text-brandorange-500 font-bold">9:00 AM - 6:00 PM</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Saturday</span>
+                <span class="text-brandorange-500 font-bold">9:00 AM - 2:00 PM</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Sunday</span>
+                <span class="text-rose-500 font-bold uppercase tracking-wider text-[10px]">Closed</span>
+              </div>
+            </div>
+            <div class="p-3 bg-brandorange-50/40 dark:bg-slate-800/40 rounded-xl border border-brandorange-500/10 text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed flex items-start space-x-2">
+              <i data-lucide="lightbulb" class="w-4 h-4 text-brandorange-500 shrink-0 mt-0.5 animate-pulse-slow"></i>
+              <span>For urgent inquiries outside office hours, please email us and we'll respond within 24 hours.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col justify-between h-full">
+            <div>
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white mb-4">Send a Secure Inquiry</h3>
+              <form id="contact-inquiry-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1">
+                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Full Name *</label>
+                    <input type="text" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none">
+                  </div>
+                  <div class="space-y-1">
+                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Email Address *</label>
+                    <input type="email" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1">
+                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Phone Number *</label>
+                    <input type="tel" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none">
+                  </div>
+                  <div class="space-y-1">
+                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Inquiry Target Desk *</label>
+                    <select required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/75 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none text-slate-600">
+                      <option value="General Corporate Desk">General Corporate Desk</option>
+                      <option value="Medicine Franchise/PCD Desk">Medicine Franchise/PCD Desk</option>
+                      <option value="Respiratory Devices Sales">Respiratory Devices Sales</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Inquiry Message *</label>
+                  <textarea required placeholder="Write your detailed inquiry or business proposal here..." class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 rounded-xl text-xs focus:border-brandorange-500 focus:outline-none h-28"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white font-bold rounded-xl text-xs shadow-md shadow-brandorange-500/20 active:scale-98 transition-all flex items-center justify-center space-x-2">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>Send Business Proposal</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL FOOTER (Corrected links visibility) -->
+  <footer class="bg-slate-900 text-slate-300 pt-20 pb-10 border-t border-slate-800 z-20 relative w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8 mb-16">
+      
+      <!-- Column 1 -->
+      <div class="md:col-span-4 space-y-6">
+        <div class="flex items-center space-x-3">
+          <div class="flex items-center">
+            <!-- Beautiful BOPL SVG Logo with orbiting swoosh -->
+            <svg class="h-9 w-auto text-white transition-colors duration-300" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Left swoosh orbit -->
+              <path d="M 22,5 A 16,16 0 1,0 35,28" stroke="#FF6B00" stroke-width="3.5" stroke-linecap="round" fill="none" />
+              <circle cx="35" cy="28" r="2.5" fill="#FF6B00" />
+              <!-- BOPL Text -->
+              <text x="16" y="29" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="800" font-style="italic" font-size="24" fill="currentColor" tracking="-0.5">BOPL</text>
+            </svg>
+          </div>
+          <div class="flex flex-col border-l border-slate-800 pl-3">
+            <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Life . Health . Happiness</span>
+            <span class="text-[8px] font-bold tracking-widest text-slate-500 uppercase -mt-0.5">Biocyte Organics</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+          Incorporated in 2002, Biocyte Organics Private Limited is an Indian pharmaceutical enterprise delivering high-efficiency capsules, syrups, and medical breathing devices.
+        </p>
+        <div class="flex space-x-3 pt-2">
+          <a href="#" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:bg-brandorange-500 hover:text-white transition-colors flex items-center justify-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:bg-brandorange-500 hover:text-white transition-colors flex items-center justify-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+          <a href="#" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:bg-brandorange-500 hover:text-white transition-colors flex items-center justify-center"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2 (Corrected text contrast classes) -->
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-bold text-xs uppercase text-white tracking-wider">Quick Navigation</h4>
+        <div class="flex flex-col space-y-2.5 text-xs">
+          <a href="#home" onclick="navigateTo('home'); return false;" class="text-slate-400 hover:text-white transition-colors">Home Base</a>
+          <a href="#about" onclick="navigateTo('about'); return false;" class="text-slate-400 hover:text-white transition-colors">Company Story</a>
+          <a href="#products" onclick="navigateTo('products'); return false;" class="text-slate-400 hover:text-white transition-colors">Product Range</a>
+          <a href="#careers" onclick="navigateTo('careers'); return false;" class="text-slate-400 hover:text-white transition-colors">Work With Us</a>
+          <a href="#contact" onclick="navigateTo('contact'); return false;" class="text-slate-400 hover:text-white transition-colors">Contact Support</a>
+        </div>
+      </div>
+
+      <!-- Column 3 (Corrected text contrast classes) -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-bold text-xs uppercase text-white tracking-wider">Key Portfolios</h4>
+        <div class="flex flex-col space-y-2.5 text-xs">
+          <a href="#products" onclick="navigateTo('products'); return false;" class="text-slate-400 hover:text-white transition-colors">Critical Devices (CPAP/Concentrators)</a>
+          <a href="#products" onclick="navigateTo('products'); return false;" class="text-slate-400 hover:text-white transition-colors">Cardiovascular Medicines</a>
+          <a href="#products" onclick="navigateTo('products'); return false;" class="text-slate-400 hover:text-white transition-colors">Gastrointestinal Care</a>
+          <a href="#about" onclick="switchAboutTab('quality'); return false;" class="text-slate-400 hover:text-white transition-colors">ISO 9001:2015 Accreditation</a>
+          <a href="#about" onclick="switchAboutTab('manufacturing'); return false;" class="text-slate-400 hover:text-white transition-colors">GMP Standard Facility</a>
+        </div>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-bold text-xs uppercase text-white tracking-wider">Newsletter Hub</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">Sign up with your professional email address to receive chemical synthesis and pipeline expansion bulletins.</p>
+        <form onsubmit="handleNewsletterSubmit(event)" class="relative">
+          <input type="email" placeholder="Your work email..." required class="w-full pl-4 pr-10 py-2.5 rounded-xl border border-slate-800 bg-slate-950 text-xs focus:outline-none focus:border-brandorange-500 text-white">
+          <button type="submit" class="absolute right-1 top-1 bg-brandorange-500 hover:bg-brandorange-600 text-white p-1.5 rounded-lg transition-colors"><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Sub Footer -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+      <div>
+        <span>&copy; 2026 Biocyte Organics Private Limited. All Rights Reserved. (CIN: U51397UP2002PTC027074)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CHAT & HELP ACTION WIDGET -->
+  <div class="fixed bottom-6 right-6 z-45 space-y-3">
+    <!-- Chat popup bubble -->
+    <div id="chat-popup" class="hidden glass-card p-4 rounded-2xl w-76 border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col justify-between space-y-4 animate-float">
+      <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+        <div class="flex items-center space-x-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-softgreen-500 animate-ping"></div>
+          <span class="text-xs font-bold text-slate-800 dark:text-white">Biocyte Tech Assistant</span>
+        </div>
+        <button onclick="toggleChatPopup()" class="text-slate-400"><i data-lucide="x" class="w-4 h-4"></i></button>
+      </div>
+      <div id="chat-messages-container" class="space-y-2 max-h-48 overflow-y-auto text-xs p-1">
+        <div class="bg-slate-100 dark:bg-slate-800 p-2.5 rounded-xl max-w-[85%]">
+          <span>Hello! I can help you search our medicine catalog, locate our branch addresses, or switch sub-tabs inside About Us. What can I do for you?</span>
+        </div>
+      </div>
+      <div class="flex space-x-2">
+        <input type="text" id="chat-user-input" placeholder="Type a message..." class="w-full pl-3 pr-3 py-2 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 rounded-lg text-xs focus:outline-none" onkeypress="handleChatEnter(event)">
+        <button onclick="sendChatMessage()" class="bg-brandorange-500 text-white p-2 rounded-lg"><i data-lucide="send" class="w-4.5 h-4.5"></i></button>
+      </div>
+    </div>
+
+    <!-- Main Button -->
+    <button onclick="toggleChatPopup()" class="w-14 h-14 rounded-full bg-gradient-to-tr from-brandorange-500 to-brandorange-600 text-white flex items-center justify-center shadow-xl shadow-brandorange-500/20 hover:scale-105 active:scale-95 transition-all mx-auto">
+      <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- INTERACTIVE MODALS -->
+
+  <!-- Product Inquiry Modal -->
+  <div id="product-inquiry-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm" onclick="closeProductInquiryModal()"></div>
+    <div class="glass-card p-6 sm:p-8 rounded-3xl w-full max-w-lg border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 animate-float text-left">
+      <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-4 mb-4">
+        <div>
+          <span class="text-[9px] font-bold text-brandorange-500 uppercase tracking-widest">Inquiry Desk</span>
+          <h3 id="modal-product-title" class="font-extrabold text-lg text-slate-900 dark:text-white mt-0.5">Product Inquiry</h3>
+        </div>
+        <button onclick="closeProductInquiryModal()" class="p-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400"><i data-lucide="x" class="w-5.5 h-5.5"></i></button>
+      </div>
+      
+      <form onsubmit="handleModalInquirySubmit(event)" class="space-y-4 text-left">
+        <input type="hidden" id="modal-product-id">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Your Name *</label>
+            <input type="text" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Email Address *</label>
+            <input type="email" required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none">
+          </div>
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Target Volume / Inquiries *</label>
+          <input type="text" placeholder="e.g. 500 Blisters, Hospital Supply contract, etc." required class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none">
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Specific Requirements</label>
+          <textarea placeholder="Write down custom details..." class="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none h-20"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-brandorange-500 hover:bg-brandorange-600 text-white font-bold rounded-xl text-xs shadow-md">Submit Secure Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Certification Verification Preview Modal -->
+  <div id="cert-preview-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm" onclick="closeCertModal()"></div>
+    <div class="glass-card p-6 sm:p-8 rounded-3xl w-full max-w-md border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 text-center animate-float">
+      <div class="flex justify-end"><button onclick="closeCertModal()" class="text-slate-400"><i data-lucide="x" class="w-5 h-5"></i></button></div>
+      <div class="w-16 h-16 rounded-full bg-softgreen-500/10 text-softgreen-500 flex items-center justify-center mx-auto mb-4"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+      <h3 id="modal-cert-title" class="font-extrabold text-lg text-slate-900 dark:text-white">Certificate Registry Verification</h3>
+      <p id="modal-cert-desc" class="text-xs text-slate-600 dark:text-slate-400 mt-2">Verified authentic registration under standard corporate registries.</p>
+      
+      <div class="my-6 bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 text-left space-y-2 text-xs">
+        <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-1.5"><span class="text-slate-400">Standard</span><span class="font-bold text-slate-800 dark:text-white" id="modal-cert-standard">-</span></div>
+        <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-1.5"><span class="text-slate-400">Issuer Agency</span><span class="font-bold text-slate-800 dark:text-white" id="modal-cert-issuer">-</span></div>
+        <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-1.5"><span class="text-slate-400">Status ID</span><span class="font-mono text-[10px] font-bold text-slate-800 dark:text-white" id="modal-cert-id">-</span></div>
+        <div class="flex justify-between"><span class="text-slate-400">Validity Period</span><span class="font-bold text-softgreen-500 uppercase tracking-wider text-[10px]">Verified Current</span></div>
+      </div>
+      
+      <button onclick="downloadCertMock()" class="w-full py-3 bg-brandorange-500 text-white rounded-xl text-xs font-bold flex items-center justify-center space-x-2">
+        <i data-lucide="download" class="w-4 h-4"></i>
+        <span>Download Official PDF Certificate</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Comparison Modal -->
+  <div id="comparison-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm" onclick="closeComparisonModal()"></div>
+    <div class="glass-card p-6 sm:p-8 rounded-3xl w-full max-w-3xl border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 animate-float text-center">
+      <div class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-4 mb-6">
+        <h3 class="font-extrabold text-lg text-slate-900 dark:text-white flex items-center space-x-2">
+          <i data-lucide="arrow-left-right" class="text-brandorange-500 w-5 h-5"></i>
+          <span>Product Comparison Matrix</span>
+        </h3>
+        <button onclick="closeComparisonModal()" class="text-slate-400"><i data-lucide="x" class="w-5.5 h-5.5"></i></button>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-200 dark:border-slate-800">
+              <th class="p-3 font-bold text-slate-600 dark:text-slate-400 uppercase">Formulation Specifications</th>
+              <th id="compare-col-1-title" class="p-3 font-extrabold text-slate-800 dark:text-white">-</th>
+              <th id="compare-col-2-title" class="p-3 font-extrabold text-slate-800 dark:text-white">-</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+            <tr>
+              <td class="p-3 text-slate-600 dark:text-slate-400 font-medium">Therapeutic Category</td>
+              <td id="compare-col-1-cat" class="p-3 text-slate-800 dark:text-slate-300">-</td>
+              <td id="compare-col-2-cat" class="p-3 text-slate-800 dark:text-slate-300">-</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 dark:text-slate-400 font-medium">Core Indication</td>
+              <td id="compare-col-1-desc" class="p-3 text-slate-800 dark:text-slate-300">-</td>
+              <td id="compare-col-2-desc" class="p-3 text-slate-800 dark:text-slate-300">-</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 dark:text-slate-400 font-medium">Formulation Form</td>
+              <td id="compare-col-1-form" class="p-3 text-slate-800 dark:text-slate-300">-</td>
+              <td id="compare-col-2-form" class="p-3 text-slate-800 dark:text-slate-300">-</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 dark:text-slate-400 font-medium">Manufacturing Quality Standards</td>
+              <td class="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO / GMP Sterile</td>
+              <td class="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO / GMP Sterile</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORE SPA ROUTER & COMPONENT SCRIPTS -->
+  <script>
+    // ==================== DARK MODE TOGGLE LOGIC ====================
+    const htmlEl = document.documentElement;
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+
+    function updateDarkModeUI() {
+      if (htmlEl.classList.contains('dark')) {
+        if (sunIcon) sunIcon.classList.remove('hidden');
+        if (moonIcon) moonIcon.classList.add('hidden');
+      } else {
+        if (sunIcon) sunIcon.classList.add('hidden');
+        if (moonIcon) moonIcon.classList.remove('hidden');
+      }
+    }
+
+    function toggleDarkMode() {
+      if (htmlEl.classList.contains('dark')) {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateDarkModeUI();
+    }
+
+    document.getElementById('dark-mode-toggle')?.addEventListener('click', toggleDarkMode);
+    document.getElementById('dark-mode-toggle-mobile')?.addEventListener('click', toggleDarkMode);
+
+    // Initial Theme check
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      htmlEl.classList.add('dark');
+    } else {
+      htmlEl.classList.remove('dark');
+    }
+    updateDarkModeUI();
+
+    // ==================== MOBILE MENU DRAWER LOGIC ====================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileDrawerOverlay = document.getElementById('mobile-drawer-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function openMobileDrawer() {
+      if (mobileDrawer) mobileDrawer.classList.remove('translate-x-full');
+      if (mobileDrawerOverlay) {
+        mobileDrawerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        mobileDrawerOverlay.classList.add('opacity-100');
+      }
+    }
+
+    function closeMobileDrawer() {
+      if (mobileDrawer) mobileDrawer.classList.add('translate-x-full');
+      if (mobileDrawerOverlay) {
+        mobileDrawerOverlay.classList.remove('opacity-100');
+        mobileDrawerOverlay.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeMobileDrawer);
+    if (mobileDrawerOverlay) mobileDrawerOverlay.addEventListener('click', closeMobileDrawer);
+    
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMobileDrawer);
+    });
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // ==================== STREAMLINED MULTI-PAGE SPA ROUTER ====================
+    const pages = ['home', 'about', 'products', 'careers', 'contact'];
+    
+    function navigateTo(pageId) {
+      if (!pages.includes(pageId)) return;
+
+      // Scroll to top instantly
+      window.scrollTo({ top: 0, behavior: 'instant' });
+
+      // Manage Section Hidden classes
+      pages.forEach(p => {
+        const sect = document.getElementById(`page-${p}`);
+        if (p === pageId) {
+          sect.classList.remove('hidden');
+          setTimeout(() => {
+            sect.classList.add('active-page');
+          }, 20);
+        } else {
+          sect.classList.remove('active-page');
+          sect.classList.add('hidden');
+        }
+      });
+
+      // Update Nav Link Active CSS (streamlined navbar highlight)
+      pages.forEach(p => {
+        const link = document.getElementById(`navlink-${p}`);
+        if (link) {
+          if (p === pageId) {
+            link.className = 'px-5 py-2 rounded-lg text-sm font-bold text-brandorange-500 bg-brandorange-50/50 dark:bg-slate-800/40 transition-all';
+          } else {
+            link.className = 'px-5 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-brandorange-500 transition-all';
+          }
+        }
+      });
+
+      // Update Page Tab Title
+      const formattedTitle = pageId.charAt(0).toUpperCase() + pageId.slice(1);
+      document.title = `Biocyte Organics | ${formattedTitle === 'Home' ? 'Advancing Healthcare' : formattedTitle.replace('-', ' ')}`;
+
+      // Update URL hash
+      window.location.hash = pageId;
+    }
+
+    // ==================== INLINE ABOUT SUB-TABS SWITCHER ====================
+    const aboutSubTabs = ['story', 'manufacturing', 'services', 'quality', 'leaders'];
+
+    function switchAboutTab(tabId) {
+      if (!aboutSubTabs.includes(tabId)) return;
+
+      // Switch sub-section view visibility
+      aboutSubTabs.forEach(t => {
+        const view = document.getElementById(`about-view-${t}`);
+        const tabBtn = document.getElementById(`about-tab-${t}`);
+        
+        if (t === tabId) {
+          view.classList.remove('hidden');
+          view.classList.add('active-sub');
+          tabBtn.className = 'px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-brandorange-500 text-white shadow-md transition-all shrink-0';
+        } else {
+          view.classList.remove('active-sub');
+          view.classList.add('hidden');
+          tabBtn.className = 'px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0';
+        }
+      });
+
+      // Ensure About Us page is active
+      navigateTo('about');
+      lucide.createIcons();
+    }
+
+    // ==================== INTERACTIVE CLEANROOM CONTROL PANEL LOGIC ====================
+    const cleanroomMetrics = {
+      airlock: {
+        pressure: '+15.2 Pa',
+        humidity: '45% RH',
+        changes: '40 / Hour',
+        hepa: '99.997%',
+        detail: '<b>Air Lock Zone:</b> Class 100 HEPA air shower systems seal active formulation barriers. Maintains differential positive pressure (+15 Pa) to completely prevent raw material contamination.'
+      },
+      mixing: {
+        pressure: '+12.5 Pa',
+        humidity: '40% RH',
+        changes: '55 / Hour',
+        hepa: '99.999%',
+        detail: '<b>Sterile Mixing & Formulation Zone:</b> Clean room Grade A area where active liquid/capsule blends are synthesized. Constant atmospheric sanitization and 55 hourly filtered air recirculations keep the area absolutely sterile.'
+      },
+      packaging: {
+        pressure: '+10.1 Pa',
+        humidity: '38% RH',
+        changes: '30 / Hour',
+        hepa: '99.995%',
+        detail: '<b>Strip & Blister Packaging Belt:</b> Moisture-proof sealed blister assembly lines. Relative humidity is kept below 40% to preserve medicinal compound stability and ensure maximum shelf life.'
+      }
+    };
+
+    function selectCleanroomZone(zoneKey) {
+      const data = cleanroomMetrics[zoneKey];
+      
+      // Update Metrics HTML
+      document.getElementById('cleanroom-metric-pressure').innerText = data.pressure;
+      document.getElementById('cleanroom-metric-humidity').innerText = data.humidity;
+      document.getElementById('cleanroom-metric-changes').innerText = data.changes;
+      document.getElementById('cleanroom-metric-hepa').innerText = data.hepa;
+      document.getElementById('cleanroom-metric-detail').innerHTML = data.detail;
+
+      // Update button highlights
+      const zones = ['airlock', 'mixing', 'packaging'];
+      zones.forEach(z => {
+        const btn = document.getElementById(`zone-btn-${z}`);
+        if (z === zoneKey) {
+          btn.className = 'p-3.5 rounded-2xl border-2 border-brandorange-500 bg-brandorange-50/10 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5';
+          btn.querySelector('.w-7').className = 'w-7 h-7 rounded-lg bg-brandorange-500 text-white flex items-center justify-center transition-colors';
+        } else {
+          btn.className = 'p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5';
+          btn.querySelector('.w-7').className = 'w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors';
+        }
+      });
+
+      // Update Floor Plan schematic styling dynamically
+      zones.forEach(z => {
+        const roomEl = document.getElementById(`schematic-room-${z}`);
+        const statusText = document.getElementById(`schematic-status-${z}`);
+        const statusIndicator = roomEl.querySelector('.w-1.5');
+        
+        if (z === zoneKey) {
+          roomEl.className = 'border-2 border-brandorange-500 bg-brandorange-500/10 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300 scale-102 shadow-md shadow-brandorange-500/10';
+          roomEl.querySelector('.text-\\[8px\\]').className = 'text-[8px] font-extrabold text-brandorange-400 uppercase tracking-widest block';
+          roomEl.querySelector('.text-\\[9px\\]').className = 'text-[9px] font-bold text-white block mt-1';
+          statusText.innerText = 'Active';
+          statusText.className = 'text-[7px] text-softgreen-400 uppercase tracking-wider font-extrabold';
+          statusIndicator.className = 'w-1.5 h-1.5 rounded-full bg-softgreen-500 animate-ping';
+        } else {
+          roomEl.className = 'border border-slate-800 bg-slate-900/40 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300';
+          roomEl.querySelector('.text-\\[8px\\]').className = 'text-[8px] font-extrabold text-slate-500 uppercase tracking-widest block';
+          roomEl.querySelector('.text-\\[9px\\]').className = 'text-[9px] font-bold text-slate-400 block mt-1';
+          statusText.innerText = 'Standby';
+          statusText.className = 'text-[7px] text-slate-500 uppercase tracking-wider font-extrabold';
+          statusIndicator.className = 'w-1.5 h-1.5 rounded-full bg-slate-600';
+        }
+      });
+
+      // Update Ticker Message
+      const tickerMsg = document.getElementById('diagnostic-ticker-message');
+      const tickerTime = document.getElementById('diagnostic-ticker-time');
+      
+      const now = new Date();
+      tickerTime.innerText = now.toTimeString().split(' ')[0];
+      
+      if (zoneKey === 'airlock') {
+        tickerMsg.innerText = 'Assay Status: Airlocks secure. +15.2 Pa positive pressure cycle active.';
+      } else if (zoneKey === 'mixing') {
+        tickerMsg.innerText = 'Assay Status: Formulation mixers active. Air changes at 55/Hour nominal.';
+      } else if (zoneKey === 'packaging') {
+        tickerMsg.innerText = 'Assay Status: Blister belt active. Relative humidity at 38% RH (Dry-Zone).';
+      }
+    }
+
+    // Initial page load hash check
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash && pages.includes(hash)) {
+        navigateTo(hash);
+      } else {
+        navigateTo('home');
+      }
+    });
+
+    // Hash change browser arrows support
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash && pages.includes(hash)) {
+        navigateTo(hash);
+      }
+    });
+
+
+    // ==================== PRODUCTS DATABASE ====================
+    const productsDatabase = [
+      { id: 'aerobon', name: 'Aerobon-DM Tablet', category: 'respiratory', form: 'Tablets', therCat: 'Respiratory Care', desc: 'Montelukast & Levocetirizine compound for treatment of chronic asthma, seasonal allergic rhinitis, and general respiratory congestion.', image: '💊' },
+      { id: 'calbritta', name: 'Calbritta-Max Capsule', category: 'nutritional', form: 'Capsules', therCat: 'Calcium & Vitamin D', desc: 'Bone health supplement containing high absorption Calcium, Calcitriol, Zinc, and Magnesium minerals to support joint density.', image: '🥛' },
+      { id: 'becofol', name: 'Becofol Capsules', category: 'nutritional', form: 'Capsules', therCat: 'Nutritional / B-Complex', desc: 'B-complex therapeutic formula fortified with folic acid, vitamin C, and zinc for nutritional deficiency recovery.', image: '🍀' },
+      { id: 'esmyle', name: 'Esmyle-D Capsule', category: 'digestive', form: 'Capsules', therCat: 'Gastrointestinal Care', desc: 'Sustained-release Esomeprazole and Domperidone capsule. Restores digestive comfort by managing severe acid reflux.', image: '🧪' },
+      { id: 'livlite', name: 'Livlite-Gold Syrup', category: 'digestive', form: 'Syrups & Liquids', therCat: 'Hepatic / Liver Care', desc: 'Liver tonic formulated with Silymarin, L-Ornithine L-Aspartate, and B-Complex vitamins. Promotes active liver detoxification.', image: '🍶' },
+      { id: 'rosuace', name: 'Rosuace-ASP Capsule', category: 'cardio', form: 'Capsules', therCat: 'Cardiovascular Care', desc: 'Dual cardiovascular protection compound combining Rosuvastatin and Aspirin. Controls lipid cholesterol levels.', image: '❤️' },
+      { id: 'carbofol', name: 'Carbofol-Z Capsule', category: 'nutritional', form: 'Capsules', therCat: 'Nutritional / Iron Supplement', desc: 'Carbonyl Iron, Folic Acid, and Zinc supplement for prevention of nutritional anemia and red blood cell synthesis.', image: '🧬' },
+      { id: 'orzyme', name: 'Orzyme-Plus Tablet', category: 'digestive', form: 'Tablets', therCat: 'Digestive Enzymes', desc: 'Active digestive combination of Activated Charcoal, Pancreatin, and Simethicone. Relieves severe flatulence.', image: '🥣' },
+      { id: 'orzyme_syr', name: 'Orzyme Syrup', category: 'digestive', form: 'Syrups & Liquids', therCat: 'Digestive Enzymes', desc: 'Fungal Diastase and Pepsin liquid suspension. Helps metabolize starches and proteins to treat loss of appetite.', image: '🧉' },
+      { id: 'kamfart', name: 'Kamfart-D Syrup (SF)', category: 'respiratory', form: 'Syrups & Liquids', therCat: 'Cough & Bronchodilator', desc: 'Sugar-Free cough suppressant and bronchodilator liquid syrup. Relieves allergic cough and bronchial spasms.', image: '🍃' },
+      { id: 'mach', name: 'Mach 650mg Tablet DT', category: 'respiratory', form: 'Tablets (Dispersible)', therCat: 'Analgesic & Antipyretic', desc: 'Rapid action 650mg Paracetamol dispersible tablet. Fast dissolution for prompt management of severe fever and body pain.', image: '⚡' },
+      { id: 'oxcon', name: 'Oxygen Concentrator (10L)', category: 'devices', form: 'Breathing Equipment', therCat: 'Critical Care Device', desc: 'Enterprise-grade 10-Liter medical oxygen concentrator. Provides continuous clinical grade 93% ± 3% oxygen purity stream.', image: '🌬️' },
+      { id: 'neb', name: 'Compressor Nebulizer', category: 'devices', form: 'Medical Diagnostics', therCat: 'Critical Care Device', desc: 'High-speed heavy-duty aerosol nebulizer system. Converts liquid medication into fine breathable mist.', image: '🩺' },
+      { id: 'bipap', name: 'BiPAP & CPAP Systems', category: 'devices', form: 'Breathing Equipment', therCat: 'Critical Care Device', desc: 'Advanced non-invasive positive airway pressure ventilation devices. Provides sleep apnea support.', image: '⚙️' }
+    ];
+
+    let comparedProducts = [];
+
+    // Populate Catalog Grid
+    const catalogGrid = document.getElementById('products-catalog-grid');
+    
+    function renderCatalog(items) {
+      catalogGrid.innerHTML = '';
+      if (items.length === 0) {
+        catalogGrid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-slate-400">
+            <i data-lucide="package-x" class="w-12 h-12 mx-auto mb-3 text-slate-300"></i>
+            <span class="block text-sm font-bold">No products match your search filters</span>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      items.forEach(prod => {
+        const isCompared = comparedProducts.includes(prod.id);
+        const card = document.createElement('div');
+        card.className = `glass-card p-5 rounded-3xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 relative group flex flex-col justify-between`;
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <div class="w-11 h-11 rounded-2xl bg-brandorange-50 dark:bg-slate-800 text-2xl flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">${prod.image}</div>
+              <span class="text-[9px] font-bold text-brandorange-500 bg-brandorange-50 dark:bg-slate-800 px-2.5 py-1 rounded-full uppercase tracking-wider">${prod.therCat}</span>
+            </div>
+            <h3 class="font-extrabold text-sm text-slate-900 dark:text-white group-hover:text-brandorange-500 transition-colors">${prod.name}</h3>
+            <span class="text-[9px] text-slate-400 font-bold block mt-0.5">${prod.form}</span>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">${prod.desc}</p>
+          </div>
+
+          <div class="pt-5 border-t border-slate-100 dark:border-slate-800 mt-5 flex flex-col space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <button onclick="openProductInquiry('${prod.id}')" class="flex-1 py-2 bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white text-[10px] font-bold rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-center space-x-1">
+                <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                <span>Inquiry</span>
+              </button>
+              <button onclick="toggleCompare('${prod.id}')" class="py-2 px-3 border border-slate-200 dark:border-slate-800 text-[10px] rounded-xl font-bold flex items-center justify-center ${isCompared ? 'bg-tealaccent-500 text-white border-tealaccent-500' : 'bg-slate-50 dark:bg-slate-800 text-slate-500 hover:bg-slate-100'} transition-all">
+                <i data-lucide="${isCompared ? 'check' : 'arrow-left-right'}" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <button onclick="downloadBrochureMock('${prod.name}')" class="w-full py-1.5 border border-dashed border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-400 text-[9px] font-bold rounded-lg transition-colors flex items-center justify-center space-x-1">
+              <i data-lucide="download" class="w-3 h-3 text-tealaccent-500"></i>
+              <span>PDF Technical Brochure</span>
+            </button>
+          </div>
+        `;
+        catalogGrid.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    renderCatalog(productsDatabase);
+
+    // Filter categories tabs
+    let activeCat = 'all';
+    const catalogSearch = document.getElementById('catalog-search');
+
+    function filterCatalog(category) {
+      activeCat = category;
+      const tabs = ['all', 'nutritional', 'cardio', 'digestive', 'respiratory', 'devices'];
+      tabs.forEach(tab => {
+        const btn = document.getElementById(`tab-${tab}`);
+        if (tab === category) {
+          btn.className = 'px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-brandorange-500 text-white shadow-md active:scale-95 transition-all';
+        } else {
+          btn.className = 'px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all';
+        }
+      });
+      applyFilters();
+    }
+
+    catalogSearch.addEventListener('input', applyFilters);
+
+    function applyFilters() {
+      const searchVal = catalogSearch.value.toLowerCase().trim();
+      const filtered = productsDatabase.filter(prod => {
+        const matchesCat = activeCat === 'all' || prod.category === activeCat;
+        const matchesSearch = prod.name.toLowerCase().includes(searchVal) || prod.therCat.toLowerCase().includes(searchVal);
+        return matchesCat && matchesSearch;
+      });
+      renderCatalog(filtered);
+    }
+
+    // Compare
+    const compBanner = document.getElementById('comparison-banner');
+    const compCount = document.getElementById('compare-count');
+
+    function toggleCompare(id) {
+      if (comparedProducts.includes(id)) {
+        comparedProducts = comparedProducts.filter(item => item !== id);
+      } else {
+        if (comparedProducts.length >= 2) {
+          alert('You can compare a maximum of 2 products side-by-side.');
+          return;
+        }
+        comparedProducts.push(id);
+      }
+
+      if (comparedProducts.length > 0) {
+        compBanner.classList.remove('hidden');
+        compCount.innerText = comparedProducts.length;
+      } else {
+        compBanner.classList.add('hidden');
+      }
+      applyFilters();
+    }
+
+    function clearComparison() {
+      comparedProducts = [];
+      compBanner.classList.add('hidden');
+      applyFilters();
+    }
+
+    const compModal = document.getElementById('comparison-modal');
+    function openComparisonModal() {
+      if (comparedProducts.length < 2) {
+        alert('Please select exactly 2 products to compare.');
+        return;
+      }
+      const prod1 = productsDatabase.find(p => p.id === comparedProducts[0]);
+      const prod2 = productsDatabase.find(p => p.id === comparedProducts[1]);
+
+      document.getElementById('compare-col-1-title').innerText = prod1.name;
+      document.getElementById('compare-col-2-title').innerText = prod2.name;
+
+      document.getElementById('compare-col-1-cat').innerText = prod1.therCat;
+      document.getElementById('compare-col-2-cat').innerText = prod2.therCat;
+
+      document.getElementById('compare-col-1-desc').innerText = prod1.desc;
+      document.getElementById('compare-col-2-desc').innerText = prod2.desc;
+
+      document.getElementById('compare-col-1-form').innerText = prod1.form;
+      document.getElementById('compare-col-2-form').innerText = prod2.form;
+
+      compModal.classList.remove('hidden');
+    }
+
+    function closeComparisonModal() {
+      compModal.classList.add('hidden');
+    }
+
+    // Nav Search overlay
+    const navSearchInput = document.getElementById('navbar-search');
+    const navSearchResults = document.getElementById('search-results');
+    const navResultsList = document.getElementById('search-results-list');
+
+    navSearchInput.addEventListener('input', () => {
+      const val = navSearchInput.value.toLowerCase().trim();
+      if (val === '') {
+        navSearchResults.classList.add('opacity-0', 'pointer-events-none');
+        return;
+      }
+
+      const matches = productsDatabase.filter(p => p.name.toLowerCase().includes(val));
+      navResultsList.innerHTML = '';
+
+      if (matches.length === 0) {
+        navResultsList.innerHTML = `<div class="p-2 text-slate-400">No items found</div>`;
+      } else {
+        matches.slice(0, 4).forEach(prod => {
+          const item = document.createElement('a');
+          item.href = '#products';
+          item.className = 'block p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-semibold text-slate-800 dark:text-white';
+          item.innerHTML = `<span>${prod.name}</span><span class="block text-[8px] text-slate-400 mt-0.5">${prod.therCat}</span>`;
+          item.addEventListener('click', () => {
+            navSearchInput.value = '';
+            navSearchResults.classList.add('opacity-0', 'pointer-events-none');
+            catalogSearch.value = prod.name;
+            navigateTo('products');
+            applyFilters();
+          });
+          navResultsList.appendChild(item);
+        });
+      }
+      navSearchResults.classList.remove('opacity-0', 'pointer-events-none');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navSearchInput.contains(e.target) && !navSearchResults.contains(e.target)) {
+        navSearchResults.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+
+    // Inquiry
+    const inquiryModal = document.getElementById('product-inquiry-modal');
+    const modalTitle = document.getElementById('modal-product-title');
+    const modalProdId = document.getElementById('modal-product-id');
+
+    function openProductInquiry(id) {
+      const prod = productsDatabase.find(p => p.id === id);
+      modalTitle.innerText = `Inquiry: ${prod.name}`;
+      modalProdId.value = id;
+      inquiryModal.classList.remove('hidden');
+    }
+
+    function closeProductInquiryModal() {
+      inquiryModal.classList.add('hidden');
+    }
+
+    function handleModalInquirySubmit(e) {
+      e.preventDefault();
+      alert('Thank you for your product inquiry. Our sales division will email a formal quote within 1 business day.');
+      inquiryModal.classList.add('hidden');
+      e.target.reset();
+    }
+
+    function downloadBrochureMock(name) {
+      alert(`Preparing secure pharmaceutical PDF brochure: [Technical_Specification_${name.replace(/\s+/g, '_')}.pdf]. Check your device downloads folder shortly.`);
+    }
+
+    // Careers
+    function fillJobApply(role) {
+      document.getElementById('applied-job-select').value = role;
+      navigateTo('careers');
+    }
+
+    function handleResumeFile(input) {
+      const label = document.getElementById('resume-file-label');
+      if (input.files.length > 0) {
+        label.innerText = `Selected: ${input.files[0].name} (${(input.files[0].size/1024/1024).toFixed(2)} MB)`;
+        label.className = "text-[11px] text-softgreen-500 font-bold";
+      }
+    }
+
+    function handleApplySubmit(e) {
+      e.preventDefault();
+      alert('Application successfully transmitted. Our Human Resources officers will review your resume validation assays.');
+      e.target.reset();
+      document.getElementById('resume-file-label').innerText = 'Drag & drop or browse computer files';
+      document.getElementById('resume-file-label').className = 'text-[11px] text-slate-500 font-semibold';
+    }
+
+    // Certifications preview
+    const certModal = document.getElementById('cert-preview-modal');
+    const certTitle = document.getElementById('modal-cert-title');
+    const certDesc = document.getElementById('modal-cert-desc');
+    const certStandard = document.getElementById('modal-cert-standard');
+    const certIssuer = document.getElementById('modal-cert-issuer');
+    const certId = document.getElementById('modal-cert-id');
+
+    const certData = {
+      iso: { title: 'ISO 9001:2015 Quality Management Systems', desc: 'Ensures our company maintains strict procedural controls, operational guidelines, and continuous risk assessments.', standard: 'ISO 9001:2015', issuer: 'TUV India / National Accreditation Board', id: 'CERT-ISO-9001-200274' },
+      gmp: { title: 'Good Manufacturing Practices (GMP) Standard', desc: 'Adherence to comprehensive sterile environment formulations, equipment sanitization protocols, and batch validation compliance.', standard: 'WHO-GMP guidelines', issuer: 'State Drug Control Licensing Authority', id: 'LIC-GMP-UP-02747120' },
+      mca: { title: 'Ministry of Corporate Affairs Government Registration', desc: 'Biocyte Organics Private Limited is an active incorporated commercial entity operating under central Indian corporate registries since 2002.', standard: 'U51397UP2002PTC027074', issuer: 'Registrar of Companies, Uttar Pradesh', id: 'ROC-UP-27074-REGD' },
+      gst: { title: 'Central Goods and Services Tax Registry', desc: 'Compliant registered commercial supplies partner. Fully audited tax structure enabling institutional procurement agreements.', standard: 'GSTIN UP Registered', issuer: 'Central Board of Indirect Taxes & Customs', id: '09AABCB8143M1Z2' }
+    };
+
+    function openCertModal(key) {
+      const data = certData[key];
+      certTitle.innerText = data.title;
+      certDesc.innerText = data.desc;
+      certStandard.innerText = data.standard;
+      certIssuer.innerText = data.issuer;
+      certId.innerText = data.id;
+      certModal.classList.remove('hidden');
+    }
+
+    function closeCertModal() {
+      certModal.classList.add('hidden');
+    }
+
+    function downloadCertMock() {
+      alert('Initializing secure download of official accreditation certificate file. Verified checksum: MD5-384918.');
+    }
+
+    // Forms
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert('Secure business proposal successfully transmitted. Our institutional partnership directors will contact you within 2 office hours.');
+      e.target.reset();
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      alert('Subscribed! You will now receive our pharmaceutical synthesis pipelines bulletins.');
+      e.target.reset();
+    }
+
+
+    // ==================== FLOATING CHATBOT WIDGET ====================
+    const chatPopup = document.getElementById('chat-popup');
+    const chatMsgContainer = document.getElementById('chat-messages-container');
+    const chatUserInput = document.getElementById('chat-user-input');
+
+    function toggleChatPopup() {
+      chatPopup.classList.toggle('hidden');
+    }
+
+    function handleChatEnter(e) {
+      if (e.key === 'Enter') sendChatMessage();
+    }
+
+    function sendChatMessage() {
+      const txt = chatUserInput.value.trim();
+      if (txt === '') return;
+
+      const userBubble = document.createElement('div');
+      userBubble.className = 'bg-brandorange-500 text-white p-2.5 rounded-xl max-w-[85%] ml-auto text-right';
+      userBubble.innerHTML = `<span>${txt}</span>`;
+      chatMsgContainer.appendChild(userBubble);
+      chatUserInput.value = '';
+
+      chatMsgContainer.scrollTop = chatMsgContainer.scrollHeight;
+
+      setTimeout(() => {
+        const reply = document.createElement('div');
+        reply.className = 'bg-slate-100 dark:bg-slate-800 p-2.5 rounded-xl max-w-[85%]';
+        
+        const q = txt.toLowerCase();
+        if (q.includes('about') || q.includes('story') || q.includes('company')) {
+          reply.innerHTML = `<span>I've directed you to our **About Us** company profile!</span>`;
+          switchAboutTab('story');
+        } else if (q.includes('manufacturing') || q.includes('cleanroom') || q.includes('facility')) {
+          reply.innerHTML = `<span>I've switched the About sub-tab to our **Sterile Manufacturing Facility** view. Check it out!</span>`;
+          switchAboutTab('manufacturing');
+        } else if (q.includes('service') || q.includes('franchise') || q.includes('pcd')) {
+          reply.innerHTML = `<span>I've loaded our **Commercial Services** sub-tab inside the About Us section.</span>`;
+          switchAboutTab('services');
+        } else if (q.includes('quality') || q.includes('cert') || q.includes('iso') || q.includes('gmp')) {
+          reply.innerHTML = `<span>I've updated the About sub-view to show our **Quality Assurances & Accreditations**.</span>`;
+          switchAboutTab('quality');
+        } else if (q.includes('product') || q.includes('medicine')) {
+          reply.innerHTML = `<span>I've directed you to our advanced **Products Catalog** page.</span>`;
+          navigateTo('products');
+        } else if (q.includes('contact') || q.includes('address')) {
+          reply.innerHTML = `<span>Sure! I've switched your view to our **Contact Us** portal.</span>`;
+          navigateTo('contact');
+        } else {
+          reply.innerHTML = `<span>I have logged your request: "${txt}". If you need specific pricing or supplies contracts, please submit an inquiry form in our **Contact** section!</span>`;
+        }
+
+        chatMsgContainer.appendChild(reply);
+        chatMsgContainer.scrollTop = chatMsgContainer.scrollHeight;
+        lucide.createIcons();
+      }, 700);
+    }
+
+
+    // ==================== HTML5 CANVAS MOLECULE ANIMATION (Orange particles) ====================
+    const canvas = document.getElementById('molecule-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    let particlesArray = [];
+    const maxParticles = 35;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class MoleculeParticle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 3 + 2;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = htmlEl.classList.contains('dark') ? 'rgba(255, 107, 0, 0.45)' : 'rgba(255, 107, 0, 0.18)';
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < maxParticles; i++) {
+        particlesArray.push(new MoleculeParticle());
+      }
+    }
+    initParticles();
+
+    function drawLines() {
+      for (let i = 0; i < particlesArray.length; i++) {
+        for (let j = i + 1; j < particlesArray.length; j++) {
+          const dx = particlesArray[i].x - particlesArray[j].x;
+          const dy = particlesArray[i].y - particlesArray[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+            ctx.strokeStyle = htmlEl.classList.contains('dark') ? `rgba(0, 184, 169, ${0.18 - dist/750})` : `rgba(0, 184, 169, ${0.08 - dist/1600})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      drawLines();
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Default select cleanroom airlock on load
+    selectCleanroomZone('airlock');
+
+  </script>
+</body>
+</html>
+
