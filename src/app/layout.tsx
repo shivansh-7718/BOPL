@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   keywords: "Biocyte Organics, pharmaceutical company, oxygen concentrator, nebulizer, WHO-GMP, ISO 9001:2015, Kanpur, Lucknow",
 };
 
+import ChatAssistant from "@/components/ChatAssistant";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${jakarta.variable} ${outfit.variable} font-sans antialiased`}>
         {children}
+        <ChatAssistant />
       </body>
     </html>
   );
