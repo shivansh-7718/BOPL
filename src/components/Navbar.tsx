@@ -30,23 +30,12 @@ export default function Navbar({ darkMode, onToggleDarkMode }: NavbarProps) {
           <div className="flex items-center justify-between h-20">
             
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="flex items-center space-x-3">
-                <div className="flex items-center">
-                  {/* Beautiful BOPL SVG Logo with orbiting swoosh */}
-                  <svg className="h-10 w-auto text-slate-800 dark:text-white transition-colors duration-300" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Left swoosh orbit */}
-                    <path d="M 22,5 A 16,16 0 1,0 35,28" stroke="#FF6B00" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-                    <circle cx={35} cy={28} r="2.5" fill="#FF6B00" />
-                    {/* BOPL Text */}
-                    <text x={16} y={29} fontFamily="'Outfit', 'Plus Jakarta Sans', sans-serif" fontWeight="800" fontStyle="italic" fontSize={24} fill="currentColor">BOPL</text>
-                  </svg>
-                </div>
-                <div className="hidden sm:flex flex-col border-l border-slate-200 dark:border-slate-800 pl-3">
-                  <span className="text-[11px] font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase">Life . Health . Happiness</span>
-                  <span className="text-[8px] font-bold tracking-widest text-slate-400 dark:text-slate-600 uppercase -mt-0.5">Biocyte Organics</span>
-                </div>
-              </div>
+            <Link href="/" className="flex items-center group">
+              <img 
+                src="/logo.png" 
+                alt="BIOCYTE Organics (BOPL) Logo" 
+                className="h-10 w-auto object-contain dark:invert dark:hue-rotate-180" 
+              />
             </Link>
 
             {/* STREAMLINED NAVBAR LINKS */}

@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Hero() {
   const stats = [
     { value: "24+", label: "Years Journey" },
-    { value: "35+", label: "Active Formulations" },
+    { value: "50+", label: "Active Formulations" },
     { value: "100%", label: "Quality Checked" }
   ];
 
@@ -26,7 +26,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card border-slate-200/70 text-xs font-semibold text-brandorange-500 dark:text-brandorange-400 dark:border-slate-800 shadow-sm animate-bounce">
             <ShieldCheck className="w-4 h-4 text-tealaccent-500" />
-            <span>WHO-GMP & ISO 9001:2015 Accredited</span>
+            <span>Trusted HealthCare Solutions</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:leading-[1.1] text-slate-900 dark:text-white">
@@ -34,8 +34,8 @@ export default function Hero() {
             Through <span className="bg-gradient-to-r from-brandorange-500 via-brandorange-400 to-tealaccent-500 bg-clip-text text-transparent">Innovation</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 font-medium">
-            Delivering quality pharmaceutical solutions with an unwavering commitment to scientific excellence, rigorous quality testing, and global patient well-being.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
+            BIOCYTE Organics Private Limited (BOPL) is one of India's largest mid-sized pharmaceutical companies, providing innovative healthcare solutions and affordable treatments for sleep disorders, respiratory ailments, and critical care.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">

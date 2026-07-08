@@ -144,7 +144,7 @@ export default function Home() {
             <Link href="/products" className="glass-card p-4 rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center hover:scale-102 transition-all">
               <Container className="w-5 h-5 text-tealaccent-500 mb-2" />
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Products Range</span>
-              <span className="text-lg font-extrabold mt-0.5">35+ Items</span>
+              <span className="text-lg font-extrabold mt-0.5">50+ Items</span>
             </Link>
             <Link href="/quality" className="glass-card p-4 rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center hover:scale-102 transition-all">
               <BadgeCheck className="w-5 h-5 text-softgreen-500 mb-2" />

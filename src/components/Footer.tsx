@@ -16,21 +16,12 @@ export default function Footer() {
         
         {/* Brand */}
         <div className="md:col-span-4 space-y-6">
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center">
-              {/* Beautiful BOPL SVG Logo with orbiting swoosh */}
-              <svg className="h-9 w-auto text-white transition-colors duration-300" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Left swoosh orbit */}
-                <path d="M 22,5 A 16,16 0 1,0 35,28" stroke="#FF6B00" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-                <circle cx={35} cy={28} r="2.5" fill="#FF6B00" />
-                {/* BOPL Text */}
-                <text x={16} y={29} fontFamily="'Outfit', 'Plus Jakarta Sans', sans-serif" fontWeight="800" fontStyle="italic" fontSize={24} fill="currentColor">BOPL</text>
-              </svg>
-            </div>
-            <div className="flex flex-col border-l border-slate-800 pl-3">
-              <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Life . Health . Happiness</span>
-              <span className="text-[8px] font-bold tracking-widest text-slate-500 uppercase -mt-0.5">Biocyte Organics</span>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="BIOCYTE Organics (BOPL) Logo" 
+              className="h-9 w-auto object-contain invert hue-rotate-180" 
+            />
           </div>
           <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
             Incorporated in 2002, Biocyte Organics Private Limited is an Indian pharmaceutical enterprise delivering high-efficiency capsules, syrups, and medical breathing devices.
