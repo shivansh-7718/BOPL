@@ -31,11 +31,19 @@ export default function Navbar({ darkMode, onToggleDarkMode }: NavbarProps) {
             
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <img 
-                src="/logo.png" 
-                alt="BIOCYTE Organics (BOPL) Logo" 
-                className="h-10 w-auto object-contain dark:invert dark:hue-rotate-180" 
-              />
+              <div className="flex items-center space-x-3.5">
+                <svg className="h-10 w-auto text-slate-900 dark:text-white transition-colors duration-300" viewBox="0 0 95 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Left orange swoop */}
+                  <path d="M 23 33 C 8 33 2 20 8 7 C 5 17 9 27 21 29 C 23 29 24 31 24 33 Z" fill="#FF6B00" />
+                  {/* Right orange swoop */}
+                  <path d="M 67 7 C 82 7 88 20 82 33 C 85 23 81 13 69 11 C 67 11 66 9 66 7 Z" fill="#FF6B00" />
+                  {/* BOPL Text */}
+                  <text x="17" y="30" fontFamily="'Outfit', 'Plus Jakarta Sans', 'Inter', sans-serif" fontWeight="900" fontSize="28" fill="currentColor" letterSpacing="-1">BOPL</text>
+                </svg>
+                <span className="hidden sm:block text-[12px] font-extrabold tracking-wide text-slate-500 dark:text-slate-450 font-sans">
+                  Life . Health . Happiness
+                </span>
+              </div>
             </Link>
 
             {/* STREAMLINED NAVBAR LINKS */}
