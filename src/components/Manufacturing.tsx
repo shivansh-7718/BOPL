@@ -52,9 +52,9 @@ export default function Manufacturing() {
         {/* Left Column: Details */}
         <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
           <div className="space-y-4">
-            <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">State-of-the-Art GMP Formulation Facility</h3>
-            <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-350 leading-relaxed">
-              Biocyte Organics relies on advanced GMP formulation standards. Operating with massive climate-controlled cleanrooms, high-capacity automated tableting and capsule-filling lines, and certified liquid syrup packaging systems.
+            <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">State-of-the-Art Formulation Facility</h3>
+            <p className="text-xs sm:text-sm text-slate-655 dark:text-slate-355 leading-relaxed">
+              Biocyte Organics relies on advanced formulation standards. Operating with massive climate-controlled cleanrooms, high-capacity automated tableting and capsule-filling lines, and certified liquid syrup packaging systems.
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export default function Manufacturing() {
                 </span>
                 <span className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Facility Live Diagnostic Screen</span>
               </div>
-              <div className="text-[10px] font-bold text-brandorange-500 bg-brandorange-50 dark:bg-slate-800 px-2.5 py-1 rounded-full uppercase tracking-wider">GMP Class A</div>
+              <div className="text-[10px] font-bold text-brandorange-500 bg-brandorange-50 dark:bg-slate-800 px-2.5 py-1 rounded-full uppercase tracking-wider">Class A Sterile</div>
             </div>
 
             {/* Simulated Schematic Floor plan */}

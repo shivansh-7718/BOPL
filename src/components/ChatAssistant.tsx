@@ -69,7 +69,7 @@ export default function ChatAssistant() {
           <strong>BOPL Office Locations:</strong><br />
           • 📍 <strong>Registered Office:</strong> House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India<br />
           • 🏢 <strong>Lucknow Branch:</strong> 2C/50-53, Flat No. 403, 4th Floor, Ajeet Residency, Vikas Nagar-2, Lucknow<br />
-          • 🏗️ <strong>GMP Factory:</strong> F - 11, 2nd Floor, Fazal Ganj, Kanpur, New Delhi
+          • 🏗️ <strong>Formulation Factory:</strong> F - 11, 2nd Floor, Fazal Ganj, Kanpur, New Delhi
         `;
         botReply.isHTML = true;
       } else if (query.includes("hours") || query.includes("time") || query.includes("open") || query.includes("schedule") || query.includes("sunday")) {
@@ -84,7 +84,7 @@ export default function ChatAssistant() {
       } else if (query.includes("cert") || query.includes("gmp") || query.includes("iso")) {
         botReply.text = `
           <strong>Accreditations & Compliance:</strong><br />
-          • We operate under strict <strong>WHO-GMP Certification</strong> for sterile medicine mixing and strip packaging.<br />
+          • We operate under strict <strong>Quality Control Standards</strong> for sterile medicine mixing and strip packaging.<br />
           • Fully certified under <strong>ISO 9001:2015</strong> Quality Management Systems.<br />
           • Audited and registered under Ministry of Corporate Affairs (CIN: U51397UP2002PTC027074).
         `;

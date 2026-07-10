@@ -14,8 +14,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Biocyte Organics | Advancing Healthcare Through Innovation",
-  description: "Biocyte Organics Pvt. Ltd. is an Indian pharmaceutical enterprise delivering high-efficiency medicinal capsules, syrups, and medical devices. Accredited under ISO 9001:2015 and WHO-GMP guidelines.",
-  keywords: "Biocyte Organics, pharmaceutical company, oxygen concentrator, nebulizer, WHO-GMP, ISO 9001:2015, Kanpur, Lucknow",
+  description: "Biocyte Organics Pvt. Ltd. is an Indian pharmaceutical enterprise delivering high-efficiency medicinal capsules, syrups, and medical devices. Accredited under ISO 9001:2015 guidelines.",
+  keywords: "Biocyte Organics, pharmaceutical company, oxygen concentrator, nebulizer, ISO 9001:2015, Kanpur, Lucknow",
 };
 
 import ChatAssistant from "@/components/ChatAssistant";

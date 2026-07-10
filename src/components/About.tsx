@@ -6,7 +6,7 @@ import { BookOpen, Target, Eye, FlaskConical, CheckCheck, Heart, Users } from "l
 export default function About() {
   const values = [
     { icon: FlaskConical, label: "Innovation", desc: "Research Driven", color: "text-brandorange-500", bg: "bg-brandorange-50" },
-    { icon: CheckCheck, label: "Quality First", desc: "GMP Adherence", color: "text-tealaccent-500", bg: "bg-tealaccent-50" },
+    { icon: CheckCheck, label: "Quality First", desc: "Quality Standard", color: "text-tealaccent-500", bg: "bg-tealaccent-50" },
     { icon: Heart, label: "Patient Centered", desc: "Health First", color: "text-softgreen-500", bg: "bg-softgreen-50" },
     { icon: Users, label: "Integrity", desc: "Honest Conduct", color: "text-yellow-500", bg: "bg-yellow-50" }
   ];

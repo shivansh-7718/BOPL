@@ -70,7 +70,7 @@ export default function AboutPage() {
                   : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
               }`}
             >
-              GMP Manufacturing Facility
+              Manufacturing Facility
             </button>
             <button 
               onClick={() => setActiveTab("services")}

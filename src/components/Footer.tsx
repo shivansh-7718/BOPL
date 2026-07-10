@@ -68,7 +68,7 @@ export default function Footer() {
             <Link href="/products" className="hover:text-white transition-colors">Gastrointestinal Care</Link>
             <Link href="/products" className="hover:text-white transition-colors">Nutritional & B-Complex</Link>
             <Link href="/certifications" className="hover:text-white transition-colors">ISO 9001:2015 Certification</Link>
-            <Link href="/certifications" className="hover:text-white transition-colors">GMP Standard Verification</Link>
+            <Link href="/certifications" className="hover:text-white transition-colors">Quality Control Standards</Link>
           </div>
         </div>
 

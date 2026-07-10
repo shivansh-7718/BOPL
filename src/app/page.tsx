@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
-import { Award, Container, BadgeCheck, Building } from "lucide-react";
+import { Award, Container, Globe, Building } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -146,10 +146,10 @@ export default function Home() {
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Products Range</span>
               <span className="text-lg font-extrabold mt-0.5">50+ Items</span>
             </Link>
-            <Link href="/quality" className="glass-card p-4 rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center hover:scale-102 transition-all">
-              <BadgeCheck className="w-5 h-5 text-softgreen-500 mb-2" />
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Compliance</span>
-              <span className="text-lg font-extrabold mt-0.5">WHO-GMP</span>
+            <Link href="/about" className="glass-card p-4 rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center hover:scale-102 transition-all">
+              <Globe className="w-5 h-5 text-softgreen-500 mb-2" />
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Market Reach</span>
+              <span className="text-lg font-extrabold mt-0.5">Pan UP</span>
             </Link>
             <Link href="/contact" className="glass-card p-4 rounded-2xl border border-slate-200 text-center flex flex-col items-center justify-center hover:scale-102 transition-all">
               <Building className="w-5 h-5 text-yellow-500 mb-2" />

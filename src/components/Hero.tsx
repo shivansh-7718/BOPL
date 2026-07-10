@@ -79,7 +79,7 @@ export default function Hero() {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[10px] font-bold tracking-widest text-brandorange-500 uppercase block">WHO-GMP Compliant</span>
+                <span className="text-[10px] font-bold tracking-widest text-brandorange-500 uppercase block">Quality Assured</span>
                 <h3 className="font-extrabold text-sm text-slate-900 dark:text-white">Quality Assurance</h3>
               </div>
             </div>

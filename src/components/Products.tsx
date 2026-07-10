@@ -278,8 +278,8 @@ export default function Products() {
                   </tr>
                   <tr>
                     <td className="p-3 text-slate-400 font-medium">Manufacturing Quality Standards</td>
-                    <td className="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO / GMP Sterile</td>
-                    <td className="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO / GMP Sterile</td>
+                    <td className="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO Certified Sterile</td>
+                    <td className="p-3 text-softgreen-500 font-bold uppercase tracking-wider text-[10px]">ISO Certified Sterile</td>
                   </tr>
                 </tbody>
               </table>
