@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, PhoneCall, ShieldCheck, Biohazard } from "lucide-react";
+import { ArrowRight, PhoneCall, ShieldCheck, BadgeCheck, HeartHandshake } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -73,21 +73,49 @@ export default function Hero() {
             <div className="w-60 h-60 sm:w-80 sm:h-80 rounded-full border border-dashed border-tealaccent-500/20 animate-spin" style={{ animationDuration: '40s' }} />
           </div>
 
-          <div className="absolute glass-card p-6 sm:p-8 rounded-3xl w-64 sm:w-76 border border-slate-200/60 dark:border-slate-800/60 shadow-2xl flex flex-col items-center text-center">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brandorange-500 to-tealaccent-400 text-white flex items-center justify-center shadow-lg shadow-brandorange-500/20 mb-4 animate-pulse">
-              <Biohazard className="w-8 h-8" />
+          <div className="absolute glass-card p-5 sm:p-6 rounded-3xl w-64 sm:w-80 border border-slate-200/60 dark:border-slate-800/60 shadow-2xl flex flex-col items-stretch text-left">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brandorange-500 to-brandorange-600 text-white flex items-center justify-center shadow-lg shadow-brandorange-500/20">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-bold tracking-widest text-brandorange-500 uppercase block">WHO-GMP Compliant</span>
+                <h3 className="font-extrabold text-sm text-slate-900 dark:text-white">Quality Assurance</h3>
+              </div>
             </div>
-            <span className="text-[10px] font-bold tracking-widest text-tealaccent-500 uppercase">Chemical Synthesis</span>
-            <h3 className="font-extrabold text-lg text-slate-900 dark:text-white mt-1">Research & Formulation</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Developing targeted medical molecules with high bioavailability and strict patient tolerance.</p>
-            
-            <div className="w-full mt-5 bg-slate-100/50 dark:bg-slate-800/50 rounded-xl p-3 border border-slate-200/30 dark:border-slate-700/30 text-left">
-              <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 mb-1">
-                <span>Bioavailability Assay</span>
-                <span className="text-softgreen-500 font-extrabold">94%</span>
+
+            <div className="space-y-4">
+              {/* Feature 1 */}
+              <div className="flex items-start space-x-3 p-2.5 rounded-xl bg-slate-500/5 dark:bg-slate-800/20 border border-slate-200/40 dark:border-slate-700/25">
+                <div className="mt-0.5 p-1.5 rounded-lg bg-softgreen-500/10 text-softgreen-600 dark:text-softgreen-400">
+                  <BadgeCheck className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xs text-slate-800 dark:text-slate-200">Quality & Reliability</h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 font-medium leading-relaxed">Trusted by healthcare professionals globally.</p>
+                </div>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="flex items-start space-x-3 p-2.5 rounded-xl bg-slate-500/5 dark:bg-slate-800/20 border border-slate-200/40 dark:border-slate-700/25">
+                <div className="mt-0.5 p-1.5 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400">
+                  <HeartHandshake className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xs text-slate-800 dark:text-slate-200">Patient-Centric</h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 font-medium leading-relaxed">Focused on delivering better health outcomes.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Metric */}
+            <div className="mt-4 bg-slate-100/50 dark:bg-slate-850/50 rounded-xl p-3 border border-slate-200/30 dark:border-slate-700/30">
+              <div className="flex items-center justify-between text-[10px] font-bold text-slate-500 dark:text-slate-400 mb-1.5">
+                <span>Batch Clearance Rate</span>
+                <span className="text-softgreen-500 font-extrabold">100%</span>
               </div>
               <div className="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                <div className="bg-gradient-to-r from-brandorange-500 to-tealaccent-500 h-full rounded-full" style={{ width: "94%" }} />
+                <div className="bg-gradient-to-r from-softgreen-500 to-tealaccent-500 h-full rounded-full" style={{ width: "100%" }} />
               </div>
             </div>
           </div>
