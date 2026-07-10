@@ -31,20 +31,20 @@ export default function About() {
               <BookOpen className="text-brandorange-500 w-5 h-5" />
               <span>Our Journey & Purpose</span>
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-              For more than 24 years, Biocyte Organics has dedicated itself to manufacturing, supplies, and marketing of pharmaceutical tablets, capsules, liquids, and critical care diagnostics equipment. We have established deep trust with state institutions, government healthcare agencies, and local distributors.
+            <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-350 leading-relaxed mb-6">
+              Headquartered in Kanpur, Uttar Pradesh, BIOCYTE Organics Private Limited (BOPL) is one of India's largest mid-sized privately held pharmaceutical companies. As a trusted healthcare solutions provider, BOPL markets a broad range of products and provides services for sleep diseases, respiratory ailments, and critical care, establishing key business alliances for international business, marketing, and distribution ventures.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-white/40 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200/30 dark:border-slate-700/30">
                 <Target className="w-6 h-6 text-brandorange-500 mb-3" />
                 <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Our Mission</h4>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400">To offer high-efficiency, verified, and cost-effective medical formulations that protect life, health, and elevate community happiness.</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">To make health affordable to all through the effective use of modern technology and seamless delivery of products and services, while actively contributing to a healthier society through corporate social responsibility initiatives like Anti-Tobacco and HIV/AIDS awareness.</p>
               </div>
               <div className="bg-white/40 dark:bg-slate-800/40 p-5 rounded-2xl border border-slate-200/30 dark:border-slate-700/30">
                 <Eye className="w-6 h-6 text-tealaccent-500 mb-3" />
                 <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Our Vision</h4>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400">To be a global biotech-tech innovator in specialized patient care, critical respiratory solutions, and diagnostics.</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">To achieve complete customer care and build sustainable global relationships, delivering premium value to our customers by combining innovative treatments, high quality standards, and a mission-driven commitment to patient well-being.</p>
               </div>
             </div>
           </div>
