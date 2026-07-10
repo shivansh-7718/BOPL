@@ -13,8 +13,7 @@ export default function About() {
 
   const milestones = [
     { date: "Nov 21, 2002", title: "Corporate Foundation", desc: "Incorporated as a private limited entity in Kanpur, launching stable general health multi-vitamins." },
-    { date: "2010", title: "Lucrative Expansion", desc: "Launched Lucknow branch in Vikas Nagar. Registered as a supplier for institutional state medical centers." },
-    { date: "2020", title: "Critical Care breathing focus", desc: "Strategic expansion into high-end medical equipment: oxygen concentrators, CPAP/BiPAP, and nebulizers." },
+    { date: "2009", title: "Critical Care breathing focus", desc: "Strategic expansion into high-end medical equipment: oxygen concentrators, CPAP/BiPAP, and nebulizers." },
     { date: "Present (2026)", title: "Redefined Enterprise Identity", desc: "Expanding medicine catalog to over 50 items. Deploying advanced digital support portals for partners." }
   ];
 
