@@ -1,6 +1,6 @@
 "use client";
 
-import { User, GraduationCap, Briefcase, Building, Handshake, MapPin } from "lucide-react";
+import { User, GraduationCap, Briefcase, Building } from "lucide-react";
 
 export default function Leaders() {
   const leaders = [
@@ -27,10 +27,7 @@ export default function Leaders() {
     }
   ];
 
-  const partners = [
-    { name: "Creative Medical System Germany", location: "Strategic Partner" },
-    { name: "Pneumacare Health Private Limited", location: "Strategic Partner" }
-  ];
+
 
   return (
     <div className="space-y-16 mt-8">
@@ -93,41 +90,7 @@ export default function Leaders() {
         </div>
       </div>
 
-      {/* Strategic Partners Section */}
-      <div className="space-y-8 border-t border-slate-200 dark:border-slate-800 pt-12">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brandorange-50 dark:bg-slate-800 text-[10px] font-bold text-brandorange-500 uppercase tracking-wider">
-            <Handshake className="w-3.5 h-3.5" />
-            <span>Strategic Partnerships</span>
-          </span>
-          <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">Business / Channel Partners</h3>
-          <p className="text-xs text-slate-500 leading-relaxed">
-            We collaborate with leading organizations to deliver comprehensive healthcare solutions across multiple markets.
-          </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {partners.map((partner, i) => (
-            <div key={i} className="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center space-x-4 hover:scale-[1.02] transition-transform duration-300">
-              <div className="w-11 h-11 rounded-xl bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shrink-0">
-                <Building className="w-5.5 h-5.5" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-sm text-slate-800 dark:text-white">{partner.name}</h4>
-                <span className="text-[10px] font-bold text-tealaccent-500 uppercase tracking-widest block mt-0.5">{partner.location}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Partners Registered Address */}
-        <div className="text-center pt-4 max-w-md mx-auto">
-          <div className="inline-flex items-center space-x-2 text-xs font-semibold text-slate-500 bg-slate-50 dark:bg-slate-900 px-5 py-3 rounded-2xl border border-slate-200 dark:border-slate-800 leading-relaxed">
-            <MapPin className="w-4 h-4 text-brandorange-500 shrink-0" />
-            <span>Address: F - 11, 2nd Floor, Fazal Ganj, Kanpur, New Delhi</span>
-          </div>
-        </div>
-      </div>
 
     </div>
   );
