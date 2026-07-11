@@ -58,7 +58,6 @@ export default function Contact() {
 
   const details = [
     { icon: Building, title: "Registered Office Address", desc: "House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India" },
-    { icon: MapPin, title: "Lucknow Branch Office", desc: "2C/50-53, Flat No. 403, 4th Floor, Ajeet Residency, Vikas Nagar-2, Lucknow" },
     { icon: Phone, title: "Phone Support Desk", desc: "+91-9919002065, +91-9919002066 (Telefax: +91-8429692065)" },
     { icon: Mail, title: "Email Communications", desc: "info@biocyteorganics.com" }
   ];
@@ -108,7 +107,7 @@ export default function Contact() {
                 </div>
               </div>
               <a 
-                href="https://wa.me/919919002065" 
+                href="https://wa.me/919919002066" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-softgreen-500 hover:bg-softgreen-600 text-white text-[11px] font-bold rounded-lg transition-colors flex items-center space-x-1.5"
