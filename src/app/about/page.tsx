@@ -7,7 +7,7 @@ import About from "@/components/About";
 import Quality from "@/components/Quality";
 import Certifications from "@/components/Certifications";
 import Leaders from "@/components/Leaders";
-import { Handshake, PackageCheck, Truck } from "lucide-react";
+import { Handshake, Wrench, Truck } from "lucide-react";
 
 export default function AboutPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,7 +31,7 @@ export default function AboutPage() {
 
   const services = [
     { icon: Handshake, title: "Franchise & PCD Partners", desc: "Providing PCD Franchise business rights to dedicated sales representatives with high promotional material support." },
-    { icon: PackageCheck, title: "Contract Manufacturing", desc: "Leverage our high-speed blister packing and capsule-filling setups for private-label formulations under confidentiality." },
+    { icon: Wrench, title: "Technical Care Desk", desc: "Specialized installation, repair, and remote calibration support for critical breathing equipment and nebulizers." },
     { icon: Truck, title: "Institutional Supplies", desc: "Executing rapid shipping pipelines for central and state healthcare boards, maintaining breathing device calibration." }
   ];
 
