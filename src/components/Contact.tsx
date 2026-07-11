@@ -130,12 +130,8 @@ export default function Contact() {
               </div>
               <div className="space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
                 <div className="flex justify-between items-center">
-                  <span>Monday - Friday</span>
-                  <span className="text-brandorange-500 font-bold">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Saturday</span>
-                  <span className="text-brandorange-500 font-bold">9:00 AM - 2:00 PM</span>
+                  <span>Monday - Saturday</span>
+                  <span className="text-brandorange-500 font-bold">11:00 AM - 7:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Sunday</span>
@@ -262,6 +258,17 @@ export default function Contact() {
             </div>
           </div>
 
+        </div>
+
+        {/* Google Map Section */}
+        <div className="mt-12 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg h-80 relative">
+          <iframe 
+            src="https://maps.google.com/maps?q=House%20No.%205,%20Meerpur%20Cantt,%20Kanpur,%20Uttar%20Pradesh%20208004,%20India&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full border-0 absolute inset-0"
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
 
       </div>
