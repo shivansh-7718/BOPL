@@ -8,11 +8,7 @@ export default function Careers() {
   const [resumeName, setResumeName] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const jobs = [
-    { title: "Medical Representative (MR)", openings: "2 Positions", location: "Kanpur/Lucknow", exp: "1-3 Years Experience", desc: "Expanding our medical awareness footprint across Uttar Pradesh and Bihar regions." },
-    { title: "QC Analyst (HPLC/UV)", openings: "1 Position", location: "Kanpur Facility", exp: "2-5 Years Experience", desc: "Conducting quantitative assays on formulation batches using advanced chromatography." },
-    { title: "QA Compliance Officer", openings: "1 Position", location: "Kanpur Headquarters", exp: "3+ Years Experience", desc: "Auditing batch records, verifying SOP guidelines, and coordinating ISO accreditation reviews." }
-  ];
+  const jobs: any[] = [];
 
   const handleApply = (role: string) => {
     setSelectedJob(role);
@@ -43,23 +39,17 @@ export default function Careers() {
         {/* Jobs List */}
         <div className="lg:col-span-6 space-y-4">
           <h3 className="font-bold text-sm uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 pl-2">Current Openings</h3>
-          {jobs.map((job, i) => (
-            <div 
-              key={i} 
-              onClick={() => handleApply(job.title)}
-              className="glass-card p-5 rounded-2xl border-slate-200/55 hover:border-brandorange-500/50 transition-colors cursor-pointer group"
-            >
-              <div className="flex justify-between items-start mb-2">
-                <h4 className="font-extrabold text-sm text-slate-800 dark:text-white group-hover:text-brandorange-500 transition-colors">{job.title}</h4>
-                <span className="text-[9px] font-bold text-tealaccent-500 bg-tealaccent-50 dark:bg-slate-800 px-2 py-0.5 rounded-full">{job.openings}</span>
-              </div>
-              <p className="text-xs text-slate-500 leading-relaxed mb-3">{job.desc}</p>
-              <div className="flex items-center space-x-4 text-[10px] text-slate-400 font-semibold">
-                <span className="flex items-center"><MapPin className="w-3.5 h-3.5 mr-1" />{job.location}</span>
-                <span className="flex items-center"><Briefcase className="w-3.5 h-3.5 mr-1" />{job.exp}</span>
-              </div>
+          <div className="glass-card p-8 rounded-3xl border border-slate-200/50 dark:border-slate-800 text-center space-y-4 py-12">
+            <div className="w-12 h-12 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center mx-auto shadow-inner">
+              <Briefcase className="w-6 h-6" />
             </div>
-          ))}
+            <div className="space-y-1">
+              <h4 className="font-extrabold text-sm text-slate-800 dark:text-white">Currently No Openings Available</h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm mx-auto">
+                We are not actively hiring for any open positions right now. However, we are always on the lookout for exceptional talent. Submit your details on the right to join our talent pool!
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Apply form */}
@@ -102,10 +92,8 @@ export default function Careers() {
                       className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none text-slate-600"
                     >
                       <option value="">Select a Role...</option>
-                      <option value="Medical Representative (MR)">Medical Representative (MR)</option>
-                      <option value="QC Analyst (HPLC/UV)">QC Analyst (HPLC/UV)</option>
-                      <option value="QA Compliance Officer">QA Compliance Officer</option>
                       <option value="General Internship">General / Other Positions</option>
+                      <option value="Future Openings">Future Openings (Talent Pool)</option>
                     </select>
                   </div>
                 </div>
