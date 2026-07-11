@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
-import Quality from "@/components/Quality";
 import Certifications from "@/components/Certifications";
 import Leaders from "@/components/Leaders";
 import { Handshake, Wrench, Truck } from "lucide-react";
@@ -79,7 +78,7 @@ export default function AboutPage() {
                   : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
               }`}
             >
-              Quality & Certifications
+              Certifications
             </button>
             <button 
               onClick={() => setActiveTab("leaders")}
@@ -109,12 +108,7 @@ export default function AboutPage() {
                 ))}
               </div>
             )}
-            {activeTab === "quality" && (
-              <div className="space-y-12">
-                <Quality />
-                <Certifications />
-              </div>
-            )}
+            {activeTab === "quality" && <Certifications />}
             {activeTab === "leaders" && <Leaders />}
           </div>
 

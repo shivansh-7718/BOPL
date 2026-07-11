@@ -408,7 +408,7 @@
       <div class="flex items-center space-x-2 overflow-x-auto pb-3 mb-10 border-b border-slate-200 dark:border-slate-800 no-scrollbar max-w-4xl mx-auto justify-start lg:justify-center">
         <button onclick="switchAboutTab('story')" id="about-tab-story" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-brandorange-500 text-white shadow-md transition-all shrink-0">Company Profile & Story</button>
         <button onclick="switchAboutTab('services')" id="about-tab-services" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Commercial Services</button>
-        <button onclick="switchAboutTab('quality')" id="about-tab-quality" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Quality & Certifications</button>
+        <button onclick="switchAboutTab('quality')" id="about-tab-quality" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Certifications</button>
         <button onclick="switchAboutTab('leaders')" id="about-tab-leaders" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Leadership & Partners</button>
       </div>
 
@@ -519,27 +519,9 @@
       </div>
 
       <!-- ================= Sub Tab 4: Quality & Certifications (Corrected text classes) ================= -->
-      <div id="about-view-quality" class="about-sub-section hidden mt-4 space-y-12">
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brandorange-500 to-tealaccent-400 text-white flex items-center justify-center shadow-md mb-4"><i data-lucide="beaker" class="w-6 h-6"></i></div>
-            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">HPLC Validation Assays</h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">High-Performance Liquid Chromatography tests ensure active chemical dosage precision across every production run.</p>
-          </div>
-          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-tealaccent-500 to-softgreen-500 text-white flex items-center justify-center shadow-md mb-4"><i data-lucide="fingerprint" class="w-6 h-6"></i></div>
-            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Contamination Barrier</h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Atmospheric micro-particle counts are conducted daily in cleanrooms to secure absolute microbiological safety.</p>
-          </div>
-          <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 group">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-softgreen-500 to-yellow-400 text-white flex items-center justify-center shadow-md mb-4"><i data-lucide="timer" class="w-6 h-6"></i></div>
-            <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Dissolution Assays</h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Testing bio-release speeds to ensure prompt bloodstream distribution and optimal therapeutic efficiency for patients.</p>
-          </div>
-        </div>
-
+      <div id="about-view-quality" class="about-sub-section hidden mt-4 pt-4">
         <!-- Certifications Showcase -->
-        <div class="border-t border-slate-200 dark:border-slate-800 pt-8">
+        <div>
           <h4 class="font-bold text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 text-center mb-6">Registered Credentials & Corporate Accreditations</h4>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('iso')">
