@@ -407,7 +407,6 @@
       <!-- INLINE SUB-TABS NAVIGATION (Responsive scroll container) -->
       <div class="flex items-center space-x-2 overflow-x-auto pb-3 mb-10 border-b border-slate-200 dark:border-slate-800 no-scrollbar max-w-4xl mx-auto justify-start lg:justify-center">
         <button onclick="switchAboutTab('story')" id="about-tab-story" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-brandorange-500 text-white shadow-md transition-all shrink-0">Company Profile & Story</button>
-        <button onclick="switchAboutTab('manufacturing')" id="about-tab-manufacturing" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Manufacturing Facility</button>
         <button onclick="switchAboutTab('services')" id="about-tab-services" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Commercial Services</button>
         <button onclick="switchAboutTab('quality')" id="about-tab-quality" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Quality & Certifications</button>
         <button onclick="switchAboutTab('leaders')" id="about-tab-leaders" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shrink-0">Leadership & Partners</button>
@@ -493,167 +492,7 @@
         </div>
       </div>
 
-      <!-- ================= Sub Tab 2: GMP Manufacturing (Corrected text & high-fidelity interactive control panel) ================= -->
-      <div id="about-view-manufacturing" class="about-sub-section hidden mt-4">
-        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
-          
-          <!-- Left Column: Details -->
-          <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
-            <div class="space-y-4">
-              <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">State-of-the-Art Formulation Facility</h3>
-              <!-- Standardized text-slate-600 dark:text-slate-300 -->
-              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Biocyte Organics relies on advanced formulation standards. Operating with massive climate-controlled cleanrooms, high-capacity automated tableting and capsule-filling lines, and certified liquid syrup packaging systems.
-              </p>
-            </div>
 
-            <!-- Custom validated lists with standard slate tags -->
-            <div class="space-y-4">
-              <div class="flex space-x-3 items-start">
-                <div class="w-8 h-8 rounded-full bg-brandorange-100 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
-                <div>
-                  <h4 class="font-bold text-xs text-slate-800 dark:text-white">Raw Material Validation</h4>
-                  <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Every batch of active API undergoes robust chemical assay checks inside our Quality Control laboratory.</p>
-                </div>
-              </div>
-              <div class="flex space-x-3 items-start">
-                <div class="w-8 h-8 rounded-full bg-tealaccent-100 dark:bg-slate-800 text-tealaccent-500 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
-                <div>
-                  <h4 class="font-bold text-xs text-slate-800 dark:text-white">Sterile Mixing & Formulation</h4>
-                  <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">Automated containment mixers process core therapeutic formulations to ensure absolute batch uniformity.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Workflow mini panel -->
-            <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-              <span class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-3">Workflow Checklist</span>
-              <div class="flex items-center justify-between text-center relative px-2">
-                <div class="absolute top-1/2 left-4 right-4 h-0.5 bg-slate-200 dark:bg-slate-800 -translate-y-1/2 z-0"></div>
-                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-brandorange-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="inbox" class="w-3.5 h-3.5"></i></div></div>
-                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-tealaccent-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="test-tube" class="w-3.5 h-3.5"></i></div></div>
-                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-yellow-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="combine" class="w-3.5 h-3.5"></i></div></div>
-                <div class="relative z-10"><div class="w-7 h-7 rounded-full bg-softgreen-500 text-white flex items-center justify-center mx-auto text-[10px] font-bold shadow-sm"><i data-lucide="package" class="w-3.5 h-3.5"></i></div></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: HIGH-FIDELITY INTERACTIVE CLEANROOM CONTROL PANEL -->
-          <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
-            <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-lg glow-orange flex-grow flex flex-col justify-between space-y-6">
-              
-              <!-- Cleanroom interactive header -->
-              <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
-                <div class="flex items-center space-x-2">
-                  <span class="flex h-2.5 w-2.5 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-softgreen-500 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-softgreen-500"></span>
-                  </span>
-                  <span class="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Facility Live Diagnostic Screen</span>
-                </div>
-                <div class="text-[10px] font-bold text-brandorange-500 bg-brandorange-50 dark:bg-slate-800 px-2.5 py-1 rounded-full uppercase tracking-wider">Class A Sterile</div>
-              </div>
-
-              <!-- Cleanroom Simulated Floor plan SVG Schematic -->
-              <div class="relative bg-slate-950 rounded-2xl p-4 border border-slate-800 flex flex-col justify-between h-48 overflow-hidden">
-                <div class="absolute inset-0 opacity-20 pointer-events-none">
-                  <div class="w-full h-full bg-[linear-gradient(rgba(0,184,169,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,184,169,0.1)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
-                </div>
-                
-                <!-- Room schematic layout -->
-                <div class="grid grid-cols-3 gap-3 relative z-10 my-auto h-24">
-                  <!-- Room 1 Airlock -->
-                  <div id="schematic-room-airlock" class="border-2 border-brandorange-500 bg-brandorange-500/10 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300">
-                    <span class="text-[8px] font-extrabold text-brandorange-400 uppercase tracking-widest block">Zone 1</span>
-                    <span class="text-[9px] font-bold text-white block mt-1">Air Lock Chamber</span>
-                    <div class="flex items-center space-x-1 mt-2">
-                      <span class="w-1.5 h-1.5 rounded-full bg-softgreen-500 animate-ping"></span>
-                      <span class="text-[7px] text-softgreen-400 uppercase tracking-wider font-extrabold" id="schematic-status-airlock">Active</span>
-                    </div>
-                  </div>
-
-                  <!-- Room 2 Sterile Area -->
-                  <div id="schematic-room-mixing" class="border border-slate-800 bg-slate-900/40 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300">
-                    <span class="text-[8px] font-extrabold text-slate-500 uppercase tracking-widest block">Zone 2</span>
-                    <span class="text-[9px] font-bold text-slate-400 block mt-1">Sterile Area</span>
-                    <div class="flex items-center space-x-1 mt-2">
-                      <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
-                      <span class="text-[7px] text-slate-500 uppercase tracking-wider font-extrabold" id="schematic-status-mixing">Standby</span>
-                    </div>
-                  </div>
-
-                  <!-- Room 3 Packing Belt -->
-                  <div id="schematic-room-packaging" class="border border-slate-800 bg-slate-900/40 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300">
-                    <span class="text-[8px] font-extrabold text-slate-500 uppercase tracking-widest block">Zone 3</span>
-                    <span class="text-[9px] font-bold text-slate-400 block mt-1">Packing Belt</span>
-                    <div class="flex items-center space-x-1 mt-2">
-                      <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
-                      <span class="text-[7px] text-slate-500 uppercase tracking-wider font-extrabold" id="schematic-status-packaging">Standby</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Real-time diagnostic ticker -->
-                <div class="flex items-center justify-between border-t border-slate-800/80 pt-2 text-[9px] font-mono text-slate-500 relative z-10">
-                  <div class="flex items-center space-x-1.5">
-                    <i data-lucide="terminal" class="w-3.5 h-3.5 text-tealaccent-500"></i>
-                    <span id="diagnostic-ticker-message" class="text-tealaccent-400">Assay Status: Airlocks secure. +15.2 Pa positive pressure cycle active.</span>
-                  </div>
-                  <span id="diagnostic-ticker-time" class="text-slate-400">17:40:24</span>
-                </div>
-              </div>
-
-              <!-- Cleanroom simulated map grids -->
-              <div class="grid grid-cols-3 gap-4 text-center">
-                <div onclick="selectCleanroomZone('airlock')" id="zone-btn-airlock" class="p-3.5 rounded-2xl border-2 border-brandorange-500 bg-brandorange-50/10 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5">
-                  <div class="w-7 h-7 rounded-lg bg-brandorange-500 text-white flex items-center justify-center transition-colors"><i data-lucide="door-closed" class="w-4 h-4"></i></div>
-                  <span class="block font-bold text-[10px]">1. Air Locks</span>
-                  <span class="block text-[8px] text-softgreen-500 font-bold uppercase tracking-wider">Secure</span>
-                </div>
-
-                <div onclick="selectCleanroomZone('mixing')" id="zone-btn-mixing" class="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5">
-                  <div class="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"><i data-lucide="workflow" class="w-4 h-4"></i></div>
-                  <span class="block font-bold text-[10px]">2. Sterile Area</span>
-                  <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">Nominal</span>
-                </div>
-
-                <div onclick="selectCleanroomZone('packaging')" id="zone-btn-packaging" class="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5">
-                  <div class="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors"><i data-lucide="package-open" class="w-4 h-4"></i></div>
-                  <span class="block font-bold text-[10px]">3. Packing Belt</span>
-                  <span class="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">Nominal</span>
-                </div>
-              </div>
-
-              <!-- Cleanroom metrics status panel -->
-              <div class="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-semibold">
-                <div class="space-y-1 text-center sm:text-left">
-                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">Air Pressure</span>
-                  <span class="block text-base font-extrabold text-slate-800 dark:text-white" id="cleanroom-metric-pressure">+15.2 Pa</span>
-                </div>
-                <div class="space-y-1 text-center sm:text-left border-l border-slate-200 dark:border-slate-800 pl-0 sm:pl-4">
-                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">Humidity</span>
-                  <span class="block text-base font-extrabold text-slate-800 dark:text-white" id="cleanroom-metric-humidity">45% RH</span>
-                </div>
-                <div class="space-y-1 text-center sm:text-left border-l border-slate-200 dark:border-slate-800 pl-0 sm:pl-4">
-                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">Air Changes</span>
-                  <span class="block text-base font-extrabold text-slate-800 dark:text-white" id="cleanroom-metric-changes">40 / Hour</span>
-                </div>
-                <div class="space-y-1 text-center sm:text-left border-l border-slate-200 dark:border-slate-800 pl-0 sm:pl-4">
-                  <span class="block text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-[9px]">HEPA Filter</span>
-                  <span class="block text-base font-extrabold text-softgreen-500" id="cleanroom-metric-hepa">99.997%</span>
-                </div>
-              </div>
-
-              <!-- Interactive details note -->
-              <div class="p-4 bg-brandorange-50/30 dark:bg-brandorange-500/5 rounded-2xl border border-brandorange-500/10 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed" id="cleanroom-metric-detail">
-                <b>Air Lock Zone:</b> Class 100 HEPA air shower systems seal active formulation barriers. Maintains differential positive pressure (+15 Pa) to completely prevent raw material contamination.
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
 
       <!-- ================= Sub Tab 3: Commercial Services (Corrected text classes) ================= -->
       <div id="about-view-services" class="about-sub-section hidden mt-4">
@@ -1239,7 +1078,7 @@
           <a href="#products" onclick="navigateTo('products'); return false;" class="text-slate-400 hover:text-white transition-colors">Cardiovascular Medicines</a>
           <a href="#products" onclick="navigateTo('products'); return false;" class="text-slate-400 hover:text-white transition-colors">Gastrointestinal Care</a>
           <a href="#about" onclick="switchAboutTab('quality'); return false;" class="text-slate-400 hover:text-white transition-colors">ISO 9001:2015 Accreditation</a>
-          <a href="#about" onclick="switchAboutTab('manufacturing'); return false;" class="text-slate-400 hover:text-white transition-colors">Quality Standard Facility</a>
+
         </div>
       </div>
 
@@ -1518,7 +1357,7 @@
     }
 
     // ==================== INLINE ABOUT SUB-TABS SWITCHER ====================
-    const aboutSubTabs = ['story', 'manufacturing', 'services', 'quality', 'leaders'];
+    const aboutSubTabs = ['story', 'services', 'quality', 'leaders'];
 
     function switchAboutTab(tabId) {
       if (!aboutSubTabs.includes(tabId)) return;
@@ -1544,92 +1383,7 @@
       lucide.createIcons();
     }
 
-    // ==================== INTERACTIVE CLEANROOM CONTROL PANEL LOGIC ====================
-    const cleanroomMetrics = {
-      airlock: {
-        pressure: '+15.2 Pa',
-        humidity: '45% RH',
-        changes: '40 / Hour',
-        hepa: '99.997%',
-        detail: '<b>Air Lock Zone:</b> Class 100 HEPA air shower systems seal active formulation barriers. Maintains differential positive pressure (+15 Pa) to completely prevent raw material contamination.'
-      },
-      mixing: {
-        pressure: '+12.5 Pa',
-        humidity: '40% RH',
-        changes: '55 / Hour',
-        hepa: '99.999%',
-        detail: '<b>Sterile Mixing & Formulation Zone:</b> Clean room Grade A area where active liquid/capsule blends are synthesized. Constant atmospheric sanitization and 55 hourly filtered air recirculations keep the area absolutely sterile.'
-      },
-      packaging: {
-        pressure: '+10.1 Pa',
-        humidity: '38% RH',
-        changes: '30 / Hour',
-        hepa: '99.995%',
-        detail: '<b>Strip & Blister Packaging Belt:</b> Moisture-proof sealed blister assembly lines. Relative humidity is kept below 40% to preserve medicinal compound stability and ensure maximum shelf life.'
-      }
-    };
 
-    function selectCleanroomZone(zoneKey) {
-      const data = cleanroomMetrics[zoneKey];
-      
-      // Update Metrics HTML
-      document.getElementById('cleanroom-metric-pressure').innerText = data.pressure;
-      document.getElementById('cleanroom-metric-humidity').innerText = data.humidity;
-      document.getElementById('cleanroom-metric-changes').innerText = data.changes;
-      document.getElementById('cleanroom-metric-hepa').innerText = data.hepa;
-      document.getElementById('cleanroom-metric-detail').innerHTML = data.detail;
-
-      // Update button highlights
-      const zones = ['airlock', 'mixing', 'packaging'];
-      zones.forEach(z => {
-        const btn = document.getElementById(`zone-btn-${z}`);
-        if (z === zoneKey) {
-          btn.className = 'p-3.5 rounded-2xl border-2 border-brandorange-500 bg-brandorange-50/10 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5';
-          btn.querySelector('.w-7').className = 'w-7 h-7 rounded-lg bg-brandorange-500 text-white flex items-center justify-center transition-colors';
-        } else {
-          btn.className = 'p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 cursor-pointer hover:border-brandorange-500 hover:scale-102 active:scale-98 transition-all flex flex-col items-center justify-center space-y-1.5';
-          btn.querySelector('.w-7').className = 'w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center transition-colors';
-        }
-      });
-
-      // Update Floor Plan schematic styling dynamically
-      zones.forEach(z => {
-        const roomEl = document.getElementById(`schematic-room-${z}`);
-        const statusText = document.getElementById(`schematic-status-${z}`);
-        const statusIndicator = roomEl.querySelector('.w-1.5');
-        
-        if (z === zoneKey) {
-          roomEl.className = 'border-2 border-brandorange-500 bg-brandorange-500/10 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300 scale-102 shadow-md shadow-brandorange-500/10';
-          roomEl.querySelector('.text-\\[8px\\]').className = 'text-[8px] font-extrabold text-brandorange-400 uppercase tracking-widest block';
-          roomEl.querySelector('.text-\\[9px\\]').className = 'text-[9px] font-bold text-white block mt-1';
-          statusText.innerText = 'Active';
-          statusText.className = 'text-[7px] text-softgreen-400 uppercase tracking-wider font-extrabold';
-          statusIndicator.className = 'w-1.5 h-1.5 rounded-full bg-softgreen-500 animate-ping';
-        } else {
-          roomEl.className = 'border border-slate-800 bg-slate-900/40 rounded-xl p-2.5 flex flex-col justify-between transition-all duration-300';
-          roomEl.querySelector('.text-\\[8px\\]').className = 'text-[8px] font-extrabold text-slate-500 uppercase tracking-widest block';
-          roomEl.querySelector('.text-\\[9px\\]').className = 'text-[9px] font-bold text-slate-400 block mt-1';
-          statusText.innerText = 'Standby';
-          statusText.className = 'text-[7px] text-slate-500 uppercase tracking-wider font-extrabold';
-          statusIndicator.className = 'w-1.5 h-1.5 rounded-full bg-slate-600';
-        }
-      });
-
-      // Update Ticker Message
-      const tickerMsg = document.getElementById('diagnostic-ticker-message');
-      const tickerTime = document.getElementById('diagnostic-ticker-time');
-      
-      const now = new Date();
-      tickerTime.innerText = now.toTimeString().split(' ')[0];
-      
-      if (zoneKey === 'airlock') {
-        tickerMsg.innerText = 'Assay Status: Airlocks secure. +15.2 Pa positive pressure cycle active.';
-      } else if (zoneKey === 'mixing') {
-        tickerMsg.innerText = 'Assay Status: Formulation mixers active. Air changes at 55/Hour nominal.';
-      } else if (zoneKey === 'packaging') {
-        tickerMsg.innerText = 'Assay Status: Blister belt active. Relative humidity at 38% RH (Dry-Zone).';
-      }
-    }
 
     // Initial page load hash check
     window.addEventListener('load', () => {
@@ -1984,8 +1738,8 @@
           reply.innerHTML = `<span>I've directed you to our **About Us** company profile!</span>`;
           switchAboutTab('story');
         } else if (q.includes('manufacturing') || q.includes('cleanroom') || q.includes('facility')) {
-          reply.innerHTML = `<span>I've switched the About sub-tab to our **Sterile Manufacturing Facility** view. Check it out!</span>`;
-          switchAboutTab('manufacturing');
+          reply.innerHTML = `<span>I've directed you to our **About Us** page to learn more about our company profile.</span>`;
+          switchAboutTab('story');
         } else if (q.includes('service') || q.includes('franchise') || q.includes('pcd')) {
           reply.innerHTML = `<span>I've loaded our **Commercial Services** sub-tab inside the About Us section.</span>`;
           switchAboutTab('services');

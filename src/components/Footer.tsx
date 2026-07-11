@@ -53,7 +53,6 @@ export default function Footer() {
             <Link href="/" className="hover:text-white transition-colors">Home Base</Link>
             <Link href="/about" className="hover:text-white transition-colors">Company Story</Link>
             <Link href="/products" className="hover:text-white transition-colors">Product Range</Link>
-            <Link href="/manufacturing" className="hover:text-white transition-colors">Manufacturing</Link>
             <Link href="/quality" className="hover:text-white transition-colors">Quality Control</Link>
             <Link href="/careers" className="hover:text-white transition-colors">Work With Us</Link>
           </div>

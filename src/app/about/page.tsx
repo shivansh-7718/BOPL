@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
-import Manufacturing from "@/components/Manufacturing";
 import Quality from "@/components/Quality";
 import Certifications from "@/components/Certifications";
 import Leaders from "@/components/Leaders";
@@ -63,16 +62,6 @@ export default function AboutPage() {
               Company Profile & Story
             </button>
             <button 
-              onClick={() => setActiveTab("manufacturing")}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
-                activeTab === "manufacturing" 
-                  ? "bg-brandorange-500 text-white shadow-md" 
-                  : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
-              }`}
-            >
-              Manufacturing Facility
-            </button>
-            <button 
               onClick={() => setActiveTab("services")}
               className={`px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
                 activeTab === "services" 
@@ -107,7 +96,6 @@ export default function AboutPage() {
           {/* Sub-Views render grid */}
           <div className="transition-all duration-300">
             {activeTab === "story" && <About />}
-            {activeTab === "manufacturing" && <Manufacturing />}
             {activeTab === "services" && (
               <div className="grid md:grid-cols-3 gap-6 mt-8">
                 {services.map((item, i) => (
