@@ -524,24 +524,24 @@
         <div>
           <h4 class="font-bold text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 text-center mb-6">Registered Credentials & Corporate Accreditations</h4>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('iso')">
+            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('drug')">
               <div class="w-10 h-10 rounded-xl bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 mx-auto flex items-center justify-center mb-2"><i data-lucide="shield-alert" class="w-5 h-5 text-brandorange-500"></i></div>
-              <span class="font-bold text-xs block text-slate-800 dark:text-white">ISO 9001:2015</span>
-              <span class="text-[9px] text-slate-400 block mt-0.5">Management</span>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">Drug License</span>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Formulation Approvals</span>
             </div>
-            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('gmp')">
+            <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('food')">
               <div class="w-10 h-10 rounded-xl bg-tealaccent-50 dark:bg-slate-800 text-tealaccent-505 mx-auto flex items-center justify-center mb-2"><i data-lucide="clipboard-check" class="w-5 h-5 text-tealaccent-505"></i></div>
-              <span class="font-bold text-xs block text-slate-800 dark:text-white">Quality Assured</span>
-              <span class="text-[9px] text-slate-400 block mt-0.5">Strict Control</span>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">Food License</span>
+              <span class="text-[9px] text-slate-400 block mt-0.5">FSSAI Standards</span>
             </div>
             <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('mca')">
               <div class="w-10 h-10 rounded-xl bg-softgreen-50 dark:bg-slate-800 text-softgreen-500 mx-auto flex items-center justify-center mb-2"><i data-lucide="landmark" class="w-5 h-5 text-softgreen-500"></i></div>
-              <span class="font-bold text-xs block text-slate-800 dark:text-white">MCA Registry</span>
-              <span class="text-[9px] text-slate-400 block mt-0.5">Govt Supplies</span>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">MCA Registered</span>
+              <span class="text-[9px] text-slate-400 block mt-0.5">Govt of India (2002)</span>
             </div>
             <div class="glass-card p-5 rounded-2xl text-center border-slate-200 dark:border-slate-800 hover:shadow-md transition-all group relative cursor-pointer" onclick="openCertModal('gst')">
               <div class="w-10 h-10 rounded-xl bg-yellow-50 dark:bg-slate-800 text-yellow-500 mx-auto flex items-center justify-center mb-2"><i data-lucide="file-check-2" class="w-5 h-5 text-yellow-550"></i></div>
-              <span class="font-bold text-xs block text-slate-800 dark:text-white">Active GSTIN</span>
+              <span class="font-bold text-xs block text-slate-800 dark:text-white">GST</span>
               <span class="text-[9px] text-slate-400 block mt-0.5">Tax Compliant</span>
             </div>
           </div>
@@ -1596,10 +1596,10 @@
     const certId = document.getElementById('modal-cert-id');
 
     const certData = {
-      iso: { title: 'ISO 9001:2015 Quality Management Systems', desc: 'Ensures our company maintains strict procedural controls, operational guidelines, and continuous risk assessments.', standard: 'ISO 9001:2015', issuer: 'TUV India / National Accreditation Board', id: 'CERT-ISO-9001-200274' },
-      gmp: { title: 'Quality Control Standards', desc: 'Adherence to comprehensive sterile environment formulations, equipment sanitization protocols, and batch validation compliance.', standard: 'In-house QA Guidelines', issuer: 'Internal Quality Assurance Board', id: 'LIC-QA-UP-02747120' },
+      drug: { title: 'Drug License Registration', desc: 'Authorizes BOPL to market and distribute a broad range of pharmaceutical formulations. Verified under regional drug administration standards.', standard: 'Form 20-B & 21-B', issuer: 'Food Safety & Drug Administration UP', id: 'LIC-DL-UP-208004' },
+      food: { title: 'Food License (FSSAI Registration)', desc: 'Validates compliance with safety standards for nutritional supplements and dietary syrup blends.', standard: 'FSSAI Registered', issuer: 'Food Safety & Standards Authority of India', id: 'REG-FSSAI-UP-10274' },
       mca: { title: 'Ministry of Corporate Affairs Government Registration', desc: 'Biocyte Organics Private Limited is an active incorporated commercial entity operating under central Indian corporate registries since 2002.', standard: 'U51397UP2002PTC027074', issuer: 'Registrar of Companies, Uttar Pradesh', id: 'ROC-UP-27074-REGD' },
-      gst: { title: 'Central Goods and Services Tax Registry', desc: 'Compliant registered commercial supplies partner. Fully audited tax structure enabling institutional procurement agreements.', standard: 'GSTIN UP Registered', issuer: 'Central Board of Indirect Taxes & Customs', id: '09AABCB8143M1Z2' }
+      gst: { title: 'GST Registration', desc: 'Compliant registered commercial supplies partner. Fully audited tax structure enabling institutional procurement agreements.', standard: 'GSTIN UP Registered', issuer: 'Central Board of Indirect Taxes & Customs', id: '09AABCB8143M1Z2' }
     };
 
     function openCertModal(key) {

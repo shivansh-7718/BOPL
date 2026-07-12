@@ -4,10 +4,10 @@ import { ShieldAlert, ClipboardCheck, Landmark, FileCheck2 } from "lucide-react"
 
 export default function Certifications() {
   const certifications = [
-    { icon: ShieldAlert, title: "ISO 9001:2015", subtitle: "Management Standards", color: "text-brandorange-500", bg: "bg-brandorange-50" },
-    { icon: ClipboardCheck, title: "Quality Assurance", subtitle: "Strict Control", color: "text-tealaccent-500", bg: "bg-tealaccent-50" },
+    { icon: ShieldAlert, title: "Drug License", subtitle: "Formulation Approvals", color: "text-brandorange-500", bg: "bg-brandorange-50" },
+    { icon: ClipboardCheck, title: "Food License", subtitle: "FSSAI Standards", color: "text-tealaccent-500", bg: "bg-tealaccent-50" },
     { icon: Landmark, title: "MCA Registered", subtitle: "Govt of India (2002)", color: "text-softgreen-500", bg: "bg-softgreen-50" },
-    { icon: FileCheck2, title: "Active GSTIN", subtitle: "Tax Compliant Partner", color: "text-yellow-500", bg: "bg-yellow-50" }
+    { icon: FileCheck2, title: "GST", subtitle: "Tax Compliant", color: "text-yellow-500", bg: "bg-yellow-50" }
   ];
 
   return (
