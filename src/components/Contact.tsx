@@ -58,7 +58,7 @@ export default function Contact() {
 
   const details = [
     { icon: Building, title: "Registered Office Address", desc: "House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India" },
-    { icon: Phone, title: "Phone Support Desk", desc: "+91-9919002065, +91-9919002066 (Telefax: +91-8429692065)" },
+    { icon: Phone, title: "Phone Support Desk", desc: "+91-9919002065, +91-9919002066, +91-9919003377 (Telefax: +91-8429692065)" },
     { icon: Mail, title: "Email Communications", desc: "info@biocyteorganics.com" }
   ];
 
@@ -85,7 +85,7 @@ export default function Contact() {
                         <a href={`mailto:${det.desc}`} className="block text-[11px] text-slate-500 hover:text-brandorange-500 transition-colors mt-0.5">{det.desc}</a>
                       ) : det.title === "Phone Support Desk" ? (
                         <span className="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                          <a href="tel:+919919002065" className="hover:text-brandorange-500 transition-colors">+91-9919002065</a>, <a href="tel:+919919002066" className="hover:text-brandorange-500 transition-colors">+91-9919002066</a> (Telefax: +91-8429692065)
+                          <a href="tel:+919919002065" className="hover:text-brandorange-500 transition-colors">+91-9919002065</a>, <a href="tel:+919919002066" className="hover:text-brandorange-500 transition-colors">+91-9919002066</a>, <a href="tel:+919919003377" className="hover:text-brandorange-500 transition-colors">+91-9919003377</a> (Telefax: +91-8429692065)
                         </span>
                       ) : (
                         <span className="block text-[11px] text-slate-500 mt-0.5">{det.desc}</span>
