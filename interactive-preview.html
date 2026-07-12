@@ -2287,18 +2287,17 @@
             • ✉️ <strong>Email:</strong> <a href="mailto:info@biocyteorganics.com" style="color: #FF6B00; text-decoration: none;">info@biocyteorganics.com</a><br />
             • 🟢 <strong>WhatsApp Support:</strong> <a href="https://wa.me/919919002066" target="_blank" style="color: #00B8A9; font-weight: 700; text-decoration: underline;">Open WhatsApp chat</a>
           `;
-        } else if (q.includes('address') || q.includes('office') || q.includes('where') || q.includes('location') || q.includes('kanpur') || q.includes('lucknow')) {
-          reply.innerHTML = `
-            <strong>BOPL Office Locations:</strong><br />
-            • 📍 <strong>Registered Office:</strong> House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India<br />
-            • 🏗️ <strong>Formulation Factory:</strong> F - 11, Fazal Ganj, Kanpur, Uttar Pradesh
-          `;
         } else if (q.includes('hours') || q.includes('time') || q.includes('open') || q.includes('schedule') || q.includes('sunday')) {
           reply.innerHTML = `
             <strong>BOPL Office Hours:</strong><br />
             • <strong>Monday - Saturday:</strong> 11:00 AM - 7:00 PM<br />
             • <strong>Sunday:</strong> Closed / Off<br />
             💡 <em>Outside office hours, please email us and we will reply within 24 hours.</em>
+          `;
+        } else if (q.includes('address') || q.includes('office') || q.includes('where') || q.includes('location') || q.includes('kanpur') || q.includes('lucknow')) {
+          reply.innerHTML = `
+            <strong>BOPL Office Location:</strong><br />
+            • 📍 <strong>Registered Office:</strong> House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India
           `;
         } else if (q.includes('cert') || q.includes('gmp') || q.includes('iso') || q.includes('license')) {
           reply.innerHTML = `

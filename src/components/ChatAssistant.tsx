@@ -63,19 +63,18 @@ export default function ChatAssistant() {
           • 🟢 <strong>WhatsApp Support:</strong> <a href="https://wa.me/919919002066" target="_blank" style="color: #00B8A9; font-weight: 700; text-decoration: underline;">Open WhatsApp chat</a>
         `;
         botReply.isHTML = true;
-      } else if (query.includes("address") || query.includes("office") || query.includes("where") || query.includes("location") || query.includes("kanpur") || query.includes("lucknow")) {
-        botReply.text = `
-          <strong>BOPL Office Locations:</strong><br />
-          • 📍 <strong>Registered Office:</strong> House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India<br />
-          • 🏗️ <strong>Formulation Factory:</strong> F - 11, Fazal Ganj, Kanpur, Uttar Pradesh
-        `;
-        botReply.isHTML = true;
       } else if (query.includes("hours") || query.includes("time") || query.includes("open") || query.includes("schedule") || query.includes("sunday")) {
         botReply.text = `
           <strong>BOPL Office Hours:</strong><br />
           • <strong>Monday - Saturday:</strong> 11:00 AM - 7:00 PM<br />
           • <strong>Sunday:</strong> Closed / Off<br />
           💡 <em>Outside office hours, please email us and we will reply within 24 hours.</em>
+        `;
+        botReply.isHTML = true;
+      } else if (query.includes("address") || query.includes("office") || query.includes("where") || query.includes("location") || query.includes("kanpur") || query.includes("lucknow")) {
+        botReply.text = `
+          <strong>BOPL Office Location:</strong><br />
+          • 📍 <strong>Registered Office:</strong> House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India
         `;
         botReply.isHTML = true;
       } else if (query.includes("cert") || query.includes("gmp") || query.includes("iso") || query.includes("license")) {
