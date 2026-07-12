@@ -48,45 +48,42 @@ export default function ChatAssistant() {
       if (query.includes("inventory") || query.includes("medicine") || query.includes("product") || query.includes("drug") || query.includes("tablet") || query.includes("capsule")) {
         botReply.text = `
           <strong>Our Formulation Inventory Categories:</strong><br />
-          • <strong>Nutritional & B-Complex:</strong> Calbritta-Max, Becofol, Carbofol-Z<br />
-          • <strong>Digestive Care:</strong> Esmyle-D, Livlite-Gold, Orzyme-Plus, Orzyme Syrup<br />
-          • <strong>Cardiovascular Care:</strong> Rosuace-ASP Capsule<br />
-          • <strong>Respiratory & Cough:</strong> Aerobon-DM, Kamfart-D (SF), Mach 650mg<br />
-          • <strong>Critical Care Equipment:</strong> Oxygen Concentrators (10L), Compressor Nebulizers, BiPAP & CPAP Devices.<br /><br />
+          • <strong>Nutritional & Vitamins:</strong> Calbritta-XT, Becofol Cap, Dioprot Powder, Supipep Sachet, Udiboost Sachet, Sg-Frac, Sg-Mag<br />
+          • <strong>Digestive Care:</strong> Esmyle-D, Livlite Syp, Orzyme Liq, Fibrex Powder, IBSacure, Flowzy Solution<br />
+          • <strong>Cardiovascular Care:</strong> Rosuace ASP 10-75, Rosuace ASP 20-75, Dapafloz Met ER 10/500<br />
+          • <strong>Respiratory & Pain:</strong> Aerobon-DM, Actramol, Algieva, Jaifix-O, Kamfart Syp, Montera-L, Tapex SR 50.<br /><br />
           <a href="/products" style="color: #FF6B00; font-weight: 700; text-decoration: underline;">View Full Catalog &rarr;</a>
         `;
         botReply.isHTML = true;
       } else if (query.includes("contact") || query.includes("phone") || query.includes("email") || query.includes("call") || query.includes("whatsapp")) {
         botReply.text = `
           <strong>Corporate Contact Desks:</strong><br />
-          • 📞 <strong>Phone:</strong> <a href="tel:+919919002065" style="color: #FF6B00; text-decoration: none;">+91-9919002065</a>, <a href="tel:+919919002066" style="color: #FF6B00; text-decoration: none;">+91-9919002066</a><br />
+          • 📞 <strong>Phone Support:</strong> <a href="tel:+919919002065" style="color: #FF6B00; text-decoration: none;">+91-9919002065</a>, <a href="tel:+919919002066" style="color: #FF6B00; text-decoration: none;">+91-9919002066</a>, <a href="tel:+919919003377" style="color: #FF6B00; text-decoration: none;">+91-9919003377</a><br />
           • ✉️ <strong>Email:</strong> <a href="mailto:info@biocyteorganics.com" style="color: #FF6B00; text-decoration: none;">info@biocyteorganics.com</a><br />
-          • 🟢 <strong>WhatsApp Support:</strong> <a href="https://wa.me/919919002065" target="_blank" style="color: #00B8A9; font-weight: 700; text-decoration: underline;">Open WhatsApp chat</a>
+          • 🟢 <strong>WhatsApp Support:</strong> <a href="https://wa.me/919919002066" target="_blank" style="color: #00B8A9; font-weight: 700; text-decoration: underline;">Open WhatsApp chat</a>
         `;
         botReply.isHTML = true;
       } else if (query.includes("address") || query.includes("office") || query.includes("where") || query.includes("location") || query.includes("kanpur") || query.includes("lucknow")) {
         botReply.text = `
           <strong>BOPL Office Locations:</strong><br />
           • 📍 <strong>Registered Office:</strong> House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India<br />
-          • 🏢 <strong>Lucknow Branch:</strong> 2C/50-53, Flat No. 403, 4th Floor, Ajeet Residency, Vikas Nagar-2, Lucknow<br />
-          • 🏗️ <strong>Formulation Factory:</strong> F - 11, 2nd Floor, Fazal Ganj, Kanpur, New Delhi
+          • 🏗️ <strong>Formulation Factory:</strong> F - 11, Fazal Ganj, Kanpur, Uttar Pradesh
         `;
         botReply.isHTML = true;
       } else if (query.includes("hours") || query.includes("time") || query.includes("open") || query.includes("schedule") || query.includes("sunday")) {
         botReply.text = `
           <strong>BOPL Office Hours:</strong><br />
-          • <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM<br />
-          • <strong>Saturday:</strong> 9:00 AM - 2:00 PM<br />
-          • <strong>Sunday:</strong> Closed<br />
+          • <strong>Monday - Saturday:</strong> 11:00 AM - 7:00 PM<br />
+          • <strong>Sunday:</strong> Closed / Off<br />
           💡 <em>Outside office hours, please email us and we will reply within 24 hours.</em>
         `;
         botReply.isHTML = true;
-      } else if (query.includes("cert") || query.includes("gmp") || query.includes("iso")) {
+      } else if (query.includes("cert") || query.includes("gmp") || query.includes("iso") || query.includes("license")) {
         botReply.text = `
           <strong>Accreditations & Compliance:</strong><br />
           • We operate under strict <strong>Quality Control Standards</strong> for sterile medicine mixing and strip packaging.<br />
-          • Fully certified under <strong>ISO 9001:2015</strong> Quality Management Systems.<br />
-          • Audited and registered under Ministry of Corporate Affairs (CIN: U51397UP2002PTC027074).
+          • Fully certified for <strong>Drug License</strong>, <strong>Food License</strong>, <strong>MCA Registered</strong>, and <strong>GST Registration</strong>.<br />
+          • Registered under Ministry of Corporate Affairs (CIN: U51397UP2002PTC027074).
         `;
         botReply.isHTML = true;
       } else {
