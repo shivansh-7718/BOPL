@@ -710,7 +710,7 @@
         <button onclick="filterCatalog('cardio')" id="tab-cardio" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Cardiovascular</button>
         <button onclick="filterCatalog('digestive')" id="tab-digestive" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Digestive Care</button>
         <button onclick="filterCatalog('respiratory')" id="tab-respiratory" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Respiratory & Pain</button>
-        <button onclick="filterCatalog('devices')" id="tab-devices" class="px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all">Medical Equipment</button>
+        
       </div>
 
       <!-- Compare banner -->
@@ -1336,21 +1336,628 @@
 
     // ==================== PRODUCTS DATABASE ====================
     const productsDatabase = [
-      { id: 'aerobon', name: 'Aerobon-DM Tablet', category: 'respiratory', form: 'Tablets', therCat: 'Respiratory Care', desc: 'Montelukast & Levocetirizine compound for treatment of chronic asthma, seasonal allergic rhinitis, and general respiratory congestion.', image: '💊' },
-      { id: 'calbritta', name: 'Calbritta-Max Capsule', category: 'nutritional', form: 'Capsules', therCat: 'Calcium & Vitamin D', desc: 'Bone health supplement containing high absorption Calcium, Calcitriol, Zinc, and Magnesium minerals to support joint density.', image: '🥛' },
-      { id: 'becofol', name: 'Becofol Capsules', category: 'nutritional', form: 'Capsules', therCat: 'Nutritional / B-Complex', desc: 'B-complex therapeutic formula fortified with folic acid, vitamin C, and zinc for nutritional deficiency recovery.', image: '🍀' },
-      { id: 'esmyle', name: 'Esmyle-D Capsule', category: 'digestive', form: 'Capsules', therCat: 'Gastrointestinal Care', desc: 'Sustained-release Esomeprazole and Domperidone capsule. Restores digestive comfort by managing severe acid reflux.', image: '🧪' },
-      { id: 'livlite', name: 'Livlite-Gold Syrup', category: 'digestive', form: 'Syrups & Liquids', therCat: 'Hepatic / Liver Care', desc: 'Liver tonic formulated with Silymarin, L-Ornithine L-Aspartate, and B-Complex vitamins. Promotes active liver detoxification.', image: '🍶' },
-      { id: 'rosuace', name: 'Rosuace-ASP Capsule', category: 'cardio', form: 'Capsules', therCat: 'Cardiovascular Care', desc: 'Dual cardiovascular protection compound combining Rosuvastatin and Aspirin. Controls lipid cholesterol levels.', image: '❤️' },
-      { id: 'carbofol', name: 'Carbofol-Z Capsule', category: 'nutritional', form: 'Capsules', therCat: 'Nutritional / Iron Supplement', desc: 'Carbonyl Iron, Folic Acid, and Zinc supplement for prevention of nutritional anemia and red blood cell synthesis.', image: '🧬' },
-      { id: 'orzyme', name: 'Orzyme-Plus Tablet', category: 'digestive', form: 'Tablets', therCat: 'Digestive Enzymes', desc: 'Active digestive combination of Activated Charcoal, Pancreatin, and Simethicone. Relieves severe flatulence.', image: '🥣' },
-      { id: 'orzyme_syr', name: 'Orzyme Syrup', category: 'digestive', form: 'Syrups & Liquids', therCat: 'Digestive Enzymes', desc: 'Fungal Diastase and Pepsin liquid suspension. Helps metabolize starches and proteins to treat loss of appetite.', image: '🧉' },
-      { id: 'kamfart', name: 'Kamfart-D Syrup (SF)', category: 'respiratory', form: 'Syrups & Liquids', therCat: 'Cough & Bronchodilator', desc: 'Sugar-Free cough suppressant and bronchodilator liquid syrup. Relieves allergic cough and bronchial spasms.', image: '🍃' },
-      { id: 'mach', name: 'Mach 650mg Tablet DT', category: 'respiratory', form: 'Tablets (Dispersible)', therCat: 'Analgesic & Antipyretic', desc: 'Rapid action 650mg Paracetamol dispersible tablet. Fast dissolution for prompt management of severe fever and body pain.', image: '⚡' },
-      { id: 'oxcon', name: 'Oxygen Concentrator (10L)', category: 'devices', form: 'Breathing Equipment', therCat: 'Critical Care Device', desc: 'Enterprise-grade 10-Liter medical oxygen concentrator. Provides continuous clinical grade 93% ± 3% oxygen purity stream.', image: '🌬️' },
-      { id: 'neb', name: 'Compressor Nebulizer', category: 'devices', form: 'Medical Diagnostics', therCat: 'Critical Care Device', desc: 'High-speed heavy-duty aerosol nebulizer system. Converts liquid medication into fine breathable mist.', image: '🩺' },
-      { id: 'bipap', name: 'BiPAP & CPAP Systems', category: 'devices', form: 'Breathing Equipment', therCat: 'Critical Care Device', desc: 'Advanced non-invasive positive airway pressure ventilation devices. Provides sleep apnea support.', image: '⚙️' }
-    ];
+  {
+    "id": "aerobon_dm",
+    "name": "AEROBON-DM TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Joint & Pain Care",
+    "desc": "Formulated with Diacerin, Glucosamine, and Methylsulfonyl Methane to support joint health, cartilage repair, and relieve chronic osteoarthritis pain.",
+    "image": "💊"
+  },
+  {
+    "id": "aerobon_qr",
+    "name": "AEROBON-QR TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Joint & Pain Care",
+    "desc": "Potent combination of Glucosamine, Methylsulfonyl Methane, Rutin, and Quercetin to reduce joint inflammation and support vascular integrity.",
+    "image": "💊"
+  },
+  {
+    "id": "actramol",
+    "name": "ACTRAMOL TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Analgesic & Pain Relief",
+    "desc": "Synergistic combination of Tramadol HCL (37.5 mg) and Paracetamol (375 mg) for the management of moderate to severe acute pain.",
+    "image": "💊"
+  },
+  {
+    "id": "algieva",
+    "name": "ALGIEVA Cap",
+    "category": "respiratory",
+    "form": "Capsules",
+    "therCat": "Anti-inflammatory & Pain Care",
+    "desc": "Contains Palmitoylethanolamide (300 mg), Cucumis Melo L Extract (7 mg) providing Superoxide Dismutase (140 units), and Alpha Lipoic Acid (300 mg) for chronic neuropathic pain management.",
+    "image": "💊"
+  },
+  {
+    "id": "aqunext",
+    "name": "AQUNEXT CAP",
+    "category": "respiratory",
+    "form": "Capsules",
+    "therCat": "Joint & Mobility Care",
+    "desc": "Premium mobility formula featuring Aflapin (100 mg), Curqlie (100 mg), Native Collagen (40 mg), and Mobilee Hyaluronate (40 mg) to restore joint flexibility.",
+    "image": "💊"
+  },
+  {
+    "id": "bioraft",
+    "name": "BIORAFT LIQUID",
+    "category": "digestive",
+    "form": "Syrups & Liquids",
+    "therCat": "Antacid & Anti-Reflux",
+    "desc": "Rapid relief suspension containing Sodium Alginate (250 mg), Sodium Bicarbonate (133.5 mg), and Calcium Carbonate (88 mg) to prevent acid reflux and heartburn.",
+    "image": "🍶"
+  },
+  {
+    "id": "becofol",
+    "name": "BECOFOL CAP.",
+    "category": "nutritional",
+    "form": "Capsules",
+    "therCat": "B-Complex & Probiotics",
+    "desc": "B-Complex vitamins fortified with Lactic Acid Bacillus, Vitamin C, and Folic Acid to support gut health and recover from nutritional deficiencies.",
+    "image": "🍀"
+  },
+  {
+    "id": "becofol_tm",
+    "name": "BECOFOL-TM CAP.",
+    "category": "nutritional",
+    "form": "Capsules",
+    "therCat": "Multivitamins & Antioxidants",
+    "desc": "High-potency therapeutic capsule combining Vitamin A (5000 IU), Lycopene (4000 mcg), and essential Multivitamins for comprehensive cell protection.",
+    "image": "💊"
+  },
+  {
+    "id": "becofol_pr",
+    "name": "BECOFOL-PR CAP.",
+    "category": "nutritional",
+    "form": "Capsules",
+    "therCat": "Pre & Probiotic",
+    "desc": "Advanced Pre and Probiotic capsules formulated to restore healthy intestinal microflora, boost immunity, and improve digestion.",
+    "image": "🦠"
+  },
+  {
+    "id": "becofol_coq",
+    "name": "BECOFOL CoQ Cap",
+    "category": "nutritional",
+    "form": "Capsules",
+    "therCat": "Coenzyme Q10 & Antioxidants",
+    "desc": "Premium soft gelatin capsules containing Ubidecarenone (CoQ10) combined with Omega 3 Fatty Acids, Lycopene, and Selenium for cardiovascular and cellular energy support.",
+    "image": "💊"
+  },
+  {
+    "id": "calbritta_forte",
+    "name": "CALBRITTA-FORTE TAB",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Calcium & Amino Acids",
+    "desc": "Formulated with L-Arginine, L-Lysine, Zinc, Calcium Citrate, and Vitamin B6 to enhance bone mineralization and calcium absorption.",
+    "image": "💊"
+  },
+  {
+    "id": "calbritta_xt",
+    "name": "CALBRITTA -XT TAB",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Calcium & Bone Health",
+    "desc": "Advanced combination of L-Arginine, L-Citrulline, Zinc, Calcium Citrate, and Vitamin B6 to support bone density and muscle wellness.",
+    "image": "💊"
+  },
+  {
+    "id": "calbritta_k2",
+    "name": "CALBRITTA-K2 CAP",
+    "category": "nutritional",
+    "form": "Capsules",
+    "therCat": "Calcium, D3 & Vitamin K2-7",
+    "desc": "Comprehensive soft gelatin formula with Calcium Carbonate, Calcitriol (0.25 mcg), Zinc (7.5 mg), Vitamin B6 (3 mg), Magnesium Oxide (50 mg), Folic Acid (1.5 mg), Methylcobalamin (1500 mcg), and Vitamin K2-7 (50 mcg).",
+    "image": "🥛"
+  },
+  {
+    "id": "carbofol_z_tab",
+    "name": "CARBOFOL-Z Tab.",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Iron & Folic Acid",
+    "desc": "Optimal hematinic combination of Ferrous Ascorbate (100 mg) and Folic Acid (1.5 mg) to treat iron-deficiency anemia and boost energy levels.",
+    "image": "💊"
+  },
+  {
+    "id": "carbofol_z_syp",
+    "name": "CARBOFOL-Z SYP.",
+    "category": "nutritional",
+    "form": "Syrups & Liquids",
+    "therCat": "Hematinic Syrup",
+    "desc": "Liquid iron supplement providing Ferrous Ascorbate (30 mg) and Folic Acid (1.5 mg) per 5 ml serving to promote red blood cell synthesis.",
+    "image": "🍶"
+  },
+  {
+    "id": "dapafloz_500",
+    "name": "DAPAFLOZ MET ER 10/500 TAB",
+    "category": "cardio",
+    "form": "Tablets",
+    "therCat": "Anti-Diabetic Care",
+    "desc": "Extended-release combination of Dapagliflozin (10 mg) and Metformin HCL (500 mg) for effective glycemic control in Type 2 Diabetes.",
+    "image": "💊"
+  },
+  {
+    "id": "dapafloz_1000",
+    "name": "DAPAFLOZ MET ER 10/1000 TAB",
+    "category": "cardio",
+    "form": "Tablets",
+    "therCat": "Anti-Diabetic Care",
+    "desc": "High strength extended-release combination of Dapagliflozin (10 mg) and Metformin HCL (1000 mg) for advanced blood glucose management.",
+    "image": "💊"
+  },
+  {
+    "id": "dioprot",
+    "name": "DIOPROT POWDER",
+    "category": "nutritional",
+    "form": "Powders & Sachets",
+    "therCat": "Protein Supplement",
+    "desc": "Premium quality protein powder formulated to support muscle recovery, daily protein requirements, and strength synthesis.",
+    "image": "🥛"
+  },
+  {
+    "id": "esmyle_d",
+    "name": "ESMYLE-D TAB",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Antacid & Anti-Emetic",
+    "desc": "Balanced formulation of Esomeprazole (20 mg) and Domperidone (10 mg) to treat gastroesophageal reflux disease (GERD) and associated nausea.",
+    "image": "💊"
+  },
+  {
+    "id": "ediquit",
+    "name": "EDIQUIT TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Systemic Enzymes & Wound Healing",
+    "desc": "Proteolytic enzyme combination containing Trypsin (72 mg), Chymotrypsin (12 mg), Bromelain (135 mg), and Rutoside Trihydrate (150 mg) to reduce post-surgical edema and inflammation.",
+    "image": "💊"
+  },
+  {
+    "id": "ediquit_ds",
+    "name": "EDIQUIT -DS TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Double Strength Anti-inflammatory",
+    "desc": "Double strength enzyme therapy comprising Trypsin (96 mg), Bromelain (180 mg), and Rutoside Trihydrate (200 mg) for resolving deep tissue inflammation and hematomas.",
+    "image": "💊"
+  },
+  {
+    "id": "fibrex",
+    "name": "FIBREX POWDER",
+    "category": "digestive",
+    "form": "Powders & Sachets",
+    "therCat": "Laxative & Fiber",
+    "desc": "Clinically proven combination of Lactitol (10 gm) and Ispaghula Husk (3.5 gm) per serving to relieve chronic constipation and support bowel regularity.",
+    "image": "🥛"
+  },
+  {
+    "id": "flurtin_p",
+    "name": "FLURTIN P Tab",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Analgesic & Muscle Relaxant",
+    "desc": "Formulated with Flupirtine (100 mg) and Paracetamol (325 mg) for the management of acute and chronic musculoskeletal pain.",
+    "image": "💊"
+  },
+  {
+    "id": "foxy_oz",
+    "name": "FOXY-OZ TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Antibiotic & Anti-Diarrheal",
+    "desc": "Broad-spectrum anti-infective combining Ofloxacin (200 mg) and Ornidazole (500 mg) for mixed gastrointestinal and respiratory bacterial infections.",
+    "image": "💊"
+  },
+  {
+    "id": "glution",
+    "name": "GLUTION TAB",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Skin Health & Antioxidant",
+    "desc": "Nutrient blend of L-Glutathione, Alpha Lipoic Acid, Grape Seed Extract, Ascorbic Acid, and Vitamin E to detoxify and promote cellular rejuvenation.",
+    "image": "✨"
+  },
+  {
+    "id": "jaical",
+    "name": "JAICAL TAB.",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Calcium & Mineral Supplement",
+    "desc": "Essential daily formula with Calcium Citrate (1000 mg), Vitamin D3 (200 IU), Magnesium (100 mg), and Zinc (4 mg) to support structural bone strength.",
+    "image": "💊"
+  },
+  {
+    "id": "jaifix_o",
+    "name": "JAIFIX -O Tab",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Antibiotic",
+    "desc": "Powerful combination of Cefixime (200 mg) and Ofloxacin (200 mg) to treat severe respiratory tract and urinary tract infections.",
+    "image": "💊"
+  },
+  {
+    "id": "jaifix_xl",
+    "name": "JAIFIX -XL TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Antibiotic",
+    "desc": "Contains Cefixime (200 mg) for effective treatment of typhoid fever, bronchitis, and acute middle ear infections.",
+    "image": "💊"
+  },
+  {
+    "id": "kamfart_syp",
+    "name": "KAMFART SYP",
+    "category": "respiratory",
+    "form": "Syrups & Liquids",
+    "therCat": "Cough & Bronchodilator",
+    "desc": "Expectorant syrup containing Ambroxol (15 mg), Guaiphenesin (50 mg), Terbutaline (1.25 mg), and Menthol (2.5 mg) in a sorbitol base for mucosal clearance.",
+    "image": "🍶"
+  },
+  {
+    "id": "kamfart_d_syp",
+    "name": "KAMFART-D SYP",
+    "category": "respiratory",
+    "form": "Syrups & Liquids",
+    "therCat": "Cough Suppressant",
+    "desc": "Cough relief formula containing Phenylpropanolamine HCL (12.5 mg), Dextromethorphan HBr (10 mg), Chlorpheniramine Maleate (2 mg), and Menthol (2 mg) per 5 ml.",
+    "image": "🍶"
+  },
+  {
+    "id": "livlite_syp",
+    "name": "LIVLITE SYP.",
+    "category": "digestive",
+    "form": "Syrups & Liquids",
+    "therCat": "Ayurvedic Liver Care",
+    "desc": "Premium Ayurvedic liver care preparation formulated with natural herbs to support digestion, appetite, and hepatic detoxification.",
+    "image": "🍶"
+  },
+  {
+    "id": "livlite_plus_syp",
+    "name": "LIVLITE PLUS SYP.",
+    "category": "digestive",
+    "form": "Syrups & Liquids",
+    "therCat": "Appetite Stimulant",
+    "desc": "Exquisite syrup containing Cyproheptadine (2 mg) and Tricholine Citrate (275 mg) to stimulate appetite and improve weight gain.",
+    "image": "🍶"
+  },
+  {
+    "id": "livlite_gold_tab",
+    "name": "LIVLITE GOLD TAB.",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Hepatic Support",
+    "desc": "Advanced liver health support combination of Lecithin, Silymarin, Zinc, Amino Acids, and essential vitamins.",
+    "image": "💊"
+  },
+  {
+    "id": "loricyte_8",
+    "name": "LORICYTE-8 MG",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Analgesic & Pain Relief",
+    "desc": "Non-steroidal anti-inflammatory tablet containing Lornoxicam (8 mg) for effective relief of osteoarthritis and rheumatoid arthritis pain.",
+    "image": "💊"
+  },
+  {
+    "id": "loricyte_p_8",
+    "name": "LORICYTE P-8 MG",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Analgesic & Pain Relief",
+    "desc": "Combination of Lornoxicam (8 mg) and Paracetamol (325 mg) for fast-acting management of acute muscle pain and joint inflammation.",
+    "image": "💊"
+  },
+  {
+    "id": "montera_l",
+    "name": "MONTERA-L TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Anti-Allergic Care",
+    "desc": "Standard combination of Montelukast (10 mg) and Levocetirizine (5 mg) for the prevention of asthma, allergic rhinitis, and hives.",
+    "image": "💊"
+  },
+  {
+    "id": "montera_ab",
+    "name": "MONTERA AB TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Bronchodilator & Anti-Allergic",
+    "desc": "Sustained-release formulation containing Acebrophylline (200 mg) and Montelukast (10 mg) to treat asthma and COPD.",
+    "image": "💊"
+  },
+  {
+    "id": "nervitop_gt",
+    "name": "NERVITOP-GT",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Neuropathic Pain Relief",
+    "desc": "Formulated with Gabapentin (300 mg) and Methylcobalamin (750 mcg) to alleviate neuropathic pain and regenerate damaged nerves.",
+    "image": "💊"
+  },
+  {
+    "id": "ocean_d",
+    "name": "OCEAN-D CAP.",
+    "category": "digestive",
+    "form": "Capsules",
+    "therCat": "Gastrointestinal Care",
+    "desc": "Contains Omeprazole (20 mg) and Domperidone (10 mg) to manage stomach acidity, bloating, and gastroesophageal reflux.",
+    "image": "🧪"
+  },
+  {
+    "id": "orgnise_spas",
+    "name": "ORGNISE-SPAS TAB.",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Anti-Spasmodic",
+    "desc": "Formulated with Drotaverine HCL (80 mg) to relieve smooth muscle spasms, abdominal cramping, and kidney/biliary colic.",
+    "image": "💊"
+  },
+  {
+    "id": "orgnise_asp",
+    "name": "ORGNISE-ASP Tab.",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Muscle Care & Anti-inflammatory",
+    "desc": "Powerful triple combination of Aceclofenac (100 mg), Paracetamol (325 mg), and Serratiopeptidase (15 mg) to resolve inflammation and edema.",
+    "image": "💊"
+  },
+  {
+    "id": "orgnise_p",
+    "name": "ORGNISE-P Tab.",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Analgesic & Antipyretic",
+    "desc": "Standard pain relief tablet combining Aceclofenac (100 mg) and Paracetamol (325 mg) for muscular pain, fever, and headaches.",
+    "image": "💊"
+  },
+  {
+    "id": "orgpan_dsr",
+    "name": "ORGPAN-DSR Cap.",
+    "category": "digestive",
+    "form": "Capsules",
+    "therCat": "Gastrointestinal Care",
+    "desc": "Sustained-release capsule combining Pantoprazole (40 mg) and Domperidone (30 mg) to treat severe acidity and peptic ulcers.",
+    "image": "🧪"
+  },
+  {
+    "id": "orzyme_liq",
+    "name": "ORZYME LIQ.",
+    "category": "digestive",
+    "form": "Syrups & Liquids",
+    "therCat": "Digestive Enzymes",
+    "desc": "Liquid digestive enzymes supplement formulated with Fungal Diastase and Pepsin to aid protein and starch metabolism.",
+    "image": "🍶"
+  },
+  {
+    "id": "orzyme_plus_tab",
+    "name": "ORZYME PLUS Tab.",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Digestive & Anti-Flatulent",
+    "desc": "Contains Pancreatin (175 mg), Activated Charcoal (50 mg), and Activated Dimethicone (50 mg) for indigestion, intestinal gas, and abdominal comfort.",
+    "image": "🥣"
+  },
+  {
+    "id": "pcl_2_tab",
+    "name": "PCL-2 TAB",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Gastrointestinal Motility",
+    "desc": "Contains Prucalopride for the treatment of chronic idiopathic constipation by enhancing intestinal transit and bowel movement.",
+    "image": "💊"
+  },
+  {
+    "id": "raji_dsr",
+    "name": "RAJI-DSR CAP.",
+    "category": "digestive",
+    "form": "Capsules",
+    "therCat": "Gastrointestinal Care",
+    "desc": "Sustained-release capsule formulation of Rabeprazole (20 mg) and Domperidone (30 mg) for immediate relief from hyperacidity and GERD.",
+    "image": "🧪"
+  },
+  {
+    "id": "reversyn",
+    "name": "REVERSYN Tab.",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Liver & Immune Support",
+    "desc": "A premium phytotherapy blend featuring Withania Somnifera (Ashwagandha), N-Acetylglucosamine, Silymarin (Milk Thistle), Boswellia Serrata, Zingiber Officinale (Ginger), and Curcuma Longa (Turmeric).",
+    "image": "🌿"
+  },
+  {
+    "id": "rifast",
+    "name": "RIFAST TAB",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Gastrointestinal Antibiotic",
+    "desc": "Contains Rifaximin (400 mg) for the treatment of Irritable Bowel Syndrome with diarrhea (IBS-D) and Hepatic Encephalopathy.",
+    "image": "💊"
+  },
+  {
+    "id": "rosuace_asp_10",
+    "name": "ROSUACE ASP 10-75 CAP",
+    "category": "cardio",
+    "form": "Capsules",
+    "therCat": "Cardiovascular Care",
+    "desc": "Active cardiovascular protection combining Rosuvastatin (10 mg) and Aspirin (75 mg) to regulate cholesterol levels and prevent blood clots.",
+    "image": "❤️"
+  },
+  {
+    "id": "rosuace_asp_20",
+    "name": "ROSUACE ASP 20-75 CAP",
+    "category": "cardio",
+    "form": "Capsules",
+    "therCat": "Cardiovascular Care",
+    "desc": "High strength cardiac combination of Rosuvastatin (20 mg) and Aspirin (75 mg) to manage hyperlipidemia and support artery health.",
+    "image": "❤️"
+  },
+  {
+    "id": "sg_ajmo",
+    "name": "SG-AJMO Cap.",
+    "category": "nutritional",
+    "form": "Capsules",
+    "therCat": "Anti-inflammatory & Joints",
+    "desc": "Herbal anti-inflammatory blend containing Apium Graveolens (250 mg) and Boswellia Serrata (250 mg) to support joint comfort and alleviate arthritis.",
+    "image": "🌿"
+  },
+  {
+    "id": "spride",
+    "name": "SPRIDE",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Gastrointestinal Motility",
+    "desc": "Contains Levosulpiride (25 mg) to manage diabetic gastroparesis, dyspepsia, and restore gastrointestinal homeostasis.",
+    "image": "💊"
+  },
+  {
+    "id": "supipep",
+    "name": "SUPIPEP Sachet",
+    "category": "nutritional",
+    "form": "Powders & Sachets",
+    "therCat": "Collagen & Bone Supplement",
+    "desc": "Advanced structural supplement containing Collagen Peptide (10 gm), Vitamin D3 (50 IU), Calcium Carbonate (500 mg), and Methylcobalamin (100 mcg) for cartilage vitality.",
+    "image": "🥛"
+  },
+  {
+    "id": "tapex_sr_50",
+    "name": "TAPEX SR 50",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Analgesic & Pain Relief",
+    "desc": "Contains Tapentadol (50 mg) in a sustained-release formulation to manage moderate to severe chronic pain.",
+    "image": "💊"
+  },
+  {
+    "id": "udibest_300",
+    "name": "UDIBEST TAB",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Hepatobiliary Support",
+    "desc": "Contains Ursodeoxycholic Acid (300 mg) to dissolve gallstones and treat primary biliary cholangitis.",
+    "image": "💊"
+  },
+  {
+    "id": "vijdec_25",
+    "name": "VIJDEC-25 MG",
+    "category": "nutritional",
+    "form": "Injectables",
+    "therCat": "Anabolic Support",
+    "desc": "Contains Nandrolone Decanoate (25 mg) injection to treat osteoporosis in postmenopausal women and manage anemia of renal insufficiency.",
+    "image": "💉"
+  },
+  {
+    "id": "calbritta_nano",
+    "name": "Calbritta Nano Shot",
+    "category": "nutritional",
+    "form": "Syrups & Liquids",
+    "therCat": "Vitamin D3 Shot",
+    "desc": "Fast-acting Vitamin D3 oral solution (Cholecalciferol 60,000 IU) to correct severe vitamin D deficiency and support immunity.",
+    "image": "🧪"
+  },
+  {
+    "id": "provent",
+    "name": "PROVENT CAP",
+    "category": "nutritional",
+    "form": "Capsules",
+    "therCat": "Probiotic Care",
+    "desc": "High-density therapeutic probiotic containing Lactobacillus Paracasei GMNL-133 and Lactobacillus Fermentum GM-090 (4 Billion Spores) to boost gut health.",
+    "image": "🦠"
+  },
+  {
+    "id": "lolax",
+    "name": "LOLAX Sachet",
+    "category": "digestive",
+    "form": "Powders & Sachets",
+    "therCat": "Liver Care",
+    "desc": "L-Aspartate L-Ornithine (3 gm per 5 gm sachet) formula to lower blood ammonia levels and promote active liver rejuvenation.",
+    "image": "🥛"
+  },
+  {
+    "id": "jaifix_cv",
+    "name": "JAIFIX-CV TAB",
+    "category": "respiratory",
+    "form": "Tablets",
+    "therCat": "Antibiotic",
+    "desc": "Advanced combination of Cefixime (200 mg) and Potassium Clavulanate (125 mg) to combat beta-lactamase resistant bacterial infections.",
+    "image": "💊"
+  },
+  {
+    "id": "udibest_150",
+    "name": "UDIBEST-150 TAB",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Hepatobiliary Support",
+    "desc": "Contains Ursodeoxycholic Acid (150 mg) for active gallstone dissolution and management of chronic hepatobiliary disorders.",
+    "image": "💊"
+  },
+  {
+    "id": "flowzy",
+    "name": "FLOWZY Solution",
+    "category": "digestive",
+    "form": "Syrups & Liquids",
+    "therCat": "Laxative",
+    "desc": "Lactulose Solution to treat chronic constipation and portal-systemic encephalopathy by regulating colonic pH.",
+    "image": "🍶"
+  },
+  {
+    "id": "nactive",
+    "name": "NACTIVE TAB",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Antioxidant & Respiratory Support",
+    "desc": "Formulated with N-Acetyl-L-Cysteine (150 mg), Taurine (500 mg), Vitamin B12 (2.2 mcg), Vitamin B6 (2.4 mcg), and Folic Acid (176.47 mg) to support cellular glutathione synthesis.",
+    "image": "💊"
+  },
+  {
+    "id": "adecyte",
+    "name": "ADECYTE TAB",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Liver & Mood Support",
+    "desc": "Contains Ademetionine (S-Adenosyl-L-Methionine 400 mg) to support liver function, cellular health, and emotional well-being.",
+    "image": "💊"
+  },
+  {
+    "id": "ibsacure",
+    "name": "IBSACURE Tab",
+    "category": "digestive",
+    "form": "Tablets",
+    "therCat": "Gastrointestinal Care",
+    "desc": "Antispasmodic and anxiolytic combination of Chlordiazepoxide (5 mg) and Mebeverine HCL (135 mg) to manage Irritable Bowel Syndrome (IBS).",
+    "image": "💊"
+  },
+  {
+    "id": "udiboost",
+    "name": "UDIBOOST Sachet",
+    "category": "nutritional",
+    "form": "Powders & Sachets",
+    "therCat": "Amino Acids Support",
+    "desc": "Essential branched-chain amino acids sachet featuring L-Leucine (2300 mg), L-Valine (1500 mg), and L-Isoleucine (1200 mg) to support muscle synthesis.",
+    "image": "🥛"
+  },
+  {
+    "id": "sg_frac",
+    "name": "SG-FRAC Tab",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Bone & Joint Support",
+    "desc": "Advanced formula combining L-Arginine HCL (250 mg), L-Citrulline (250 mg), Cissus Quadrangularis Extract (250 mg), Collagen Type I, II, III (150 mg), Quercetin (50 mg), L-Glutathione (50 mg), and Boron (1.5 mg) to support bone fracture healing.",
+    "image": "🦴"
+  },
+  {
+    "id": "sg_mag",
+    "name": "SG-MAG TAB",
+    "category": "nutritional",
+    "form": "Tablets",
+    "therCat": "Mineral Supplement",
+    "desc": "Contains Magnesium Bisglycinate (400 mg) for optimal magnesium absorption to support muscle function and nervous system health.",
+    "image": "💊"
+  }
+]
 
     let comparedProducts = [];
 
@@ -1414,7 +2021,7 @@
 
     function filterCatalog(category) {
       activeCat = category;
-      const tabs = ['all', 'nutritional', 'cardio', 'digestive', 'respiratory', 'devices'];
+      const tabs = ['all', 'nutritional', 'cardio', 'digestive', 'respiratory'];
       tabs.forEach(tab => {
         const btn = document.getElementById(`tab-${tab}`);
         if (tab === category) {
