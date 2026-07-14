@@ -6,21 +6,24 @@ export default function Leaders() {
   const leaders = [
     {
       name: "J. R. S. Gaur",
-      role: "Director of Formulation Assay",
+      role: "Director",
+      image: "/jrs_gaur.jpg",
       qualifications: "Bachelor of Science",
       experience: "25 Years",
       companies: "Ranbaxy Laboratories Limited, Glenmark Laboratories Limited, Glenmark Pharmaceuticals Limited"
     },
     {
       name: "Vibhor Tiwari",
-      role: "Director of Global Channels",
+      role: "Director",
+      image: "/vibhor_tiwari.jpg",
       qualifications: "Bachelor of Science, Masters in Business Administration",
       experience: "12 Years",
       companies: "Biological E. Limited, Maxx Limited"
     },
     {
       name: "Indra Sen Singh",
-      role: "Director of Quality Assurances",
+      role: "Director",
+      image: "/indra_sen_singh.jpg",
       qualifications: "Bachelor of Science, Diploma in Marketing sponsored by SIDBI",
       experience: "15 Years",
       companies: "Dr. Reddy's Laboratories Limited, Maxx Limited"
@@ -36,7 +39,7 @@ export default function Leaders() {
       <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">Corporate Leadership</h3>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-slate-505 leading-relaxed">
             Meet our experienced leadership team driving innovation and excellence in pharmaceutical solutions.
           </p>
         </div>
@@ -48,8 +51,12 @@ export default function Leaders() {
                 
                 {/* Header Profile */}
                 <div className="flex flex-col items-center text-center space-y-3 pb-4 border-b border-slate-100 dark:border-slate-800">
-                  <div className="w-14 h-14 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shadow-inner">
-                    <User className="w-7 h-7" />
+                  <div className="w-14 h-14 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shadow-inner overflow-hidden relative">
+                    {leader.image ? (
+                      <img src={leader.image} alt={leader.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <User className="w-7 h-7" />
+                    )}
                   </div>
                   <div>
                     <h4 className="font-extrabold text-base text-slate-900 dark:text-white">{leader.name}</h4>
