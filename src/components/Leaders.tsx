@@ -51,11 +51,11 @@ export default function Leaders() {
                 
                 {/* Header Profile */}
                 <div className="flex flex-col items-center text-center space-y-3 pb-4 border-b border-slate-100 dark:border-slate-800">
-                  <div className="w-14 h-14 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shadow-inner overflow-hidden relative">
+                  <div className="w-24 h-24 rounded-full bg-brandorange-50 dark:bg-slate-800 text-brandorange-500 flex items-center justify-center shadow-md overflow-hidden relative ring-4 ring-brandorange-500/10">
                     {leader.image ? (
                       <img src={leader.image} alt={leader.name} className="w-full h-full object-cover" />
                     ) : (
-                      <User className="w-7 h-7" />
+                      <User className="w-10 h-10" />
                     )}
                   </div>
                   <div>
