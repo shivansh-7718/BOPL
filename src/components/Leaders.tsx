@@ -1,6 +1,6 @@
 "use client";
 
-import { User, GraduationCap, Briefcase, Building } from "lucide-react";
+import { User, GraduationCap, Briefcase } from "lucide-react";
 
 export default function Leaders() {
   const leaders = [
@@ -9,28 +9,23 @@ export default function Leaders() {
       role: "Director",
       image: "/jrs_gaur.jpg",
       qualifications: "Bachelor of Science",
-      experience: "25 Years",
-      companies: "Ranbaxy Laboratories Limited, Glenmark Laboratories Limited, Glenmark Pharmaceuticals Limited"
+      experience: "30 Years"
     },
     {
       name: "Vibhor Tiwari",
       role: "Director",
       image: "/vibhor_tiwari.jpg",
       qualifications: "Bachelor of Science, Masters in Business Administration",
-      experience: "12 Years",
-      companies: "Biological E. Limited, Maxx Limited"
+      experience: "28 Years"
     },
     {
       name: "Indra Sen Singh",
       role: "Director",
       image: "/indra_sen_singh.jpg",
       qualifications: "Bachelor of Science, Diploma in Marketing sponsored by SIDBI",
-      experience: "15 Years",
-      companies: "Dr. Reddy's Laboratories Limited, Maxx Limited"
+      experience: "25 Years"
     }
   ];
-
-
 
   return (
     <div className="space-y-16 mt-8">
@@ -81,14 +76,6 @@ export default function Leaders() {
                       <span className="block text-slate-800 dark:text-slate-200 mt-0.5">{leader.experience}</span>
                     </div>
                   </div>
-
-                  <div className="flex items-start space-x-3">
-                    <Building className="w-4.5 h-4.5 text-softgreen-500 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="block text-[10px] text-slate-400 font-bold uppercase tracking-wider">Previous Companies</span>
-                      <span className="block text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">{leader.companies}</span>
-                    </div>
-                  </div>
                 </div>
 
               </div>
@@ -96,8 +83,6 @@ export default function Leaders() {
           ))}
         </div>
       </div>
-
-
 
     </div>
   );
