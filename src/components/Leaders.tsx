@@ -16,14 +16,14 @@ export default function Leaders() {
       role: "Director",
       image: "/vibhor_tiwari.jpg",
       qualifications: "Bachelor of Science, Masters in Business Administration",
-      experience: "28 Years"
+      experience: "25 Years"
     },
     {
       name: "Indra Sen Singh",
       role: "Director",
       image: "/indra_sen_singh.jpg",
       qualifications: "Bachelor of Science, Diploma in Marketing sponsored by SIDBI",
-      experience: "25 Years"
+      experience: "28 Years"
     }
   ];
 
