@@ -109,10 +109,10 @@ export default function Hero() {
             </div>
 
             {/* Bottom Metric */}
-            <div className="mt-4 bg-slate-100/50 dark:bg-slate-850/50 rounded-xl p-3 border border-slate-200/30 dark:border-slate-700/30">
-              <div className="flex items-center justify-between text-[10px] font-bold text-slate-500 dark:text-slate-400 mb-1.5">
+            <div className="mt-4 bg-slate-100/80 dark:bg-slate-900/60 rounded-xl p-3 border border-slate-200/50 dark:border-slate-800/50">
+              <div className="flex items-center justify-between text-[10px] font-bold text-slate-700 dark:text-slate-300 mb-1.5">
                 <span>Batch Clearance Rate</span>
-                <span className="text-softgreen-500 font-extrabold">100%</span>
+                <span className="text-softgreen-600 dark:text-softgreen-500 font-extrabold">100%</span>
               </div>
               <div className="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
                 <div className="bg-gradient-to-r from-softgreen-500 to-tealaccent-500 h-full rounded-full" style={{ width: "100%" }} />
