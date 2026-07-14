@@ -53,7 +53,6 @@ export default function Footer() {
             <Link href="/" className="hover:text-white transition-colors">Home Base</Link>
             <Link href="/about" className="hover:text-white transition-colors">Company Story</Link>
             <Link href="/products" className="hover:text-white transition-colors">Product Range</Link>
-            <Link href="/quality" className="hover:text-white transition-colors">Quality Control</Link>
             <Link href="/careers" className="hover:text-white transition-colors">Work With Us</Link>
           </div>
         </div>
@@ -62,12 +61,9 @@ export default function Footer() {
         <div className="md:col-span-3 space-y-4">
           <h4 className="font-bold text-xs uppercase text-white tracking-wider">Key Portfolios</h4>
           <div className="flex flex-col space-y-2.5 text-xs">
-            <Link href="/products" className="hover:text-white transition-colors">Critical Devices (CPAP/Concentrators)</Link>
             <Link href="/products" className="hover:text-white transition-colors">Cardiovascular Medicines</Link>
             <Link href="/products" className="hover:text-white transition-colors">Gastrointestinal Care</Link>
             <Link href="/products" className="hover:text-white transition-colors">Nutritional & B-Complex</Link>
-            <Link href="/certifications" className="hover:text-white transition-colors">ISO 9001:2015 Certification</Link>
-            <Link href="/certifications" className="hover:text-white transition-colors">Quality Control Standards</Link>
           </div>
         </div>
 
