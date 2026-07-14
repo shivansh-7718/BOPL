@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Mail, Download, ArrowLeftRight, Check, X } from "lucide-react";
+import { Search, ArrowLeftRight, Check, X, MessageSquare } from "lucide-react";
 
 interface Product {
   id: string;
@@ -775,37 +775,37 @@ export default function Products() {
                 <div>
                   <div className="flex justify-between items-start mb-4">
                     <div className="w-11 h-11 rounded-2xl bg-brandorange-50 dark:bg-slate-800 text-2xl flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">{prod.image}</div>
-                    <span className="text-[9px] font-bold text-brandorange-500 bg-brandorange-50 dark:bg-slate-800 px-2.5 py-1 rounded-full uppercase tracking-wider">{prod.therCat}</span>
+                    <div className="flex flex-col items-end space-y-1.5">
+                      <span className="text-[9px] font-bold text-brandorange-500 bg-brandorange-50 dark:bg-slate-800 px-2.5 py-1 rounded-full uppercase tracking-wider">{prod.therCat}</span>
+                      {prod.category === "nutritional" ? (
+                        <span className="text-[8px] font-extrabold text-softgreen-500 bg-softgreen-50 dark:bg-slate-800 px-2 py-0.5 rounded uppercase tracking-widest border border-softgreen-500/20">Nutraceutical</span>
+                      ) : (
+                        <span className="text-[8px] font-extrabold text-rose-500 bg-rose-50 dark:bg-slate-800 px-2 py-0.5 rounded uppercase tracking-widest border border-rose-500/20">Rx Only</span>
+                      )}
+                    </div>
                   </div>
                   <h3 className="font-extrabold text-sm text-slate-900 dark:text-white group-hover:text-brandorange-500 transition-colors">{prod.name}</h3>
                   <span className="text-[9px] text-slate-400 font-bold block mt-0.5">{prod.form}</span>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2.5 leading-relaxed">{prod.desc}</p>
                 </div>
 
-                <div className="pt-5 border-t border-slate-100 dark:border-slate-800 mt-5 flex flex-col space-y-2">
-                  <div className="flex items-center justify-between gap-2">
-                    <button 
-                      onClick={() => setSelectedProduct(prod)} 
-                      className="flex-1 py-2 bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white text-[10px] font-bold rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-center space-x-1"
-                    >
-                      <Mail className="w-3.5 h-3.5" />
-                      <span>Inquiry</span>
-                    </button>
-                    <button 
-                      onClick={() => handleToggleCompare(prod.id)} 
-                      className={`py-2 px-3 border border-slate-200 dark:border-slate-800 text-[10px] rounded-xl font-bold flex items-center justify-center ${
-                        isCompared ? "bg-tealaccent-500 text-white border-tealaccent-500" : "bg-slate-50 dark:bg-slate-800 text-slate-500 hover:bg-slate-100"
-                      } transition-all`}
-                    >
-                      {isCompared ? <Check className="w-3.5 h-3.5" /> : <ArrowLeftRight className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                  <button 
-                    onClick={() => handleDownloadBrochure(prod.name)}
-                    className="w-full py-1.5 border border-dashed border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-405 text-[9px] font-bold rounded-lg transition-colors flex items-center justify-center space-x-1"
+                <div className="pt-5 border-t border-slate-100 dark:border-slate-800 mt-5 flex items-center justify-between gap-2">
+                  <a 
+                    href={`https://wa.me/919919002066?text=Hi,%20I%20am%20interested%20in%20obtaining%20PCD%20franchise%20rates%20for%20${encodeURIComponent(prod.name)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-3 bg-gradient-to-r from-softgreen-500 to-softgreen-600 text-white text-[11px] font-bold rounded-xl shadow-md shadow-softgreen-500/10 hover:shadow-lg transition-all flex items-center justify-center space-x-1.5"
                   >
-                    <Download className="w-3 h-3 text-tealaccent-500" />
-                    <span>PDF Technical Brochure</span>
+                    <MessageSquare className="w-4 h-4" />
+                    <span>WhatsApp Inquiry</span>
+                  </a>
+                  <button 
+                    onClick={() => handleToggleCompare(prod.id)} 
+                    className={`py-3 px-3 border border-slate-200 dark:border-slate-800 text-[10px] rounded-xl font-bold flex items-center justify-center ${
+                      isCompared ? "bg-tealaccent-500 text-white border-tealaccent-500" : "bg-slate-50 dark:bg-slate-800 text-slate-500 hover:bg-slate-100"
+                    } transition-all`}
+                  >
+                    {isCompared ? <Check className="w-4 h-4" /> : <ArrowLeftRight className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
