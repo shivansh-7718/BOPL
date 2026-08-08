@@ -20,41 +20,47 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    setSuccess(false);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
+  setSuccess(false);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+        subject: "New Business Inquiry - BIOCYTE Organics",
+        from_name: formData.name,
+        ...formData,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        desk: "General Corporate Desk",
+        message: ""
       });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          desk: "General Corporate Desk",
-          message: ""
-        });
-      } else {
-        setError(data.error || "Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      setError("Failed to connect to the server. Please check your connection.");
-    } finally {
-      setLoading(false);
+    } else {
+      setError(data.message || "Something went wrong. Please try again.");
     }
-  };
+  } catch (err) {
+    setError("Failed to connect to the server. Please check your connection.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const details = [
     { icon: Building, title: "Registered Office Address", desc: "House No. 5, Meerpur Cantt, Kanpur, Uttar Pradesh – 208004, India" },
