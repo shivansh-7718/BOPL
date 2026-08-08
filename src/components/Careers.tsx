@@ -17,40 +17,42 @@ export default function Careers() {
     document.getElementById("careers")?.scrollIntoView();
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setLoading(true);
+  setError("");
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
-    formData.append("subject", "New Career Application - BIOCYTE Organics");
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+  formData.append("_subject", "New Career Application - BIOCYTE Organics");
 
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-      const result = await res.json();
+  try {
+    const res = await fetch("https://formspree.io/f/xjybgoez", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: formData,
+    });
 
-      if (result.success) {
-        setSubmitted(true);
-        form.reset();
-        setTimeout(() => {
-          setSubmitted(false);
-          setSelectedJob("");
-          setResumeName("");
-        }, 2000);
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      setError("Network error. Please check your connection and try again.");
-    } finally {
-      setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+      form.reset();
+      setTimeout(() => {
+        setSubmitted(false);
+        setSelectedJob("");
+        setResumeName("");
+      }, 2000);
+    } else {
+      const data = await res.json();
+      setError(data.errors?.[0]?.message || "Something went wrong. Please try again.");
     }
-  };
+  } catch (err) {
+    setError("Network error. Please check your connection and try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section id="careers" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
