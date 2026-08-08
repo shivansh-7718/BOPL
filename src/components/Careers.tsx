@@ -7,6 +7,8 @@ export default function Careers() {
   const [selectedJob, setSelectedJob] = useState("");
   const [resumeName, setResumeName] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const jobs: any[] = [];
 
@@ -15,14 +17,39 @@ export default function Careers() {
     document.getElementById("careers")?.scrollIntoView();
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setSelectedJob("");
-      setResumeName("");
-    }, 2000);
+    setLoading(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
+    formData.append("subject", "New Career Application - BIOCYTE Organics");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => {
+          setSubmitted(false);
+          setSelectedJob("");
+          setResumeName("");
+        }, 2000);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -35,7 +62,7 @@ export default function Careers() {
       </div>
 
       <div className="grid lg:grid-cols-12 gap-12 items-start">
-        
+
         {/* Jobs List */}
         <div className="lg:col-span-6 space-y-4">
           <h3 className="font-bold text-sm uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 pl-2">Current Openings</h3>
@@ -60,7 +87,7 @@ export default function Careers() {
               <span>Instant Application Portal</span>
             </h3>
             <p className="text-xs text-slate-500 mb-6">Complete our online career application and upload your professional profile.</p>
-            
+
             {submitted ? (
               <div className="py-8 text-center text-softgreen-500 font-bold text-sm">
                 Application successfully submitted! Check your email for further steps.
@@ -70,25 +97,26 @@ export default function Careers() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Your Name *</label>
-                    <input type="text" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none" />
+                    <input name="name" type="text" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none" />
                   </div>
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Email Address *</label>
-                    <input type="email" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none" />
+                    <input name="email" type="email" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Phone *</label>
-                    <input type="tel" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none" />
+                    <input name="phone" type="tel" required className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none" />
                   </div>
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Applied Position *</label>
-                    <select 
+                    <select
+                      name="position"
                       value={selectedJob}
                       onChange={(e) => setSelectedJob(e.target.value)}
-                      required 
+                      required
                       className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none text-slate-600"
                     >
                       <option value="">Select a Role...</option>
@@ -100,18 +128,19 @@ export default function Careers() {
 
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Brief Cover Note</label>
-                  <textarea placeholder="Tell us about your background..." className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none focus:border-brandorange-500 h-16" />
+                  <textarea name="cover_note" placeholder="Tell us about your background..." className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none focus:border-brandorange-500 h-16" />
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Upload Professional Resume (PDF) *</label>
                   <div className="border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-all flex flex-col items-center justify-center relative">
-                    <input 
-                      type="file" 
-                      required 
-                      accept=".pdf" 
+                    <input
+                      name="resume"
+                      type="file"
+                      required
+                      accept=".pdf"
                       onChange={(e) => setResumeName(e.target.files?.[0]?.name || "")}
-                      className="absolute inset-0 opacity-0 cursor-pointer" 
+                      className="absolute inset-0 opacity-0 cursor-pointer"
                     />
                     <UploadCloud className="w-8 h-8 text-slate-400 mb-2" />
                     <span className={`text-[11px] font-semibold ${resumeName ? 'text-softgreen-500' : 'text-slate-500'}`}>
@@ -120,9 +149,17 @@ export default function Careers() {
                   </div>
                 </div>
 
-                <button type="submit" className="w-full py-3.5 bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white font-bold rounded-xl text-xs shadow-md shadow-brandorange-500/20 active:scale-98 transition-all flex items-center justify-center space-x-2">
+                {error && (
+                  <p className="text-[11px] text-red-500 font-semibold text-center">{error}</p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-3.5 bg-gradient-to-r from-brandorange-500 to-brandorange-600 text-white font-bold rounded-xl text-xs shadow-md shadow-brandorange-500/20 active:scale-98 transition-all flex items-center justify-center space-x-2 disabled:opacity-60"
+                >
                   <Send className="w-4 h-4" />
-                  <span>Submit Profile Application</span>
+                  <span>{loading ? "Submitting..." : "Submit Profile Application"}</span>
                 </button>
               </form>
             )}
@@ -133,4 +170,3 @@ export default function Careers() {
     </section>
   );
 }
-
