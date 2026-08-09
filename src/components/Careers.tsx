@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { FileEdit, MapPin, Briefcase, UploadCloud, Send } from "lucide-react";
+import { FileEdit, MapPin, Briefcase, Mail, Send } from "lucide-react";
 
 export default function Careers() {
   const [selectedJob, setSelectedJob] = useState("");
-  const [resumeName, setResumeName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -17,42 +16,51 @@ export default function Careers() {
     document.getElementById("careers")?.scrollIntoView();
   };
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setLoading(true);
-  setError("");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
 
-  const form = e.currentTarget;
-  const formData = new FormData(form);
-  formData.append("_subject", "New Career Application - BIOCYTE Organics");
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-  try {
-    const res = await fetch("https://formspree.io/f/xjybgoez", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-      body: formData,
-    });
+    const payload = {
+      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+      subject: "New Career Application - BIOCYTE Organics",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      position: formData.get("position"),
+      cover_note: formData.get("cover_note"),
+    };
 
-    if (res.ok) {
-      setSubmitted(true);
-      form.reset();
-      setTimeout(() => {
-        setSubmitted(false);
-        setSelectedJob("");
-        setResumeName("");
-      }, 2000);
-    } else {
-      const data = await res.json();
-      setError(data.errors?.[0]?.message || "Something went wrong. Please try again.");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => {
+          setSubmitted(false);
+          setSelectedJob("");
+        }, 2000);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
-  } catch (err) {
-    setError("Network error. Please check your connection and try again.");
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
     <section id="careers" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -88,11 +96,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <FileEdit className="text-brandorange-500 w-5 h-5" />
               <span>Instant Application Portal</span>
             </h3>
-            <p className="text-xs text-slate-500 mb-6">Complete our online career application and upload your professional profile.</p>
+            <p className="text-xs text-slate-500 mb-6">Complete our online career application below.</p>
 
             {submitted ? (
               <div className="py-8 text-center text-softgreen-500 font-bold text-sm">
-                Application successfully submitted! Check your email for further steps.
+                Application successfully submitted! Please email your resume to info@biocyteorganics.com to complete your application.
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -133,22 +141,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   <textarea name="cover_note" placeholder="Tell us about your background..." className="w-full p-3 border border-slate-200 dark:border-slate-800 bg-[#F8FAFC]/50 dark:bg-slate-900/50 rounded-xl text-xs focus:outline-none focus:border-brandorange-500 h-16" />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Upload Professional Resume (PDF) *</label>
-                  <div className="border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-all flex flex-col items-center justify-center relative">
-                    <input
-                      name="resume"
-                      type="file"
-                      required
-                      accept=".pdf"
-                      onChange={(e) => setResumeName(e.target.files?.[0]?.name || "")}
-                      className="absolute inset-0 opacity-0 cursor-pointer"
-                    />
-                    <UploadCloud className="w-8 h-8 text-slate-400 mb-2" />
-                    <span className={`text-[11px] font-semibold ${resumeName ? 'text-softgreen-500' : 'text-slate-500'}`}>
-                      {resumeName ? `Selected: ${resumeName}` : 'Drag & drop or browse computer files'}
-                    </span>
-                  </div>
+                <div className="p-4 bg-brandorange-50/40 dark:bg-slate-800/40 rounded-xl border border-brandorange-500/10 flex items-start space-x-2">
+                  <Mail className="w-4 h-4 text-brandorange-500 shrink-0 mt-0.5" />
+                  <span className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Please email your resume/CV to <a href="mailto:info@biocyteorganics.com" className="font-bold text-brandorange-500 hover:underline">info@biocyteorganics.com</a> after submitting this form.
+                  </span>
                 </div>
 
                 {error && (
